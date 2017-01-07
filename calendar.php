@@ -182,19 +182,6 @@
                   <li>
                       <a href="calendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
-                <!--  <li>
-                      <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                  </li>
-                  <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                  </li>
-
-                  <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li> -->
               </ul>
           </div>
           <!-- /.navbar-collapse -->
