@@ -37,7 +37,7 @@
   session_write_close();
 
   if( $_SESSION['sess_userrole'] == "admin"){
-   header('Location: index.html');
+   header('Location: adminhome.html');
   }else if( $_SESSION['sess_userrole'] == "staff"){
    header('Location: staffhome.html');
   }else{
