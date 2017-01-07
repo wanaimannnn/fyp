@@ -21,7 +21,7 @@
 </head>
 <body>
  <meta charset="UTF-8">
-    <title>Online Book Store</title>
+     <title>OFFICE MANAGEMENT SYSTEM</title>
 
 
 
@@ -30,7 +30,7 @@
 
     <br>
 	<br>
-	<img src="mayangsari-logo.png" width="100" height="100" style="margin-left:450; margin-top:-25;"/><img src="workspace.png" width="80" height="100" style="margin-left:-200; margin-top:-50;"/><h1 align="center" style="margin-top: -65; margin-left:140">Office Management System</h1>
+	<img src="css/img/mayangsari-logo.png" width="100" height="100" style="margin-left:450; margin-top:-25;"/><img src="css/img/workspace.png" width="80" height="100" style="margin-left:-200; margin-top:-50;"/><h1 align="center" style="margin-top: -65; margin-left:140">Office Management System</h1>
 
   </head>
 
