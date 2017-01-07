@@ -1,6 +1,6 @@
 <?php
 //db details
-$dbServer= '146.185.160.162';
+$dbServer= 'localhost';
 $dbUsername = 'root';
 $dbPassword = 'opom2317';
 $dbName = 'permohonan';
