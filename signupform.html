@@ -1,4 +1,3 @@
-<?php include_once('functions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-        <title>OFFICE MANAGEMENT SYSTEM</title>
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,12 +17,12 @@
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="css/calendarstyle.css"/>
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -171,7 +170,7 @@
                       </ul>
                   </li> -->
                   <li>
-                      <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
+                      <a href="#"><i class="fa fa-fw fa-user"></i> User Registration</a>
                     </li>
                   <li>
                       <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
@@ -183,7 +182,7 @@
                       <a href="#"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
                   </li>
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                      <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
                 <!--    <li>
                       <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
@@ -200,46 +199,130 @@
           <!-- /.navbar-collapse -->
       </nav>
 
-        <div id="page-wrapper">
+      <div id="page-wrapper">
 
-            <div class="container-fluid">
+         <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Calendar
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-calendar"></i> Calendar
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
+             <!-- Page Heading -->
+             <div class="row">
+                 <div class="col-lg-12">
+                     <h1 class="page-header">
+                         User Registration
+                     </h1>
+                     <ol class="breadcrumb">
+                         <li>
+                             <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                         </li>
+                         <li class="active">
+                             <i class="fa fa-edit"></i> User Registration
+                         </li>
+                     </ol>
+                 </div>
+             </div>
 
-                <!-- Main jumbotron for a primary marketing message or call to action -->
-                <div id="calendar_div">
-                	<?php echo getCalender(); ?>
-                </div>
+             <!-- /.row -->
 
-            </div>
-            <!-- /.container-fluid -->
+             <div class="row">
+                 <div class="col-lg-6">
 
-        </div>
-        <!-- /#page-wrapper -->
+                     <form role="form" method="post" action="#">
+
+                       <div class="form-group">
+                     <label> Name </Label>
+                     <input class="form-control" name="name" >
+
+                   </div>
+
+                         <div class="form-group">
+                             <label> Number IC </Label>
+                             <input class="form-control" name="name">
+
+                         </div>
+
+                          <div class="form-group">
+                             <label>Address</label>
+                             <textarea class="form-control" rows="3"></textarea>
+                         </div>
+
+                         <div class="form-group">
+                             <label> Phone Number </Label>
+                             <input class="form-control" name="name">
+
+                         </div>
+
+                         <div class="form-group">
+                             <label> Position </Label>
+                             <input class="form-control" name="name">
+
+                         </div>
+
+                     <div class="form-group">
+                             <label>Department</label>
+                             <select class="form-control">
+                             <option></option>
+                                 <option>Admin</option>
+                                 <option>Human Resources</option>
+                                 <option>Kitchen</option>
+                                 <option>Front Service Office</option>
+                                 <option>Account</option>
+                                 <option>House Skeeping</option>
+                                 <option>Landskap/Maintanance</option>
+                             </select>
+                         </div>
+
+                         <h3 class="page-header"> User Credential </h3>
+
+                         <div class="form-group">
+                             <label> Username Request </Label>
+                             <input class="form-control" name="name">
+
+                         </div>
+
+                         <div class="form-group">
+                             <label> Password </Label>
+                             <input type="password" class="form-control" name="name">
+
+                         </div>
+
+
+                         <button type="submit" class="btn btn-default">Submit Button</button> &nbsp;&nbsp;
+                         <button type="reset" class="btn btn-default">Reset Button</button>
+
+                     </form>
+
+                     <br>
+                     <br>
+                 </div>
+             </div>
+             <!-- /.row -->
+
+         </div>
+         <!-- /.container-fluid -->
+
+     </div>
+     <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/flot-data.js"></script>
 
 </body>
 
