@@ -1,7 +1,7 @@
 <?php
    // define database related variables
    $db = 'permohonan';
-   $host = '146.185.160.162';
+   $host = 'localhost';
    $username = 'root';
    $password = 'opom2317';
 
