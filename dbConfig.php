@@ -2,7 +2,7 @@
 //db details
 $dbHost = 'localhost';
 $dbUsername = 'root';
-$dbPassword = '';
+$dbPassword = 'opom2317';
 $dbName = 'permohonan';
 
 //Connect and select the database
