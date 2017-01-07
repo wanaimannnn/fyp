@@ -180,7 +180,7 @@
                       <a href="#"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
                   </li>
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                      <a href="calendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
               </ul>
           </div>
