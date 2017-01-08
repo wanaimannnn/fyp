@@ -214,7 +214,7 @@
                                 <i class="fa fa-dashboard"></i>  <a href="svhome.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-edit"></i> Forms
+                                <i class="fa fa-edit"></i> Leave
                             </li>
                         </ol>
                     </div>
@@ -224,164 +224,82 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form">
-
+                      <form role="form" method="post" action="svleaveform.php">
+                              <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control">
+                                <input class="form-control" name="name">
                                 <p class="help-block">.</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Department</label>
-                                <select class="form-control">
-									<option>Admin</option>
-                                    <option>Human Resource</option>
-                                    <option>Kitchen</option>
-                                    <option>Front Service Office</option>
-									<option>Account</option>
-									<option>House Keeping</option>
-									<option>Landscape/Maintenance</option>
+                                <select class="form-control" name="department" required>
+                                    <option></option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Human Resource">Human Resources</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Front Office">Front Service Office</option>
+                                    <option value="Account">Account</option>
+                                    <option value="Housekeeping">House Keeping</option>
+                                    <option value="Landscape/Maintenance">Landscape/Maintenance</option>
                                 </select>
                             </div>
 
-							<div class="form-group">
+							              <div class="form-group">
                                 <label>Type of Leave</label>
-                                <div class="checkbox">
+                                <div class="checkbox" name="leavetype">
                                     <label>
-                                        <input type="checkbox" value="">Annual Leave
+                                        <input type="checkbox" name="chkbox[]" value="Annual Leave">Annual Leave
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">Unpaid Leave
+                                        <input type="checkbox" name="chkbox[]" value="Unpaid Leave">Unpaid Leave
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">Maternity Leave
+                                        <input type="checkbox" name="chkbox[]" value="Maternity Leave">Maternity Leave
                                     </label>
                                 </div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">Compassionate Leave
-									</label>
-								</div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">Emergency Leave
-									</label>
-								</div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">Hospital Leave
-									</label>
-								</div>
+                								<div class="checkbox">
+                									<label>
+                										<input type="checkbox" name="chkbox[]" value="Compassionate Leave">Compassionate Leave
+                									</label>
+                								</div>
+                								<div class="checkbox">
+                									<label>
+                										<input type="checkbox" name="chkbox[]" value="Emergency Leave">Emergency Leave
+                									</label>
+                								</div>
+                								<div class="checkbox">
+                									<label>
+                										<input type="checkbox" name="chkbox[]" value="Hospital Leave">Hospital Leave
+                									</label>
+                								</div>
                             </div>
 
-							      <div class="form-group">
-									<label>Leave Requested to Commence On</label>
-									<div id="datetimepicker" class="input-append date">
-									<input type="date">  Until  </input> <input type="date"></input>
-									<span class="add-on">
-									<i  data-date-icon="icon-calendar"></i>
+      							      <div class="form-group">
+      									<label>Leave Requested to Commence On</label>
+      									    <div id="datetimepicker" class="input-append date">
+      									               <input class="form-group" name="start_date" type="date"></input>&nbsp;Until&nbsp;<input class="form-group" name="end_date" type="date"></input>
+      							        </div>
+                          </div>
 
-							</div>
-                            <script type="text/javascript">
-                             $('#datetimepicker').datetimepicker({
-                                format: 'dd/MM/yyyy hh:mm:ss',
-                                language: 'pt-BR'
-                              });
+      							<div class="form-group">
+      							<label> Will Resume Duty On:</label>
+      							</div>
 
-                            </script>
-                            </div>
-
-							<div class="form-group">
-							<label> Will Resume Duty On:</label>
-							</div>
-
-							<div class="form-group">
+							              <div class="form-group">
                                 <label>Reasons</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" name="reason"></textarea>
                             </div>
 
-							<div class="form-group">
+					              <!--<div class="form-group">
                                 <label>File input</label>
                                 <input type="file">
-                            </div>
-
-
-                           <!-- <div class="form-group">
-                                <label>Static Control</label>
-                                <p class="form-control-static">email@example.com</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Inline Checkboxes</label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">1
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">3
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Radio Buttons</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Inline Radio Buttons</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Selects</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Multiple Selects</label>
-                                <select multiple class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>-->
+                            </div> -->
 
                             <button type="submit" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
