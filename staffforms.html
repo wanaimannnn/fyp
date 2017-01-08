@@ -161,43 +161,16 @@
                     <ul id="demo" class="collapse">
 
                         <li>
-                            <a href="#"></i> Office Leave Forms</a>
+                            <a href="#"></i> Office Leave Form</a>
                         </li>
 
                         <li>
-                            <a href="staffleaveform.html">Leave</a>
+                            <a href="staffleaveform.html">Leave Form</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <!--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                </li>-->
                 <li>
                     <a href="#"><i class="fa fa-fw fa-table"></i> Status</a>
-                </li>
-
-                <li>
-                   <!-- <<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                </li>
-                <li>
-                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                </li>
-                <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Form <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo" class="collapse">
-                        <li>
-                            <a href="#">Office Leave</a>
-                        </li>
-                        <li>
-                            <a href="#">Leave</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                 </li>
             </ul>
         </div>
@@ -230,48 +203,47 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form">
+                        <form role="form" method="post" action="#">
 
                         	<div class="form-group">
                 				<label>Name </Label>
-                				<input class="form-control" name="name" value="Mohamad Ariffikri bin Mohamad Sobri">
-
-                			</div>
+                				<input class="form-control" name="name">
+                			    </div>
 
                 			  <div class="form-group">
                                 <label>Department</label>
-                                <select class="form-control">
-                                <option></option>
-                                    <option>Admin</option>
-                                    <option>Human Resources</option>
-                                    <option>Kitchen</option>
-                                    <option>Front Service Office</option>
-                                    <option>Account</option>
-                                    <option>House Keeping</option>
-                                    <option>Landscape/Maintenance</option>
+                                <select class="form-control" name="department">
+                                    <option></option>
+                                    <option value="admin">Admin</option>
+                                    <option value="hr">Human Resources</option>
+                                    <option value="kitchen">Kitchen</option>
+                                    <option value="frontoffice">Front Service Office</option>
+                                    <option value="account">Account</option>
+                                    <option value="housekeeping">House Keeping</option>
+                                    <option value="landscape">Landscape/Maintenance</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label>Shift</label>
-                                <div class="checkbox">
+                                <div class="checkbox" name="shift">
                                     <label>
-                                        <input type="checkbox" value="">Normal
+                                        <input type="checkbox" value="normal">Normal
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">Morning
+                                        <input type="checkbox" value="morning">Morning
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">Afternoon
+                                        <input type="checkbox" value="afternoob">Afternoon
                                     </label>
                                 </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">Evening
+                                        <input type="checkbox" value="evening">Evening
                                     </label>
                                 </div>
                             </div>
@@ -279,7 +251,7 @@
                            <div class="form-group">
                                 <label>Date</label>
                             <div id="datetimepicker" class="input-append date" >
-                              <input type="date"></input>
+                              <input type="date" value="date"></input>
                               <span class="add-on">
                                 <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                               </span>
@@ -309,12 +281,12 @@
 
                             <div class="form-group">
                                 <label>Reason</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" value="reason"></textarea>
                             </div>
 
                               <div class="form-group">
                             <div> <label>Select Time Out:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text">
+                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
                             </div>
 
                             <script type="text/javascript">
@@ -325,7 +297,7 @@
 
                              <div class="form-group">
                             <div> <label>Select Time In:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text">
+                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
                             </div>
 
                             <script type="text/javascript">
@@ -334,21 +306,14 @@
                             </script>
                             </div>
 
-                             <div class="form-group">
+                        <!--     <div class="form-group">
                                 <label>Document</label>
                                 <input type="file">
-                            </div>
+                            </div> -->
 
                             <button type="submit" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
-
                         </form>
-
-                        <br>
-                        <br>
-
-                        <p>Welcome to Mayang Sari <a href="http://getbootstrap.com/css/#forms">Bootstrap's Form Documentation</a>.</p>
-
                     </div>
                 </div>
                 <!-- /.row -->
