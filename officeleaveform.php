@@ -13,11 +13,12 @@ foreach($_POST['chkbox'] as $index => $val);
 $date = date('Y-m-d',strtotime($_POST['date']));
 $radio= $_POST['purpose'];
 $reason=mysqli_real_escape_string($link, $_POST['reason']);
-
+$timeout= $_POST['timeout'];
+$timein= $_POST['timein'];
 // $end_date= date('Y-m-d',strtotime($_POST['end_date']));
 // $verification = $_POST['verification'];
 
-$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason) VALUES ('$name','$department','$val','$date','$radio','$reason')")
+$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein) VALUES ('$name','$department','$val','$date','$radio','$reason','$timeout','$timein')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
