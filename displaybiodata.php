@@ -188,7 +188,7 @@ $num_rows= mysqli_num_rows($q);
                       </ul>
                   </li> -->
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-user"></i> User Registration</a>
+                      <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
                     </li>
                   <li>
                       <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
@@ -202,16 +202,6 @@ $num_rows= mysqli_num_rows($q);
                   <li>
                       <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
-                <!--    <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                  </li>
-
-                  <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li> -->
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -229,10 +219,10 @@ $num_rows= mysqli_num_rows($q);
                      </h1>
                      <ol class="breadcrumb">
                          <li>
-                             <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                             <i class="fa fa-dashboard"></i>  <a href="adminhome.html">Dashboard</a>
                          </li>
                          <li class="active">
-                             <i class="fa fa-table"></i> Tables
+                             <i class="fa fa-user"></i> Profile
                          </li>
                      </ol>
                  </div>
