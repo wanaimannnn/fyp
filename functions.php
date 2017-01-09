@@ -63,7 +63,7 @@ function getCalender($year = '',$month = '')
 						//Include db configuration file
 						include 'dbConfig.php';
 						//Get number of events based on the current date
-						$result = $db->query("SELECT * FROM request WHERE datee = '".$currentDate."' AND verification = 1");
+						$result = $db->query("SELECT * FROM request WHERE datee = '".$currentDate."' AND status = 0");
 						$eventNum = $result->num_rows;
 						//Define date cell color
 						if(strtotime($currentDate) == strtotime(date("Y-m-d"))){
@@ -193,13 +193,12 @@ function getEvents($date = ''){
 	$eventListHTML = '';
 	$date = $date?$date:date("Y-m-d");
 	//Get events based on the current date
-	$result = $db->query("SELECT * FROM request WHERE datee = '".$date."' AND verification = 1");
+	$result = $db->query("SELECT * FROM request WHERE datee = '".$date."' AND status = 0");
 	if($result->num_rows > 0){
 		$eventListHTML = '<h2>Records on '.date("l, d M Y",strtotime($date)).'</h2>';
 		$eventListHTML .= '<ul>';
 		while($row = $result->fetch_assoc()){
             $eventListHTML .= '<li>' .$row['name']. '</li>';
-						$eventListHTML .= '<li>'.$row['reason'].'</li>';
         }
 		$eventListHTML .= '</ul>';
 	}
