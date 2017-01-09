@@ -225,74 +225,158 @@
              <div class="row">
                  <div class="col-lg-6">
 
-                     <form role="form" method="post" action="#">
-
+                     <form role="form" method="post" action="signup.php">
+                      <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
                        <div class="form-group">
                      <label> Name </Label>
-                     <input class="form-control" name="name" >
+                     <input class="form-control" name="name">
 
                    </div>
 
                          <div class="form-group">
                              <label> Number IC </Label>
-                             <input class="form-control" name="name">
+                             <input class="form-control" name="ic">
 
                          </div>
 
                           <div class="form-group">
                              <label>Address</label>
-                             <textarea class="form-control" rows="3"></textarea>
+                             <textarea class="form-control" rows="3" name="address"></textarea>
                          </div>
 
                          <div class="form-group">
                              <label> Phone Number </Label>
-                             <input class="form-control" name="name">
+                             <input class="form-control" name="mobileno">
 
                          </div>
 
                          <div class="form-group">
                              <label> Position </Label>
-                             <input class="form-control" name="name">
+                             <input class="form-control" name="position">
 
                          </div>
 
                      <div class="form-group">
                              <label>Department</label>
-                             <select class="form-control">
-                             <option></option>
-                                 <option>Admin</option>
-                                 <option>Human Resources</option>
-                                 <option>Kitchen</option>
-                                 <option>Front Service Office</option>
-                                 <option>Account</option>
-                                 <option>House Skeeping</option>
-                                 <option>Landskap/Maintanance</option>
+                             <select class="form-control" name="department">
+                               <option></option>
+                               <option value="Admin">Admin</option>
+                               <option value="Human Resource">Human Resources</option>
+                               <option value="Kitchen">Kitchen</option>
+                               <option value="Front Office">Front Service Office</option>
+                               <option value="Account">Account</option>
+                               <option value="Housekeeping">House Keeping</option>
+                               <option value="Landscape/Maintenance">Landscape/Maintenance</option>
                              </select>
                          </div>
 
-                         <h3 class="page-header"> User Credential </h3>
+                           <div class="form-group">
+                                <label>Gender</label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="optionsRadiosInline1" value="Male" checked>Male
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="optionsRadiosInline2" value="Female">Female
+                                </label>
+                            </div>
+
+                               <div class="form-group">
+                                <label>Citizen Status</label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="citizenstatus" id="optionsRadiosInline1" value="Malaysian" checked>Malaysia
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="citizenstatus" id="optionsRadiosInline2" value="Other">Others
+                                </label>
+                              <!--   <input class="form-control" name="citizen" > -->
+                            </div>
+
+                            <div class="form-group">
+                                <label>Race</label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="race" id="optionsRadiosInline1" value="Malay" checked>Malay
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="race" id="optionsRadiosInline2" value="Chinese">Chinese
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="race" id="optionsRadiosInline3" value="Indian">Indian
+                                </label>
+                                 <label class="radio-inline">
+                                    <input type="radio" name="race" id="optionsRadiosInline3" value="Others">Others
+                                </label>
+                                <!-- <input class="form-control" name="race" > -->
+                            </div>
+
+                            <div class="form-group">
+                                <label>Religion</label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="religion" id="optionsRadiosInline1" value="Islam" checked>Islam
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="religion" id="optionsRadiosInline2" value="Christian">Christian
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="religion" id="optionsRadiosInline3" value="Hindu">Hindu
+                                </label>
+                                 <label class="radio-inline">
+                                    <input type="radio" name="religion" id="optionsRadiosInline3" value="Others">Others
+                                </label>
+                               <!-- <input class="form-control" name="religion" > -->
+                            </div>
+
+                             <div class="form-group">
+                                <label>Marital Status</label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="maritalstatus" id="optionsRadiosInline1" value="Married" checked>Married
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="maritalstatus" id="optionsRadiosInline2" value="Single">Single
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="maritalstatus" id="optionsRadiosInline2" value="Divorced">Divorced
+                                </label>
+                            </div>
+
+                             <div class="form-group">
+                             <label> Email </Label>
+                             <input class="form-control" name="email">
+                             </div>
+
+                   <h3 class="page-header"> Login Credential </h3>
+
+                        <form role="form">
 
                          <div class="form-group">
-                             <label> Username Request </Label>
-                             <input class="form-control" name="name">
+                             <label> Username Request </label>
+                             <input class="form-control" name="username">
 
                          </div>
 
                          <div class="form-group">
-                             <label> Password </Label>
-                             <input type="password" class="form-control" name="name">
+                             <label> Password </label>
+                             <input type="password" class="form-control" name="password">
 
                          </div>
-
+                         <div class="form-group">
+                                 <label>Assign Role</label>
+                                 <select class="form-control" name="role">
+                                     <option></option>
+                                     <option value="admin">Admin</option>
+                                     <option value="Supervisor">Supervisor</option>
+                                     <option value="staff">Staff</option>
+                                 </select>
+                             </div>
 
                          <button type="submit" class="btn btn-default">Submit Button</button> &nbsp;&nbsp;
                          <button type="reset" class="btn btn-default">Reset Button</button>
-
+                         </label>
                      </form>
 
                      <br>
                      <br>
                  </div>
+
              </div>
              <!-- /.row -->
 

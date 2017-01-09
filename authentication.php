@@ -15,7 +15,7 @@
  }
 
 
- $q = 'SELECT * FROM login WHERE username=:username AND password=:password';
+ $q = 'SELECT * FROM biodata WHERE username=:username AND password=:password';
 
  $query = $dbh->prepare($q);
 
