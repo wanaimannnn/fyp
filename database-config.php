@@ -10,7 +10,7 @@
 
    if(!$dbh){
 
-      echo "unable to connect to database";
+      echo "Unable to connect to database";
    }
 
 ?>
