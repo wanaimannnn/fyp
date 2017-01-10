@@ -1,3 +1,21 @@
+<?php
+//include("session.php");
+//include("conn.php");
+//$username=$_SESSION['username'];
+//$password=$_SESSION['password'];
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+
+$query="SELECT * FROM leavereq WHERE status = false";
+$q=mysqli_query($link,$query);
+$num_rows= mysqli_num_rows($q);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +61,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="svhome.html">Supervisor Page</a>
+              <a class="navbar-brand" href="staffhome.html">Staff Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -150,34 +168,78 @@
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
-                <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
+
+                                 <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo1" class="collapse">
+
+                        <li>
+                            <a href="staffforms.html"></i> Office Leave Form</a>
+                        </li>
+
+                        <li>
+                            <a href="statusofficeleave.php"></i> Status</a>
+                        </li>
+
+                        <li>
+                            <a href="Officeleaverecords.html">View Record</a>
+                        </li>
+                    </ul>
+                </li>
+
+                 <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
+
+
+
                             <li>
-                                <a href="svleaveoffice.html">Office Leave Form</a>
+                                <a href="staffleaveform.html">Leave Form</a>
                             </li>
+
                             <li>
-                                <a href="svstatusofficeleave.html">Status </a>
+                                <a href="#"></i> Status</a>
                             </li>
-							<li>
-								<a href="svofficeleaverecords.html">View Records</a>
-						</ul>
-					</li>
-					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo1" class="collapse">
+
                             <li>
-                                <a href="svleaveform.html">Leave</a>
+                                <a href="Leaverecords.html"></i> View Record</a>
                             </li>
-                            <li>
-                                <a href="svstatusleave.html">Status </a>
-                            </li>
-							<li>
-								<a href="svleaverecords.html">View Records</a>
-						</ul>
-					</li>
+
+                        </ul>
+                    </li>
+
+
+                <!--  <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Managements <i class="fa fa-fw fa-caret-down"></i></a>
+                      <ul id="demo" class="collapse">
+                          <li>
+                              <a href="#">Manager Management</a>
+                          </li>
+                          <li>
+                              <a href="#">Supervisor Management</a>
+                          </li>
+                          <li>
+                              <a href="#">Staff Management</a>
+                          </li>
+                      </ul>
+                  </li> -->
+                  <!--<li>
+                      <a href="charts.html"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
+                  </li>
+                  <li>
+                      <a href="tables.html"><i class="fa fa-fw fa-edit"></i> Supervisor Management</a>
+                  </li>
+                  <li>
+                      <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
+                  </li>
+                  <li>
+                      <a href="calendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                  </li>
+                   <li class="active">
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Status</a>
+                    </li>
                 <!--  <li>
                       <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                   </li>
@@ -208,10 +270,10 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="svhome.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> Leave Status
+                                <i class="fa fa-table"></i> Status
                             </li>
                         </ol>
                     </div>
@@ -220,9 +282,9 @@
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-                        <center>
-						<h2>Leave Status</h2>
-						</center>
+                  <center>
+                        <h2>Leave Status</h2>
+                    </center>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                 <thead>
@@ -233,41 +295,34 @@
                                         <th>Start Date</th>
                                         <th>End Date</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
-                                </thead>
-                                <tbody>
+                                  </thead>
+                                  <tbody>
+                                    <?php
+
+                                    while($row=mysqli_fetch_array($q))
+                                    {
+                                    ?>
                                     <tr>
-                                        <td>Ariffikri</td>
-                                        <td>Annual Leave</td>
-                                        <td>Bercuti Bersama Family</td>
-                                        <td>5/1/2017</td>
-                                        <td>9/1/2017</td>
-                                        <td>Pending</td>
+                                        <td><?php echo $row['name'];?></td>
+                                        <td><?php echo $row['leavetype'];?></td>
+                                        <td><?php echo $row['reason'];?></td>
+                                        <td><?php echo $row['start_date'];?></td>
+                                        <td><?php echo $row['end_date'];?></td>
+                                        <td><?php echo $row['status'];?></td>
                                     </tr>
-                                    <tr>
-                                        <td>Ariffikri</td>
-                                        <td>Unpaid Leave</td>
-                                        <td>cuti saje saje</td>
-                                        <td>25/12/2016</td>
-                                        <td>19/12/2016</td>
-                                        <td>Rejected</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ariffikri</td>
-                                        <td>Meternity Leave</td>
-                                        <td>Bersalin</td>
-                                        <td>24/12/2016</td>
-                                        <td>25/12/2016</td>
-                                        <td>Approved</td>
-                                    </tr>
-                                </tbody>
+                                    <?php
+                                    }
+                                    mysqli_close($link);
+                                    ?>
+                                  </tbody>
                             </table>
                         </div>
-                   
+
                     </div>
                 </div>
-                    
+
                 </div>
                 <!-- /.row -->
 

@@ -1,3 +1,21 @@
+<?php
+//include("session.php");
+//include("conn.php");
+//$username=$_SESSION['username'];
+//$password=$_SESSION['password'];
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+
+$query="SELECT * FROM request WHERE status = false";
+$q=mysqli_query($link,$query);
+$num_rows= mysqli_num_rows($q);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +61,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="svhome.html">Supervisor Page</a>
+              <a class="navbar-brand" href="staffhome.html">Staff Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -150,47 +168,43 @@
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                  </li>
-                <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="svleaveoffice.html">Office Leave Form</a>
-                            </li>
-                            <li>
-                                <a href="svstatusofficeleave.html">Status </a>
-                            </li>
-							<li>
-								<a href="svofficeleaverecords.html">View Records</a>
-						</ul>
-					</li>
-					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo1" class="collapse">
-                            <li>
-                                <a href="svleaveform.html">Leave</a>
-                            </li>
-                            <li>
-                                <a href="svstatusleave.html">Status </a>
-                            </li>
-							<li>
-								<a href="svleaverecords.html">View Records</a>
-						</ul>
-					</li>
-                <!--  <li>
-                      <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                  </li>
-                  <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                      <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
                   <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li> -->
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo1" class="collapse">
+
+                        <li>
+                            <a href="staffforms.html"></i> Office Leave Form</a>
+                        </li>
+
+                        <li>
+                            <a href="#"></i> Status</a>
+                        </li>
+
+                        <li>
+                            <a href="Officeleaverecords.html">View Record</a>
+                        </li>
+                    </ul>
+                </li>
+
+                 <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="staffleaveform.html">Leave Form</a>
+                            </li>
+
+                            <li>
+                                <a href="statusleave.php"></i> Status</a>
+                            </li>
+
+                            <li>
+                                <a href="Leaverecords.html"></i> View Record</a>
+                            </li>
+                        </ul>
+                    </li>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -208,10 +222,10 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="svhome.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> Office Leave Status
+                                <i class="fa fa-table"></i> Status
                             </li>
                         </ol>
                     </div>
@@ -220,54 +234,49 @@
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-					<center>
-					<h2>Office Leave Status</h2>
-					</center>
-                        
+                    <center>
+                        <h2>Office Leave Status</h2>
+
+                    </center>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
-                                <thead>
+                                  <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Purpose</th>
                                         <th>Reason</th>
-										<th>Date</th>
+                                        <th>Date</th>
+                                        <th>Time Out</th>
                                         <th>Time In</th>
-                                        <th>Time out</th>
                                         <th>Status</th>
                                     </tr>
-                                </thead>
-                                <tbody>
+                                  </thead
+                                    <?php
+
+                                    while($row=mysqli_fetch_array($q))
+                                    {
+                                    ?>
+                                    <tbody>
                                     <tr>
-                                        <td>Ariffikri</td>
-                                        <td>Kucing Bersalin</td>
-                                        <td>2:00pm</td>
-                                        <td>3:00pm</td>
-                                        <td>Pending</td>
-										<td></td>
+                                        <td><?php echo $row['name'];?></td>
+                                        <td><?php echo $row['purpose'];?></td>
+                                        <td><?php echo $row['reason'];?></td>
+                                        <td><?php echo $row['datee'];?></td>
+                                        <td><?php echo $row['timeout'];?></td>
+                                        <td><?php echo $row['timein'];?></td>
+                                        <td><?php echo $row['status'];?></td>
                                     </tr>
-                                    <tr>
-                                        <td>Ariffikri</td>
-                                        <td>Sakit kepala</td>
-                                        <td>3:00pm</td>
-                                        <td>4:00pm</td>
-                                        <td>Approve</td>
-										<td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ariffikri</td>
-                                        <td>Kereta rosak</td>
-                                        <td>12:30pm</td>
-                                        <td>3:00pm</td>
-                                        <td>Reject</td>
-										<td></td>
-                                    </tr>
-                                </tbody>
+                                    <?php
+                                    }
+                                    mysqli_close($link);
+                                    ?>
+                                  </tbody>
                             </table>
                         </div>
-                   
+
                     </div>
                 </div>
-                    
+
                 </div>
                 <!-- /.row -->
 
