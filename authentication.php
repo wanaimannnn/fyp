@@ -35,7 +35,22 @@
 
         echo $_SESSION['sess_userrole'];
   session_write_close();
-
+  $role =   $_SESSION['sess_userrole'] = $row['role'];
+  switch($role){
+      case ($_SESSION['sess_userrole'] == "admin"):
+          header('Location: adminhome.html');
+          break;
+      case $_SESSION['sess_userrole'] == "staff":
+          header('Location: staffhome.html');
+          break;
+      case $_SESSION['sess_userrole'] == "supervisor":
+          header('Location: svhome.html');
+          break;
+      case $_SESSION['sess_userrole'] == "manager":
+          header('Location: mgrhome.html');
+          break;
+        }
+/*
   if( $_SESSION['sess_userrole'] == "admin"){
    header('Location: adminhome.html');
   }else if( $_SESSION['sess_userrole'] == "staff"){
@@ -43,7 +58,7 @@
   }else{
    header('location: svhome.html');
   }
-
+*/
 
  }
 
