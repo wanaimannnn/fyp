@@ -15,6 +15,7 @@ $purpose= $_POST['purpose'];
 $reason=mysqli_real_escape_string($link, $_POST['reason']);
 $timeout= $_POST['timeout'];
 $timein= $_POST['timein'];
+$status=$_POST['status'];
 // $end_date= date('Y-m-d',strtotime($_POST['end_date']));
 // $verification = $_POST['verification'];
 
