@@ -1,8 +1,5 @@
 <?php
-//include("session.php");
-//include("conn.php");
-//$username=$_SESSION['username'];
-//$password=$_SESSION['password'];
+session_start();
 
 $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
@@ -10,8 +7,10 @@ mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-
-$query="SELECT * FROM request WHERE status = false";
+$staff = $_SESSION['id_user'];
+$name = $_SESSION['user_name'];
+$query="SELECT * FROM request WHERE name = '$name' AND status = false";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
 
@@ -149,7 +148,7 @@ $num_rows= mysqli_num_rows($q);
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i>  <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                          <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
                       <li>
                           <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -159,7 +158,7 @@ $num_rows= mysqli_num_rows($q);
                       </li>
                       <li class="divider"></li>
                       <li>
-                          <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                          <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
                       </li>
                   </ul>
               </li>
@@ -253,7 +252,7 @@ $num_rows= mysqli_num_rows($q);
                                   </thead
                                     <?php
 
-                                    while($row=mysqli_fetch_array($q))
+                                    while($row=mysqli_fetch_array($result))
                                     {
                                     ?>
                                     <tbody>
