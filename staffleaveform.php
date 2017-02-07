@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$staff = $_SESSION['id_user'];
+$query="SELECT * FROM staff WHERE staff_username='$staff'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+while( $row = mysqli_fetch_assoc($result) )
+{
+
+?>
 <html lang="en">
 
 <head>
@@ -45,7 +61,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="svhome.html">Supervisor Page</a>
+              <a class="navbar-brand" href="staffhome.html">Staff Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -152,7 +168,7 @@
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href=svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
                                   <li>
@@ -160,15 +176,15 @@
                     <ul id="demo1" class="collapse">
 
                         <li>
-                            <a href="svleaveoffive.html"></i> Office Leave Form</a>
+                            <a href="staffforms.html"></i> Office Leave Form</a>
                         </li>
 
                         <li>
-                            <a href="svstatusofficeleave.php"></i> Status</a>
+                            <a href="statusofficeleave.php"></i> Status</a>
                         </li>
 
                         <li>
-                            <a href="svofficeleaverecords.html">View Record</a>
+                            <a href="Officeleaverecords.html">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -180,15 +196,15 @@
 
 
                             <li>
-                                <a href="svleaveform.html">Leave Form</a>
+                                <a href="staffleaveform.html">Leave Form</a>
                             </li>
 
                             <li>
-                                <a href="svstatusleave.php"></i> Status</a>
+                                <a href="statusleave.php"></i> Status</a>
                             </li>
 
                             <li>
-                                <a href="svleaverecords.html"></i> View Record</a>
+                                <a href="Leaverecords.html"></i> View Record</a>
                             </li>
 
                         </ul>
@@ -255,7 +271,7 @@
                               <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" name="name">
+                                <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                 <p class="help-block">.</p>
                             </div>
 
@@ -333,7 +349,9 @@
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
                         </form>
-
+                        <?php
+                                }
+                                ?>
                     </div>
                    <!-- <div class="col-lg-6">
                         <h1>Disabled Form States</h1>

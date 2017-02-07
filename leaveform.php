@@ -16,7 +16,7 @@ $reason=mysqli_real_escape_string($link, $_POST['reason']);
 $status = $_POST['status'];
 // $verification = $_POST['verification']
 
-$result = mysqli_query ($link,"INSERT INTO leavereq (name,department,leavetype,start_date,end_date,reason) VALUES ('$name','$department','$val','$start_date','$end_date','$reason')")
+$result = mysqli_query ($link,"INSERT INTO leavereq (name,department,leavetype,start_date,end_date,reason,status) VALUES ('$name','$department','$val','$start_date','$end_date','$reason','$status')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"

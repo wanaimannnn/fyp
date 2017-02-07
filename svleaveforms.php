@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$sv = $_SESSION['id_user'];
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+while( $row = mysqli_fetch_assoc($result) )
+{
+
+?>
 <html lang="en">
 
 <head>
@@ -45,7 +61,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+              <a class="navbar-brand" href="svhome.html">Supervisor Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -152,7 +168,7 @@
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href=svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
                                   <li>
@@ -160,15 +176,15 @@
                     <ul id="demo1" class="collapse">
 
                         <li>
-                            <a href="staffforms.html"></i> Office Leave Form</a>
+                            <a href="svleaveoffive.html"></i> Office Leave Form</a>
                         </li>
 
                         <li>
-                            <a href="statusofficeleave.php"></i> Status</a>
+                            <a href="svstatusofficeleave.php"></i> Status</a>
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.html">View Record</a>
+                            <a href="svofficeleaverecords.html">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -180,50 +196,19 @@
 
 
                             <li>
-                                <a href="staffleaveform.html">Leave Form</a>
+                                <a href="svleaveform.html">Leave Form</a>
                             </li>
 
                             <li>
-                                <a href="statusleave.php"></i> Status</a>
+                                <a href="svstatusleave.php"></i> Status</a>
                             </li>
 
                             <li>
-                                <a href="Leaverecords.html"></i> View Record</a>
+                                <a href="svleaverecords.html"></i> View Record</a>
                             </li>
 
                         </ul>
                     </li>
-
-                <!--  <li>
-                      <a href="staffforms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                  </li> -->
-                      <!--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                  </li>-->
-                     <!-- <<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                  </li>
-                  <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                  </li>
-                  <li>
-                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Form <i class="fa fa-fw fa-caret-down"></i></a>
-                      <ul id="demo" class="collapse">
-                          <li>
-                              <a href="#">Office Leave</a>
-                          </li>
-                          <li>
-                              <a href="#">Leave</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li>
-              </ul>
-          </div>
-          < /.navbar-collapse -->
       </nav>
 
         <div id="page-wrapper">
@@ -251,11 +236,11 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                      <form role="form" method="post" action="leaveform.php">
+                      <form role="form" method="post" action="svleaveform.php">
                               <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" name="name">
+                                <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                 <p class="help-block">.</p>
                             </div>
 
@@ -333,95 +318,11 @@
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
                         </form>
-
+<?php
+}
+?>
                     </div>
-                   <!-- <div class="col-lg-6">
-                        <h1>Disabled Form States</h1>
 
-                        <form role="form">
-
-                            <fieldset disabled>
-
-                                <div class="form-group">
-                                    <label for="disabledSelect">Disabled input</label>
-                                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="disabledSelect">Disabled select menu</label>
-                                    <select id="disabledSelect" class="form-control">
-                                        <option>Disabled select</option>
-                                    </select>
-                                </div>
-
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Disabled Checkbox
-                                    </label>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Disabled Button</button>
-
-                            </fieldset>
-
-                        </form>
-
-                        <h1>Form Validation</h1>
-
-                        <form role="form">
-
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess">Input with success</label>
-                                <input type="text" class="form-control" id="inputSuccess">
-                            </div>
-
-                            <div class="form-group has-warning">
-                                <label class="control-label" for="inputWarning">Input with warning</label>
-                                <input type="text" class="form-control" id="inputWarning">
-                            </div>
-
-                            <div class="form-group has-error">
-                                <label class="control-label" for="inputError">Input with error</label>
-                                <input type="text" class="form-control" id="inputError">
-                            </div>
-
-                        </form>
-
-                        <h1>Input Groups</h1>
-
-                        <form role="form">
-
-                            <div class="form-group input-group">
-                                <span class="input-group-addon">@</span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">.00</span>
-                            </div>
-
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-eur"></i></span>
-                                <input type="text" class="form-control" placeholder="Font Awesome Icon">
-                            </div>
-
-                            <div class="form-group input-group">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">.00</span>
-                            </div>
-
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
-                            </div>
-
-                        </form>
-
-                        <p>For complete documentation, please visit <a href="http://getbootstrap.com/css/#forms">Bootstrap's Form Documentation</a>.</p>
-
-                    </div> -->
                 </div>
                 <!-- /.row -->
 

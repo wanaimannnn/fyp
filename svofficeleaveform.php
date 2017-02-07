@@ -25,6 +25,6 @@ or die ("Insert Error:" . mysqli_error($link));
 echo"<script>"
 		."alert('Your form has been submitted');"
 		."</script>"
-		."<meta http-equiv=Refresh content=\"0; URL=svleaveoffice.html\">";
+		."<meta http-equiv=Refresh content=\"0; URL=svleaveoffice.php\">";
 mysqli_close($link);
 ?>

@@ -15,12 +15,12 @@ $end_date= date('Y-m-d',strtotime($_POST['end_date']));
 $reason=mysqli_real_escape_string($link, $_POST['reason']);
 $status = $_POST['status'];
 
-$result = mysqli_query ($link,"INSERT INTO leavereq (name,department,leavetype,start_date,end_date,reason) VALUES ('$name','$department','$val','$start_date','$end_date','$reason')")
+$result = mysqli_query ($link,"INSERT INTO leavereq (name,department,leavetype,start_date,end_date,reason,status) VALUES ('$name','$department','$val','$start_date','$end_date','$reason','$status')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
 		."alert('Your form has been submitted');"
 		."</script>"
-		."<meta http-equiv=Refresh content=\"0; URL=svleaveform.html\">";
+		."<meta http-equiv=Refresh content=\"0; URL=svleaveforms.php\">";
 mysqli_close($link);
 ?>

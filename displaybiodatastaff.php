@@ -178,7 +178,7 @@ $num_rows= mysqli_num_rows($q);
                     <ul id="demo1" class="collapse">
 
                         <li>
-                            <a href="staffforms.html"></i> Office Leave Form</a>
+                            <a href="staffforms.php"></i> Office Leave Form</a>
                         </li>
 
                         <li>

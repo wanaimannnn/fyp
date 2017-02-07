@@ -16,10 +16,9 @@ $reason=mysqli_real_escape_string($link, $_POST['reason']);
 $timeout= $_POST['timeout'];
 $timein= $_POST['timein'];
 $status=$_POST['status'];
-// $end_date= date('Y-m-d',strtotime($_POST['end_date']));
-// $verification = $_POST['verification'];
 
-$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein) VALUES ('$name','$department','$val','$date','$purpose','$reason','$timeout','$timein')")
+
+$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein,status) VALUES ('$name','$department','$val','$date','$purpose','$reason','$timeout','$timein','$status')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"

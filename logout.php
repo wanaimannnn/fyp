@@ -1,5 +1,8 @@
-<?php 
+<?php
  session_start();
  session_destroy();
- header("Location:index.php");
+ echo"<script>"
+ 		."alert('You are succesfully logged out!');"
+ 		."</script>"
+ 		."<meta http-equiv=Refresh content=\"0; URL=index.php\">";
 ?>

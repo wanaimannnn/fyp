@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$sv = $_SESSION['id_user'];
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+while( $row = mysqli_fetch_assoc($result) )
+{
+
+?>
 <html lang="en">
 
 <head>
@@ -47,7 +63,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+            <a class="navbar-brand" href="svhome.html">Supervisor Page</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -61,7 +77,7 @@
                                     <img class="media-object" src="http://placehold.it/50x50" alt="">
                                 </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>ariff</strong>
+                                    <h5 class="media-heading"><strong></strong>
                                     </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -76,7 +92,7 @@
                                     <img class="media-object" src="http://placehold.it/50x50" alt="">
                                 </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>Ariff</strong>
+                                    <h5 class="media-heading"><strong></strong>
                                     </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -91,7 +107,7 @@
                                     <img class="media-object" src="http://placehold.it/50x50" alt="">
                                 </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>Ariff</strong>
+                                    <h5 class="media-heading"><strong></strong>
                                     </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -135,7 +151,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>  <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -154,22 +170,22 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a href="svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                  <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo1" class="collapse">
 
                         <li>
-                            <a href="staffforms.html"></i> Office Leave Form</a>
+                            <a href="svleaveoffice.html"></i> Office Leave Form</a>
                         </li>
 
                         <li>
-                            <a href="statusofficeleave.php"></i> Status</a>
+                            <a href="svstatusofficeleave.php"></i> Status</a>
                         </li>
 
                         <li>
-                            <a href="officeleaverecords.html">View Record</a>
+                            <a href="svofficeleaverecords.html">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -181,15 +197,15 @@
 
 
                             <li>
-                                <a href="staffleaveform.html">Leave Form</a>
+                                <a href="svleaveform.html">Leave Form</a>
                             </li>
 
                             <li>
-                                <a href="statusleave.php"></i> Status</a>
+                                <a href="svstatusleave.php"></i> Status</a>
                             </li>
 
                             <li>
-                                <a href="leaverecords.html"></i> View Record</a>
+                                <a href="svleaverecords.html"></i> View Record</a>
                             </li>
 
                         </ul>
@@ -253,12 +269,12 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form" method="post" action="officeleaveform.php">
+                        <form role="form" method="post" action="svofficeleaveform.php">
 
                           <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
                           <div class="form-group">
                         <label>Name </Label>
-                        <input class="form-control" name="name" required>
+                        <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                           </div>
 
                         <div class="form-group">
@@ -359,8 +375,10 @@
                             <button type="reset" class="btn btn-default">Reset Button</button>
                         </form>
                     </div>
+                    <?php
+                            }
+                            ?>
                 </div>
-
                     </div>
                 </div>
                 <!-- /.row -->
