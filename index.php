@@ -38,6 +38,7 @@
 
     <div class="wrapper">
 	<div class="container">
+    <div id="login">
 		<form method="post" action="authentication.php">
 		Username<br>
 		<input type="text" name="username">
@@ -46,7 +47,7 @@
        <input type="submit" value="Login" name="submit">
 		</form>
 	</div>
-
+</div>
 	<ul class="bg-bubbles">
 		<li></li>
 		<li></li>

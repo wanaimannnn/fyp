@@ -1,8 +1,5 @@
 <?php
-//include("session.php");
-//include("conn.php");
-//$username=$_SESSION['username'];
-//$password=$_SESSION['password'];
+session_start();
 
 $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
@@ -10,8 +7,9 @@ mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-
-$query="SELECT * FROM biodata WHERE role='supervisor'";
+$sv = $_SESSION['id_user'];
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
 
@@ -34,7 +32,6 @@ $num_rows= mysqli_num_rows($q);
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
