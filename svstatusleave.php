@@ -1,8 +1,5 @@
 <?php
-//include("session.php");
-//include("conn.php");
-//$username=$_SESSION['username'];
-//$password=$_SESSION['password'];
+session_start();
 
 $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
@@ -10,8 +7,10 @@ mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-
-$query="SELECT * FROM leavereq WHERE status = false";
+$sv = $_SESSION['id_user'];
+$name = $_SESSION['user_name'];
+$query="SELECT * FROM leavereq WHERE name='$name' AND status = false";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
 
@@ -257,7 +256,7 @@ $num_rows= mysqli_num_rows($q);
                                 <tbody>
                                   <?php
 
-                                  while($row=mysqli_fetch_array($q))
+                                  while($row=mysqli_fetch_array($result))
                                   {
                                   ?>
                                   <tr>
