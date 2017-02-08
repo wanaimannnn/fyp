@@ -13,7 +13,6 @@ $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($lin
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
 {
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
