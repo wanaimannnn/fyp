@@ -8,11 +8,11 @@ mysqli_error($link));
 $q=mysqli_select_db($link,"permohonan");
 
 $sv = $_SESSION['id_user'];
-$name = $_SESSION['user_name'];
-$query="SELECT * FROM request WHERE name='$name' AND status = false";
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
-$num_rows= mysqli_num_rows($q);
+while( $row = mysqli_fetch_assoc($result) )
+{
 
 ?>
 <!DOCTYPE html>
@@ -145,7 +145,7 @@ $num_rows= mysqli_num_rows($q);
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i>  <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
                           <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -163,6 +163,9 @@ $num_rows= mysqli_num_rows($q);
                   </ul>
               </li>
           </ul>
+          <?php
+        }
+        ?>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
@@ -212,7 +215,21 @@ $num_rows= mysqli_num_rows($q);
           </div>
           <!-- /.navbar-collapse -->
       </nav>
+      <?php
+      $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
+      mysqli_error($link));
+
+      $q=mysqli_select_db($link,"permohonan");
+
+      $sv = $_SESSION['id_user'];
+      $name = $_SESSION['user_name'];
+      $query="SELECT * FROM request WHERE name='$name' AND status = false";
+      $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+      $q=mysqli_query($link,$query);
+      $num_rows= mysqli_num_rows($q);
+
+      ?>
         <div id="page-wrapper">
 
             <div class="container-fluid">
