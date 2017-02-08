@@ -1,4 +1,21 @@
 <?php include_once('functions.php'); ?>
+<?php
+session_start();
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$admin = $_SESSION['id_user'];
+$query="SELECT * FROM manager WHERE mgr_username='$admin'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+while( $row = mysqli_fetch_assoc($result) )
+{
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,10 +149,10 @@
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i>  <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                          <a href="displaybiodata.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
                       <li>
                           <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -145,11 +162,14 @@
                       </li>
                       <li class="divider"></li>
                       <li>
-                          <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                          <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
                       </li>
                   </ul>
               </li>
           </ul>
+          <?php
+          }
+          ?>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
@@ -171,8 +191,25 @@
                       </ul>
                   </li> -->
                   <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-user"></i> User Registration <i class="fa fa-fw fa-caret-down"></i></a>
+                      <ul id="demo1" class="collapse">
+
+                          <li>
+                              <a href="mgrsignup.php"></i> Manager Registration</a>
+                          </li>
+
+                          <li>
+                              <a href="svsignup.php"></i> Supervisor Registration</a>
+                          </li>
+
+                          <li>
+                              <a href="staffsignup.php"> Staff Registration</a>
+                          </li>
+                      </ul>
+                  </li>
+              <!--    <li>
                       <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
-                    </li>
+                    </li> -->
                   <li>
                       <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
                   </li>

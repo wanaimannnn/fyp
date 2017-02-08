@@ -196,15 +196,15 @@ while( $row = mysqli_fetch_assoc($result) )
                         <ul id="demo1" class="collapse">
 
                             <li>
-                                <a href="#"></i> Manager Registration</a>
+                                <a href="mgrsignup.php"></i> Manager Registration</a>
                             </li>
 
                             <li>
-                                <a href="#"></i> Supervisor Registration</a>
+                                <a href="svsignup.php"></i> Supervisor Registration</a>
                             </li>
 
                             <li>
-                                <a href="#"> Staff Registration</a>
+                                <a href="staffsignup.php"> Staff Registration</a>
                             </li>
                         </ul>
                     </li>
@@ -437,6 +437,16 @@ while( $row = mysqli_fetch_assoc($result) )
 
 
                 <!-- /.row -->
+                <center>
+                           <h2> Welcome to </h2>
+                   <h1 class="page-header">
+                              Office Management System
+                          </h1>
+                </center>
+                <br>
+                <center>
+                <img src="css/img/mayangsari-logo.png" style="width">
+                </center>
 
             </div>
             <!-- /.container-fluid -->

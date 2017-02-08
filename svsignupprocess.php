@@ -19,8 +19,8 @@ $race = $_POST['race'];
 $religion = $_POST['religion'];
 $maritalstatus = $_POST['maritalstatus'];
 $email = $_POST['email'];
-$username = $_POST['staff_username'];
-$password = $_POST['staff_pwd'];
+$username = $_POST['sv_username'];
+$password = $_POST['sv_pwd'];
 $role = $_POST['role'];
 // foreach($_POST['chkbox'] as $index => $val);
 //$start_date = date('Y-m-d',strtotime($_POST['start_date']));
@@ -28,12 +28,12 @@ $role = $_POST['role'];
 //$reason=mysqli_real_escape_string($link, $_POST['reason']);
 // $verification = $_POST['verification']
 
-$result = mysqli_query ($link,"INSERT INTO staff (name,ic,address,mobileno,position,department,gender,citizenstatus,race,religion,maritalstatus,email,staff_username,staff_pwd,role) VALUES ('$name','$ic','$address','$mobileno','$position','$department','$gender','$citizenstatus','$race','$religion','$maritalstatus','$email','$username','$password','$role')")
+$result = mysqli_query ($link,"INSERT INTO supervisor (name,ic,address,mobileno,position,department,gender,citizenstatus,race,religion,maritalstatus,email,sv_username,sv_pwd,role) VALUES ('$name','$ic','$address','$mobileno','$position','$department','$gender','$citizenstatus','$race','$religion','$maritalstatus','$email','$username','$password','$role')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
 		."alert('Your form has been submitted');"
 		."</script>"
-		."<meta http-equiv=Refresh content=\"0; URL=signupform.html\">";
+		."<meta http-equiv=Refresh content=\"0; URL=svsignup.php\">";
 mysqli_close($link);
 ?>
