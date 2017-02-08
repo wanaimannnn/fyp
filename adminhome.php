@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$admin = $_SESSION['id_user'];
+$query="SELECT * FROM manager WHERE mgr_username='$admin'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+while( $row = mysqli_fetch_assoc($result) )
+{
+
+?>
 <html lang="en">
 
 <head>
@@ -15,7 +32,9 @@
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <!-- <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+
+    <!-- <link href="../dist/css/sb-admin-2.css" rel="stylesheet"> -->
 
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
@@ -27,7 +46,7 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/resposnd.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -46,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+                <a class="navbar-brand" href="adminhome.php">Admin Page</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -60,7 +79,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>ariff</strong>
+                                        <h5 class="media-heading"><strong>John Smith</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -75,7 +94,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Ariff</strong>
+                                        <h5 class="media-heading"><strong>John Smith</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -90,7 +109,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Ariff</strong>
+                                        <h5 class="media-heading"><strong>John Smith</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -131,10 +150,10 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>  <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="displaybiodata.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -149,55 +168,74 @@
                     </ul>
                 </li>
             </ul>
+            <?php
+            }
+            ?>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="adminhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-
-                <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo1" class="collapse">
-
-                        <li>
-                            <a href="staffforms.php"></i> Office Leave Form</a>
-                        </li>
-
-                        <li>
-                            <a href="statusofficeleave.php"></i> Status</a>
-                        </li>
-
-                        <li>
-                            <a href="officeleaverecords.html">View Record</a>
-                        </li>
-                    </ul>
-                </li>
-
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                  <!--  <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Managements <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
-
-
+                            <li>
+                                <a href="#">Manager Management</a>
+                            </li>
+                            <li>
+                                <a href="#">Supervisor Management</a>
+                            </li>
+                            <li>
+                                <a href="#">Staff Management</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-user"></i> User Registration <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
 
                             <li>
-                                <a href="staffleaveform.html">Leave Form</a>
+                                <a href="#"></i> Manager Registration</a>
                             </li>
 
                             <li>
-                                <a href="statusleave.php"></i> Status</a>
+                                <a href="#"></i> Supervisor Registration</a>
                             </li>
 
                             <li>
-                                <a href="leaverecords.html"></i> View Record</a>
+                                <a href="#"> Staff Registration</a>
                             </li>
-
                         </ul>
                     </li>
+                <!--    <li>
+                        <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
+                      </li> -->
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-edit"></i> Supervisor Management</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
+                    </li>
+                    <li>
+                        <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                    </li>
+                  <!--    <li>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    </li>
 
+                    <li>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
+                    <li>
+                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    </li> -->
                 </ul>
             </div>
-          <!--  < /.navbar-collapse -->
+            <!-- /.navbar-collapse -->
         </nav>
 
         <div id="page-wrapper">
@@ -208,7 +246,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard <small>Staff Page</small>
+                            Dashboard <small>Admin Page</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -220,6 +258,28 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-building fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>Administration</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-success class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -263,7 +323,51 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-info class">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-users fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">12</div>
+                                        <div>Human Resources</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
                         <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-cutlery fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">124</div>
+                                        <div>Kitchen</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-danger class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -306,19 +410,33 @@
                             </a>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-warning class">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-money fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">13</div>
+                                        <div>Account</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.row -->
 
-              <center>
-                         <h2> Welcome to </h2>
-				         <h1 class="page-header">
-                            Office Management System
-                        </h1>
-				</center>
-				<br>
-				<center>
-				<img src="css/img/mayangsari-logo.png" style="width">
-				</center>
+
+                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->

@@ -61,7 +61,7 @@ $num_rows= mysqli_num_rows($q);
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="adminhome.html">Admin Page</a>
+              <a class="navbar-brand" href="adminhome.php">Admin Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -168,7 +168,7 @@ $num_rows= mysqli_num_rows($q);
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="adminhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="adminhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
                 <!--  <li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Managements <i class="fa fa-fw fa-caret-down"></i></a>
@@ -216,7 +216,7 @@ $num_rows= mysqli_num_rows($q);
                      </h1>
                      <ol class="breadcrumb">
                          <li>
-                             <i class="fa fa-dashboard"></i>  <a href="adminhome.html">Dashboard</a>
+                             <i class="fa fa-dashboard"></i>  <a href="adminhome.php">Dashboard</a>
                          </li>
                          <li class="active">
                              <i class="fa fa-user"></i> Profile

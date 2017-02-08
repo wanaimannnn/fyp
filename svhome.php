@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$sv = $_SESSION['id_user'];
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+while( $row = mysqli_fetch_assoc($result) )
+{
+
+?>
 <html lang="en">
 
 <head>
@@ -46,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Mgrindex.html">Manager Page</a>
+                <a class="navbar-brand" href="svhome.html">Supervisor	 Page</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -130,10 +146,10 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="displaybiodatamgr.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -148,38 +164,52 @@
                     </ul>
                 </li>
             </ul>
+            <?php
+          }
+          ?>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="Mgrindex.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
 					<li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> Application </a>
-                    </li>
-					<li>
-                        <a href="#"><i class="fa fa-fw fa-desktop"></i> View Records</a>
-                    </li>
-					<li>
-                        <a href="calendarmgr.php"><i class="fa fa-fw fa-table"></i> Calendar</a>
-                    </li>
-					<!--<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Forms <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="SVleaveoffice.html">Office Leave</a>
+                                <a href="svleaveoffice.html">Office Leave Form</a>
                             </li>
                             <li>
-                                <a href="SVleaveform.html">Leave </a>
+                                <a href="svstatusofficeleave.php">Status </a>
                             </li>
+							<li>
+								<a href="svofficeleaverecords.html">View Records</a>
 						</ul>
 					</li>
-
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="svleaveform.html">Leave</a>
+                            </li>
+                            <li>
+                                <a href="svstatusleave.php">Status </a>
+                            </li>
+							<li>
+								<a href="svleaverecords.html">View Records</a>
+						</ul>
+					</li>
+					<!--
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-table"></i> Status</a>
+                    </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Records</a>
                     </li>
 
-
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    </li>
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
@@ -194,7 +224,9 @@
                             </li>
                         </ul>
                     </li>
-
+                    <li>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
@@ -211,7 +243,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard <small>Manager Page</small>
+                            Dashboard <small>Supervisor Page</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -243,7 +275,6 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
@@ -311,92 +342,6 @@
                         </div>
                     </div>
                 </div>
-
-				<!--<div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard <small>Manager Page</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </li>
-                        </ol>
-                    </div>
-                </div> -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-building fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>Administration</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-users fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>Human Resources</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-cutlery fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>Kitchen</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
                 <!-- /.row -->
 				<center>
 				         <h1 class="page-header">
@@ -406,7 +351,7 @@
 				<br>
 				<center>
 				<img src="css/img/mayangsari-logo.png" style="width">
-				</center> -->
+				</center>
                 <!-- /.row -->
 
             </div>
