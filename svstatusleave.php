@@ -8,11 +8,11 @@ mysqli_error($link));
 $q=mysqli_select_db($link,"permohonan");
 
 $sv = $_SESSION['id_user'];
-$name = $_SESSION['user_name'];
-$query="SELECT * FROM leavereq WHERE name='$name' AND status = false";
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
-$num_rows= mysqli_num_rows($q);
+while( $row = mysqli_fetch_assoc($result) )
+{
 
 ?>
 <!DOCTYPE html>
@@ -60,11 +60,11 @@ $num_rows= mysqli_num_rows($q);
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="svhome.html">Supervisor Page</a>
+              <a class="navbar-brand" href="svhome.php">Supervisor Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-              <li class="dropdown">
+              <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu message-dropdown">
                       <li class="message-preview">
@@ -116,7 +116,7 @@ $num_rows= mysqli_num_rows($q);
                           <a href="#">Read All New Messages</a>
                       </li>
                   </ul>
-              </li>
+              </li>-->
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
@@ -145,10 +145,10 @@ $num_rows= mysqli_num_rows($q);
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i>  <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                          <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
                       <li>
                           <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -158,42 +158,48 @@ $num_rows= mysqli_num_rows($q);
                       </li>
                       <li class="divider"></li>
                       <li>
-                          <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                          <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
                       </li>
                   </ul>
               </li>
           </ul>
+		  <?php
+		  }
+		  ?>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
                 <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="svleaveoffice.html">Office Leave Form</a>
+                                <a href="svleaveoffice.php">Office Leave Form</a>
                             </li>
                             <li>
                                 <a href="svstatusofficeleave.php">Status </a>
                             </li>
 							<li>
-								<a href="svofficeleaverecords.html">View Records</a>
+								<a href="svofficeleaverecords.php">View Records</a>
 						</ul>
 					</li>
 					<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="svleaveform.html">Leave</a>
+                                <a href="svleaveforms.php">Leave</a>
                             </li>
                             <li>
-                                <a href="#">Status </a>
+                                <a href="svstatusleave.php">Status </a>
                             </li>
 							<li>
-								<a href="svleaverecords.html">View Records</a>
+								<a href="svleaverecords.php">View Records</a>
 						</ul>
+					</li>
+					<li>
+							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
 					</li>
                 <!--  <li>
                       <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
@@ -212,6 +218,18 @@ $num_rows= mysqli_num_rows($q);
           </div>
           <!-- /.navbar-collapse -->
       </nav>
+	   <?php
+      $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+      mysqli_error($link));
+      $q=mysqli_select_db($link,"permohonan");
+     $sv = $_SESSION['id_user'];
+	$name = $_SESSION['user_name'];
+	$query="SELECT * FROM leavereq WHERE name='$name' AND status = false";
+	$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+	$q=mysqli_query($link,$query);
+	$num_rows= mysqli_num_rows($q);
+
+      ?>
 
         <div id="page-wrapper">
 
@@ -221,14 +239,14 @@ $num_rows= mysqli_num_rows($q);
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Status
+                            Leave
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="svhome.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> Leave Status
+                                <i class="fa fa-table"></i>Status
                             </li>
                         </ol>
                     </div>
@@ -237,9 +255,7 @@ $num_rows= mysqli_num_rows($q);
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-                        <center>
-						<h2>Leave Status</h2>
-						</center>
+
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                 <thead>

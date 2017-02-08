@@ -15,6 +15,8 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<?php include_once('functions.php'); ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,7 +27,7 @@ while( $row = mysqli_fetch_assoc($result) )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OFFICCE MANAGEMENT SYSTEM</title>
+        <title>OFFICE MANAGEMENT SYSTEM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,11 +35,12 @@ while( $row = mysqli_fetch_assoc($result) )
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/calendarstyle.css"/>
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -95,12 +98,11 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
               <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
                           <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
-
                       <li>
                           <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                       </li>
@@ -111,6 +113,9 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
           </ul>
+          <?php
+            }
+            ?>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
@@ -118,7 +123,13 @@ while( $row = mysqli_fetch_assoc($result) )
                       <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
-                                  <li>
+                              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+
+                <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo1" class="collapse">
 
@@ -131,12 +142,12 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.php">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
 
-                <li>
+                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
 
@@ -151,17 +162,22 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                             <li>
-                                <a href="Leaverecords.php"></i> View Record</a>
+                                <a href="leaverecords.php"></i> View Record</a>
                             </li>
 
                         </ul>
+                    </li>
 
-                          <li>
+                            <li>
                                 <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                             </li>
 
-                    </li>
+                </ul>
+            </div>
 
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
       </nav>
 
         <div id="page-wrapper">
@@ -172,112 +188,24 @@ while( $row = mysqli_fetch_assoc($result) )
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Leave
+                            Calendar
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-edit"></i> Leave Form
+                                <i class="fa fa-calendar"></i> Calendar
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <div class="row">
-                    <div class="col-lg-6">
-
-                      <form role="form" method="post" action="leaveform.php">
-                              <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
-                                <p class="help-block">.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Department</label>
-                                <select class="form-control" name="department" required>
-                                    <option></option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Human Resource">Human Resources</option>
-                                    <option value="Kitchen">Kitchen</option>
-                                    <option value="Front Office">Front Service Office</option>
-                                    <option value="Account">Account</option>
-                                    <option value="Housekeeping">House Keeping</option>
-                                    <option value="Landscape/Maintenance">Landscape/Maintenance</option>
-                                </select>
-                            </div>
-
-							              <div class="form-group">
-                                <label>Type of Leave</label>
-                                <div class="checkbox" name="leavetype">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Annual Leave">Annual Leave
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Unpaid Leave">Unpaid Leave
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Maternity Leave">Maternity Leave
-                                    </label>
-                                </div>
-                								<div class="checkbox">
-                									<label>
-                										<input type="checkbox" name="chkbox[]" value="Compassionate Leave">Compassionate Leave
-                									</label>
-                								</div>
-                								<div class="checkbox">
-                									<label>
-                										<input type="checkbox" name="chkbox[]" value="Emergency Leave">Emergency Leave
-                									</label>
-                								</div>
-                								<div class="checkbox">
-                									<label>
-                										<input type="checkbox" name="chkbox[]" value="Hospital Leave">Hospital Leave
-                									</label>
-                								</div>
-                            </div>
-
-      							      <div class="form-group">
-      									<label>Leave Requested to Commence On</label>
-      									    <div id="datetimepicker" class="input-append date">
-      									               <input class="form-group" name="start_date" type="date"></input>&nbsp;Until&nbsp;<input class="form-group" name="end_date" type="date"></input>
-      							        </div>
-                          </div>
-
-      							<div class="form-group">
-      							<label> Will Resume Duty On:</label>
-      							</div>
-
-							              <div class="form-group">
-                                <label>Reasons</label>
-                                <textarea class="form-control" rows="3" name="reason"></textarea>
-                            </div>
-                            <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
-
-					              <!--<div class="form-group">
-                                <label>File input</label>
-                                <input type="file">
-                            </div> -->
-
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
-
-                        </form>
-                        <?php
-                                }
-                                ?>
-                    </div>
-                  
+                <!-- Main jumbotron for a primary marketing message or call to action -->
+                <div id="calendar_div">
+                    <?php echo getCalender(); ?>
                 </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
@@ -290,7 +218,6 @@ while( $row = mysqli_fetch_assoc($result) )
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

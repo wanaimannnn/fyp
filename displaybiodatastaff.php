@@ -11,7 +11,8 @@ $staff = $_SESSION['id_user'];
 $query="SELECT * FROM staff WHERE staff_username='$staff'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
-$num_rows= mysqli_num_rows($q);
+while( $row = mysqli_fetch_assoc($result) )
+{
 
 ?>
 <!DOCTYPE html>
@@ -63,62 +64,11 @@ $num_rows= mysqli_num_rows($q);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+                <a class="navbar-brand" href="staffhome.php">Staff Page</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>ariff</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Ariff</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Ariff</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
+
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
@@ -148,29 +98,30 @@ $num_rows= mysqli_num_rows($q);
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>  <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile </a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
+
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                            <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
             </ul>
+            <?php
+          }
+            ?>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
 
                 <li>
@@ -186,7 +137,7 @@ $num_rows= mysqli_num_rows($q);
                         </li>
 
                         <li>
-                            <a href="officeleaverecords.html">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -198,7 +149,7 @@ $num_rows= mysqli_num_rows($q);
 
 
                             <li>
-                                <a href="staffleaveform.html">Leave Form</a>
+                                <a href="staffleaveform.php">Leave Form</a>
                             </li>
 
                             <li>
@@ -206,16 +157,39 @@ $num_rows= mysqli_num_rows($q);
                             </li>
 
                             <li>
-                                <a href="leaverecords.html"></i> View Record</a>
+                                <a href="leaverecords.php"></i> View Record</a>
                             </li>
 
+
                         </ul>
+
+                          <li>
+                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                            </li>
+
                     </li>
 
                 </ul>
             </div>
           <!--  < /.navbar-collapse -->
         </nav>
+
+        <?php
+
+
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+mysqli_error($link));
+
+$q=mysqli_select_db($link,"permohonan");
+
+$staff = $_SESSION['id_user'];
+$query="SELECT * FROM staff WHERE staff_username='$staff'";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+$num_rows= mysqli_num_rows($q);
+
+?>
 
         <div id="page-wrapper">
 
@@ -229,7 +203,7 @@ $num_rows= mysqli_num_rows($q);
                        </h1>
                        <ol class="breadcrumb">
                            <li>
-                               <i class="fa fa-dashboard"></i>  <a href="svhome.html">Dashboard</a>
+                               <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
                            </li>
                            <li class="active">
                                <i class="fa fa-user"></i> Profile

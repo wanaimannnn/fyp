@@ -63,63 +63,11 @@ while( $row = mysqli_fetch_assoc($result) )
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+                <a class="navbar-brand" href="staffhome.php">Staff Page</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>ariff</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Ariff</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Ariff</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
@@ -154,9 +102,6 @@ while( $row = mysqli_fetch_assoc($result) )
                             <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
@@ -173,7 +118,7 @@ while( $row = mysqli_fetch_assoc($result) )
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
 
                 <li>
@@ -189,7 +134,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="officeleaverecords.html">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -201,7 +146,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
 
                             <li>
-                                <a href="staffleaveform.html">Leave Form</a>
+                                <a href="staffleaveform.php">Leave Form</a>
                             </li>
 
                             <li>
@@ -209,11 +154,15 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                             <li>
-                                <a href="leaverecords.html"></i> View Record</a>
+                                <a href="leaverecords.php"></i> View Record</a>
                             </li>
 
                         </ul>
                     </li>
+
+                            <li>
+                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                            </li>
 
                 </ul>
             </div>

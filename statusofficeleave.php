@@ -8,11 +8,11 @@ mysqli_error($link));
 $q=mysqli_select_db($link,"permohonan");
 
 $staff = $_SESSION['id_user'];
-$name = $_SESSION['user_name'];
-$query="SELECT * FROM request WHERE name = '$name' AND status = false";
+$query="SELECT * FROM staff WHERE staff_username='$staff'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
-$num_rows= mysqli_num_rows($q);
+while( $row = mysqli_fetch_assoc($result) )
+{
 
 ?>
 <!DOCTYPE html>
@@ -48,126 +48,75 @@ $num_rows= mysqli_num_rows($q);
 
 <body>
 
-  <div id="wrapper">
+   <div id="wrapper">
 
-      <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="staffhome.html">Staff Page</a>
-          </div>
-          <!-- Top Menu Items -->
-          <ul class="nav navbar-right top-nav">
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu message-dropdown">
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-footer">
-                          <a href="#">Read All New Messages</a>
-                      </li>
-                  </ul>
-              </li>
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu alert-dropdown">
-                      <li>
-                          <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                          <a href="#">View All</a>
-                      </li>
-                  </ul>
-              </li>
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i>  <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                      <li>
-                          <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-                      </li>
-                      <li>
-                          <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                      </li>
-                      <li>
-                          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                          <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
-                      </li>
-                  </ul>
-              </li>
-          </ul>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="staffhome.php">Staff Page</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        <?php
+         }
+        ?>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
                   <li>
@@ -175,15 +124,15 @@ $num_rows= mysqli_num_rows($q);
                     <ul id="demo1" class="collapse">
 
                         <li>
-                            <a href="staffforms.html"></i> Office Leave Form</a>
+                            <a href="staffforms.php"></i> Office Leave Form</a>
                         </li>
 
                         <li>
-                            <a href="#"></i> Status</a>
+                            <a href="statusofficeleave.php"></i> Status</a>
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.html">View Record</a>
+                            <a href="Officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -192,7 +141,7 @@ $num_rows= mysqli_num_rows($q);
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="staffleaveform.html">Leave Form</a>
+                                <a href="staffleaveform.php">Leave Form</a>
                             </li>
 
                             <li>
@@ -200,14 +149,38 @@ $num_rows= mysqli_num_rows($q);
                             </li>
 
                             <li>
-                                <a href="Leaverecords.html"></i> View Record</a>
+                                <a href="Leaverecords.php"></i> View Record</a>
                             </li>
                         </ul>
+
+                          <li>
+                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                            </li>
+
                     </li>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
       </nav>
+      <?php
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+
+mysqli_error($link));
+
+
+$q=mysqli_select_db($link,"permohonan");
+
+
+$staff = $_SESSION['id_user'];
+$name = $_SESSION['user_name'];
+$query="SELECT * FROM request WHERE name = '$name' AND status = false";
+$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+$q=mysqli_query($link,$query);
+$num_rows= mysqli_num_rows($q);
+
+
+?>
 
         <div id="page-wrapper">
 
@@ -217,11 +190,11 @@ $num_rows= mysqli_num_rows($q);
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Status
+                            Office Leave
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-table"></i> Status
@@ -233,8 +206,7 @@ $num_rows= mysqli_num_rows($q);
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-                    <center>
-                        <h2>Office Leave Status</h2>
+                  
 
                     </center>
                         <div class="table-responsive">

@@ -13,7 +13,9 @@ $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($lin
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
 {
+
 ?>
+<?php include_once('functions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,7 @@ while( $row = mysqli_fetch_assoc($result) )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OFFICE MANAGEMENT SYSTEM</title>
+        <title>OFFICE MANAGEMENT SYSTEM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,9 +35,12 @@ while( $row = mysqli_fetch_assoc($result) )
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
+    <link type="text/css" rel="stylesheet" href="css/calendarstyle.css"/>
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,7 +52,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
 <body>
 
- <div id="wrapper">
+  <div id="wrapper">
 
       <!-- Navigation -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -63,7 +68,7 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-              <!--<li class="dropdown">
+             <!-- <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu message-dropdown">
                       <li class="message-preview">
@@ -162,48 +167,61 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
           </ul>
-          <?php
-        }
-        ?>
+		  <?php
+			}
+			?>
+
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
                       <a href="svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
-                <li>
+				  <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="svleaveoffice.html">Office Leave Form</a>
+                                <a href="svleaveoffice.php">Office Leave Form</a>
                             </li>
                             <li>
-                                <a href="#">Status </a>
+                                <a href="svstatusofficeleave.php">Status </a>
                             </li>
 							<li>
-								<a href="svofficeleaverecords.html">View Records</a>
+								<a href="svofficeleaverecords.php">View Records</a>
 						</ul>
 					</li>
 					<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="svleaveform.html">Leave</a>
+                                <a href="svleaveforms.php">Leave</a>
                             </li>
                             <li>
                                 <a href="svstatusleave.php">Status </a>
                             </li>
 							<li>
-								<a href="svleaverecords.html">View Records</a>
-						</ul>
-					</li>
-					<li>
+								<a href="svleaverecords.php">View Records</a>
+							</ul>
+							</li>
+							<li>
 							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
-					</li>
+							</li>
                 <!--  <li>
-                      <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                  </li>
-                  <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Managements <i class="fa fa-fw fa-caret-down"></i></a>
+                      <ul id="demo" class="collapse">
+                          <li>
+                              <a href="#">Manager Management</a>
+                          </li>
+                          <li>
+                              <a href="#">Supervisor Management</a>
+                          </li>
+                          <li>
+                              <a href="#">Staff Management</a>
+                          </li>
+                      </ul>
+                  </li> -->
+
+                <!--    <li>
                       <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                   </li>
 
@@ -217,21 +235,7 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- /.navbar-collapse -->
       </nav>
-      <?php
-      $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
-      mysqli_error($link));
-
-      $q=mysqli_select_db($link,"permohonan");
-
-      $sv = $_SESSION['id_user'];
-      $name = $_SESSION['user_name'];
-      $query="SELECT * FROM request WHERE name='$name' AND status = false";
-      $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
-      $q=mysqli_query($link,$query);
-      $num_rows= mysqli_num_rows($q);
-
-      ?>
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -240,65 +244,24 @@ while( $row = mysqli_fetch_assoc($result) )
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Office Leave
+                            Calendar
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i>Status
+                                <i class="fa fa-calendar"></i> Calendar
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                 <div class="row">
-                    <!--<div class="col-lg-6">-->
-
-
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                  <tr>
-                                      <th>Name</th>
-                                      <th>Purpose</th>
-                                      <th>Reason</th>
-                                      <th>Date</th>
-                                      <th>Time Out</th>
-                                      <th>Time In</th>
-                                      <th>Status</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <?php
-
-                                  while($row=mysqli_fetch_array($result))
-                                  {
-                                  ?>
-                                  <tr>
-                                      <td><?php echo $row['name'];?></td>
-                                      <td><?php echo $row['purpose'];?></td>
-                                      <td><?php echo $row['reason'];?></td>
-                                      <td><?php echo $row['datee'];?></td>
-                                      <td><?php echo $row['timeout'];?></td>
-                                      <td><?php echo $row['timein'];?></td>
-                                      <td><?php echo $row['status'];?></td>
-                                  </tr>
-                                  <?php
-                                  }
-                                  mysqli_close($link);
-                                  ?>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
+                <!-- Main jumbotron for a primary marketing message or call to action -->
+                <div id="calendar_div">
+                	<?php echo getCalender(); ?>
                 </div>
-
-                </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
@@ -311,7 +274,6 @@ while( $row = mysqli_fetch_assoc($result) )
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
