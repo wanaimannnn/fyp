@@ -193,15 +193,15 @@ while( $row = mysqli_fetch_assoc($result) )
                       <ul id="demo1" class="collapse">
 
                           <li>
-                              <a href="#"><i class="fa fa-fw fa-circle"></i> Admin / Manager Registration</a>
+                              <a href="#"> Admin / Manager Registration</a>
                           </li>
 
                           <li>
-                              <a href="svsignup.php"><i class="fa fa-fw fa-circle"></i> Supervisor Registration</a>
+                              <a href="svsignup.php"> Supervisor Registration</a>
                           </li>
 
                           <li>
-                              <a href="staffsignup.php"><i class="fa fa-fw fa-circle"></i> Staff Registration</a>
+                              <a href="staffsignup.php"> Staff Registration</a>
                           </li>
                       </ul>
                   </li>
