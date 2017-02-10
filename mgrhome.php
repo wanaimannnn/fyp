@@ -7,8 +7,8 @@ mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-$admin = $_SESSION['id_user'];
-$query="SELECT * FROM manager WHERE mgr_username='$admin'";
+$mgr = $_SESSION['id_user'];
+$query="SELECT * FROM manager WHERE mgr_username='$mgr'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
@@ -62,62 +62,11 @@ while( $row = mysqli_fetch_assoc($result) )
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Mgrindex.html">Manager Page</a>
+                <a class="navbar-brand" href="mgrhome.php">Manager Page</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong></strong></h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
@@ -159,7 +108,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                            <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -171,13 +120,20 @@ while( $row = mysqli_fetch_assoc($result) )
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="Mgrindex.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="mgrhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
 					<li>
                         <a href="#"><i class="fa fa-fw fa-file"></i> Application </a>
                     </li>
 					<li>
-                        <a href="#"><i class="fa fa-fw fa-desktop"></i> View Records</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> View Records <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="mgrofficeleaverecords.php">Office Leave Records </a>
+                            </li>
+                            <li>
+                                <a href="mgrleaverecords.php">Leave Records</a>
+                        </ul>
                     </li>
 					<li>
                         <a href="calendarmgr.php"><i class="fa fa-fw fa-table"></i> Calendar</a>
