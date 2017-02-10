@@ -63,7 +63,7 @@ while( $row = mysqli_fetch_assoc($result) )
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+            <a class="navbar-brand" href="staffhome.php">Staff Page</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -170,7 +170,7 @@ while( $row = mysqli_fetch_assoc($result) )
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                  <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>

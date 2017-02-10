@@ -206,20 +206,23 @@ $num_rows= mysqli_num_rows($q);
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-                  
+
 
                     </center>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                   <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Purpose</th>
-                                        <th>Reason</th>
-                                        <th>Date</th>
-                                        <th>Time Out</th>
-                                        <th>Time In</th>
-                                        <th>Status</th>
+                                        <th><center>No</center></th>
+                                        <th><center>Name</center></th>
+                                        <th><center>Purpose</center></th>
+                                        <th><center>Reason</center></th>
+                                        <th><center>Date</center></th>
+                                        <th><center>Time Out</center></th>
+                                        <th><center>Time In</center></th>
+                                        <th><center>Status</center></th>
+                                        <th><center>Action</center></th>
+
                                     </tr>
                                   </thead
                                     <?php
@@ -229,6 +232,7 @@ $num_rows= mysqli_num_rows($q);
                                     ?>
                                     <tbody>
                                     <tr>
+                                        <td><?php echo $row['no'];?></td>
                                         <td><?php echo $row['name'];?></td>
                                         <td><?php echo $row['purpose'];?></td>
                                         <td><?php echo $row['reason'];?></td>
@@ -236,6 +240,8 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['timeout'];?></td>
                                         <td><?php echo $row['timein'];?></td>
                                         <td><?php echo $row['status'];?></td>
+                                        <td><a href="staffformupdate(leave).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="staffformdelete.php?no=<?php echo $row['no'];?>">Delete</a></td>
+
                                     </tr>
                                     <?php
                                     }

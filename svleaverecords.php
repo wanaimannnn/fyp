@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -63,59 +64,6 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-             <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu message-dropdown">
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-footer">
-                          <a href="#">Read All New Messages</a>
-                      </li>
-                  </ul>
-              </li>-->
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
@@ -236,7 +184,21 @@ while( $row = mysqli_fetch_assoc($result) )
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        <?php
 
+        $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+        mysqli_error($link));
+
+        $q=mysqli_select_db($link,"permohonan");
+        $staff = $_SESSION['id_user'];
+        $name = $_SESSION['user_name'];
+        $query="SELECT * FROM leavereq WHERE name='$name' AND status = true";
+        $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+        $q=mysqli_query($link,$query);
+        $num_rows= mysqli_num_rows($q);
+
+        ?>
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -245,21 +207,21 @@ while( $row = mysqli_fetch_assoc($result) )
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Leave
+                            View Records
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="mgrhome.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> View Records
+                                <i class="fa fa-table"></i> Leave Records
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <div class="row">
+                 <div class="row">
                     <!--<div class="col-lg-6">-->
 
                         <div class="table-responsive">
@@ -268,331 +230,44 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <tr>
                                         <th>Name</th>
                                         <th>Department</th>
-                                        <th>Reasons</th>
-										<th>Start Date</th>
-										<th>End Date</th>
-										<th>Type of Leave</th>
+                                        <th>Type of Leave</th>
+                                        <th>Reason</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Status</th>
+                                        <th>Supported By</th>
+                                        <th>Validated By</th>
 
                                     </tr>
-                                </thead>
-                                <tbody>
+                                  </thead>
+                                  <tbody>
+                                    <?php
+
+                                    while($row=mysqli_fetch_array($result))
+                                    {
+                                    ?>
                                     <tr>
-                                        <td>/index.html</td>
-                                        <td>1265</td>
-                                        <td>32.3%</td>
-                                        <td>$321.33</td>
-										<td></td>
-										<td></td>
-
+                                        <td><?php echo $row['name'];?></td>
+                                        <td><?php echo $row['department']?></td>
+                                        <td><?php echo $row['leavetype'];?></td>
+                                        <td><?php echo $row['reason'];?></td>
+                                        <td><?php echo $row['start_date'];?></td>
+                                        <td><?php echo $row['end_date'];?></td>
+                                        <td><?php echo $row['status'];?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
-                                    <tr>
-                                        <td>/about.html</td>
-                                        <td>261</td>
-                                        <td>33.3%</td>
-                                        <td>$234.12</td>
-										<td></td>
-										<td></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>/sales.html</td>
-                                        <td>665</td>
-                                        <td>21.3%</td>
-                                        <td>$16.34</td>
-										<td></td>
-										<td></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>/blog.html</td>
-                                        <td>9516</td>
-                                        <td>89.3%</td>
-                                        <td>$1644.43</td>
-										<td></td>
-										<td></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>/404.html</td>
-                                        <td>23</td>
-                                        <td>34.3%</td>
-                                        <td>$23.52</td>
-										<td></td>
-										<td></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>/services.html</td>
-                                        <td>421</td>
-                                        <td>60.3%</td>
-                                        <td>$724.32</td>
-										<td></td>
-										<td></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>/blog/post.html</td>
-                                        <td>1233</td>
-                                        <td>93.2%</td>
-                                        <td>$126.34</td>
-										<td></td>
-										<td></td>
-
-                                    </tr>
-                                </tbody>
+                                    <?php
+                                    }
+                                    mysqli_close($link);
+                                    ?>
+                                  </tbody>
                             </table>
                         </div>
-                    </div>
-					<!--
-                    <div class="col-lg-6">
-                        <h2>Bordered with Striped Rows</h2>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Page</th>
-                                        <th>Visits</th>
-                                        <th>% New Visits</th>
-                                        <th>Revenue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>/index.html</td>
-                                        <td>1265</td>
-                                        <td>32.3%</td>
-                                        <td>$321.33</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/about.html</td>
-                                        <td>261</td>
-                                        <td>33.3%</td>
-                                        <td>$234.12</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/sales.html</td>
-                                        <td>665</td>
-                                        <td>21.3%</td>
-                                        <td>$16.34</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog.html</td>
-                                        <td>9516</td>
-                                        <td>89.3%</td>
-                                        <td>$1644.43</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/404.html</td>
-                                        <td>23</td>
-                                        <td>34.3%</td>
-                                        <td>$23.52</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/services.html</td>
-                                        <td>421</td>
-                                        <td>60.3%</td>
-                                        <td>$724.32</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog/post.html</td>
-                                        <td>1233</td>
-                                        <td>93.2%</td>
-                                        <td>$126.34</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+
                     </div>
                 </div>
-                <!-- /.row -->
 
-               <!-- <div class="row">
-                    <div class="col-lg-6">
-                        <h2>Basic Table</h2>
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Page</th>
-                                        <th>Visits</th>
-                                        <th>% New Visits</th>
-                                        <th>Revenue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>/index.html</td>
-                                        <td>1265</td>
-                                        <td>32.3%</td>
-                                        <td>$321.33</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/about.html</td>
-                                        <td>261</td>
-                                        <td>33.3%</td>
-                                        <td>$234.12</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/sales.html</td>
-                                        <td>665</td>
-                                        <td>21.3%</td>
-                                        <td>$16.34</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog.html</td>
-                                        <td>9516</td>
-                                        <td>89.3%</td>
-                                        <td>$1644.43</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/404.html</td>
-                                        <td>23</td>
-                                        <td>34.3%</td>
-                                        <td>$23.52</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/services.html</td>
-                                        <td>421</td>
-                                        <td>60.3%</td>
-                                        <td>$724.32</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog/post.html</td>
-                                        <td>1233</td>
-                                        <td>93.2%</td>
-                                        <td>$126.34</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <h2>Striped Rows</h2>
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Page</th>
-                                        <th>Visits</th>
-                                        <th>% New Visits</th>
-                                        <th>Revenue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>/index.html</td>
-                                        <td>1265</td>
-                                        <td>32.3%</td>
-                                        <td>$321.33</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/about.html</td>
-                                        <td>261</td>
-                                        <td>33.3%</td>
-                                        <td>$234.12</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/sales.html</td>
-                                        <td>665</td>
-                                        <td>21.3%</td>
-                                        <td>$16.34</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog.html</td>
-                                        <td>9516</td>
-                                        <td>89.3%</td>
-                                        <td>$1644.43</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/404.html</td>
-                                        <td>23</td>
-                                        <td>34.3%</td>
-                                        <td>$23.52</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/services.html</td>
-                                        <td>421</td>
-                                        <td>60.3%</td>
-                                        <td>$724.32</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog/post.html</td>
-                                        <td>1233</td>
-                                        <td>93.2%</td>
-                                        <td>$126.34</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <!-- <div class="row">
-                    <div class="col-lg-6">
-                        <h2>Contextual Classes</h2>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Page</th>
-                                        <th>Visits</th>
-                                        <th>% New Visits</th>
-                                        <th>Revenue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="active">
-                                        <td>/index.html</td>
-                                        <td>1265</td>
-                                        <td>32.3%</td>
-                                        <td>$321.33</td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>/about.html</td>
-                                        <td>261</td>
-                                        <td>33.3%</td>
-                                        <td>$234.12</td>
-                                    </tr>
-                                    <tr class="warning">
-                                        <td>/sales.html</td>
-                                        <td>665</td>
-                                        <td>21.3%</td>
-                                        <td>$16.34</td>
-                                    </tr>
-                                    <tr class="danger">
-                                        <td>/blog.html</td>
-                                        <td>9516</td>
-                                        <td>89.3%</td>
-                                        <td>$1644.43</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/404.html</td>
-                                        <td>23</td>
-                                        <td>34.3%</td>
-                                        <td>$23.52</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/services.html</td>
-                                        <td>421</td>
-                                        <td>60.3%</td>
-                                        <td>$724.32</td>
-                                    </tr>
-                                    <tr>
-                                        <td>/blog/post.html</td>
-                                        <td>1233</td>
-                                        <td>93.2%</td>
-                                        <td>$126.34</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-					-->
-                    <!-- <div class="col-lg-6">
-                        <h2>Bootstrap Docs</h2>
-                        <p>For complete documentation, please visit <a target="_blank" href="http://getbootstrap.com/css/#tables">Bootstrap's Tables Documentation</a>.</p>
-                    </div>
                 </div>
                 <!-- /.row -->
 
@@ -600,6 +275,9 @@ while( $row = mysqli_fetch_assoc($result) )
             <!-- /.container-fluid -->
 
         </div>
+        <!-- /#page-wrapper -->
+
+    </div>
         <!-- /#page-wrapper -->
 
     </div>

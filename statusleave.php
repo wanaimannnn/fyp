@@ -155,7 +155,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                         </ul>
-                        
+
                           <li>
                                 <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                             </li>

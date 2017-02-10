@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -238,89 +239,87 @@ while( $row = mysqli_fetch_assoc($result) )
         $num_rows= mysqli_num_rows($q);
 
         ?>
-          <div id="page-wrapper">
+        <div id="page-wrapper">
 
-              <div class="container-fluid">
+            <div class="container-fluid">
 
-                  <!-- Page Heading -->
-                  <div class="row">
-                      <div class="col-lg-12">
-                          <h1 class="page-header">
-                              View Records
-                          </h1>
-                          <ol class="breadcrumb">
-                              <li>
-                                  <i class="fa fa-dashboard"></i>  <a href="mgrhome.php">Dashboard</a>
-                              </li>
-                              <li class="active">
-                                  <i class="fa fa-table"></i> Office Leave Records
-                              </li>
-                          </ol>
-                      </div>
-                  </div>
-                  <!-- /.row -->
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            View Records
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="mgrhome.php">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-table"></i> Office Leave Records
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
 
-                   <div class="row">
-                      <!--<div class="col-lg-6">-->
+                 <div class="row">
+                    <!--<div class="col-lg-6">-->
 
 
-                          <div class="table-responsive">
-                              <table class="table table-bordered table-hover">
-                                  <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>Shift</th>
-                                        <th>Purpose</th>
-                                        <th>Reason</th>
-                                        <th>Date</th>
-                                        <th>Time Out</th>
-                                        <th>Time In</th>
-                                        <th>Status</th>
-                                        <th>Supported By</th>
-                                        <th>Validated By</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                      <th>Name</th>
+                                      <th>Department</th>
+                                      <th>Shift</th>
+                                      <th>Purpose</th>
+                                      <th>Reason</th>
+                                      <th>Date</th>
+                                      <th>Time Out</th>
+                                      <th>Time In</th>
+                                      <th>Status</th>
+                                      <th>Validated By</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <?php
 
-                                    while($row=mysqli_fetch_array($result))
-                                    {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $row['name'];?></td>
-                                        <td><?php echo $row['department'];?></td>
-                                        <td><?php echo $row['shift'];?></td>
-                                        <td><?php echo $row['purpose'];?></td>
-                                        <td><?php echo $row['reason'];?></td>
-                                        <td><?php echo $row['datee'];?></td>
-                                        <td><?php echo $row['timeout'];?></td>
-                                        <td><?php echo $row['timein'];?></td>
-                                        <td><?php echo $row['status'];?></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <?php
-                                    }
-                                    mysqli_close($link);
-                                    ?>
-                                  </tbody>
-                              </table>
-                          </div>
+                                  while($row=mysqli_fetch_array($result))
+                                  {
+                                  ?>
+                                  <tr>
+                                      <td><?php echo $row['name'];?></td>
+                                      <td><?php echo $row['department'];?></td>
+                                      <td><?php echo $row['shift'];?></td>
+                                      <td><?php echo $row['purpose'];?></td>
+                                      <td><?php echo $row['reason'];?></td>
+                                      <td><?php echo $row['datee'];?></td>
+                                      <td><?php echo $row['timeout'];?></td>
+                                      <td><?php echo $row['timein'];?></td>
+                                      <td><?php echo $row['status'];?></td>
+                                      <td></td>
+                                  </tr>
+                                  <?php
+                                  }
+                                  mysqli_close($link);
+                                  ?>
+                                </tbody>
+                            </table>
+                        </div>
 
-                      </div>
-                  </div>
+                    </div>
+                </div>
 
-                  </div>
-                  <!-- /.row -->
+                </div>
+                <!-- /.row -->
 
-              </div>
-              <!-- /.container-fluid -->
+            </div>
+            <!-- /.container-fluid -->
 
-          </div>
-          <!-- /#page-wrapper -->
+        </div>
+        <!-- /#page-wrapper -->
 
-      </div>
+    </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->

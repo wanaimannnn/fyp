@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -222,6 +223,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                           <th>Start Date</th>
                                           <th>End Date</th>
                                           <th>Status</th>
+                                          <th>Supported By</th>
                                           <th>Validated By</th>
 
                                       </tr>
@@ -240,6 +242,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                           <td><?php echo $row['start_date'];?></td>
                                           <td><?php echo $row['end_date'];?></td>
                                           <td><?php echo $row['status'];?></td>
+                                          <td></td>
                                           <td></td>
                                       </tr>
                                       <?php

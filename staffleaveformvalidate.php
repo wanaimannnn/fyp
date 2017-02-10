@@ -15,7 +15,6 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -199,9 +198,18 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
 
                             <div class="form-group">
-                                    <label>Department</label>
-                                  <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                                </div>
+                                <label>Department</label>
+                                <select class="form-control" name="department" required>
+                                    <option></option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Human Resource">Human Resources</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Front Office">Front Service Office</option>
+                                    <option value="Account">Account</option>
+                                    <option value="Housekeeping">House Keeping</option>
+                                    <option value="Landscape/Maintenance">Landscape/Maintenance</option>
+                                </select>
+                            </div>
 
 							              <div class="form-group">
                                 <label>Type of Leave</label>
@@ -259,8 +267,8 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <input type="file">
                             </div> -->
 
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
+                            <button type="submit" class="btn btn-default">Update</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
 
                         </form>
                         <?php
