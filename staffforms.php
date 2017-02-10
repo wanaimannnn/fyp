@@ -51,71 +51,126 @@ while( $row = mysqli_fetch_assoc($result) )
 
 </head>
 
- <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="staffhome.php">Staff Page</a>
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="staffhome.html">Staff Page</a>
+        </div>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                <ul class="dropdown-menu message-dropdown">
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media">
+                                <span class="pull-left">
+                                    <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                </span>
+                                <div class="media-body">
+                                    <h5 class="media-heading"><strong>ariff</strong>
+                                    </h5>
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media">
+                                <span class="pull-left">
+                                    <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                </span>
+                                <div class="media-body">
+                                    <h5 class="media-heading"><strong>Ariff</strong>
+                                    </h5>
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media">
+                                <span class="pull-left">
+                                    <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                </span>
+                                <div class="media-body">
+                                    <h5 class="media-heading"><strong>Ariff</strong>
+                                    </h5>
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-footer">
+                        <a href="#">Read All New Messages</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                <ul class="dropdown-menu alert-dropdown">
+                    <li>
+                        <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">View All</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>  <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a href="staffhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                  <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
@@ -130,7 +185,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="officeleaverecords.php">View Record</a>
+                            <a href="officeleaverecords.html">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -150,17 +205,42 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                             <li>
-                                <a href="leaverecords.php"></i> View Record</a>
+                                <a href="leaverecords.html"></i> View Record</a>
                             </li>
 
                         </ul>
-                        
-                          <li>
-                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
-                            </li>
-
                     </li>
 
+              <!--  <li>
+                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                </li>-->
+
+              <!--  <li>
+                    <<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                </li>
+                <li>
+                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Form <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo" class="collapse">
+                        <li>
+                            <a href="#">Office Leave</a>
+                        </li>
+                        <li>
+                            <a href="#">Leave</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                </li>
+                <li>
+                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                </li>
+            </ul>
+        </div>
+        < /.navbar-collapse -->
     </nav>
 
         <div id="page-wrapper">
@@ -171,14 +251,14 @@ while( $row = mysqli_fetch_assoc($result) )
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Office Leave
+                            Forms
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-edit"></i> Office Leave Form
+                                <i class="fa fa-edit"></i> Office Leave
                             </li>
                         </ol>
                     </div>
@@ -199,16 +279,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                         <div class="form-group">
                                 <label>Department</label>
-                                <select class="form-control" name="department" required>
-                                    <option></option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Human Resource">Human Resources</option>
-                                    <option value="Kitchen">Kitchen</option>
-                                    <option value="Front Office">Front Service Office</option>
-                                    <option value="Account">Account</option>
-                                    <option value="Housekeeping">House Keeping</option>
-                                    <option value="Landscape/Maintenance">Landscape/Maintenance</option>
-                                </select>
+                              <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
                             </div>
 
                             <div class="form-group">

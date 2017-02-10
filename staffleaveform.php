@@ -198,18 +198,9 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
 
                             <div class="form-group">
-                                <label>Department</label>
-                                <select class="form-control" name="department" required>
-                                    <option></option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Human Resource">Human Resources</option>
-                                    <option value="Kitchen">Kitchen</option>
-                                    <option value="Front Office">Front Service Office</option>
-                                    <option value="Account">Account</option>
-                                    <option value="Housekeeping">House Keeping</option>
-                                    <option value="Landscape/Maintenance">Landscape/Maintenance</option>
-                                </select>
-                            </div>
+                                    <label>Department</label>
+                                  <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                                </div>
 
 							              <div class="form-group">
                                 <label>Type of Leave</label>
@@ -275,7 +266,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 }
                                 ?>
                     </div>
-                  
+
                 </div>
                 <!-- /.row -->
 

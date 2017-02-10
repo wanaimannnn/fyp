@@ -175,7 +175,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="svleaveoffice.html">Office Leave Form</a>
+                                <a href="svleaveoffice.php">Office Leave Form</a>
                             </li>
                             <li>
                                 <a href="#">Status </a>
