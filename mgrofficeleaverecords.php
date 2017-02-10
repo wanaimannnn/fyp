@@ -269,6 +269,8 @@ while( $row = mysqli_fetch_assoc($result) )
                                   <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Department</th>
+                                        <th>Shift</th>
                                         <th>Purpose</th>
                                         <th>Reason</th>
                                         <th>Date</th>
@@ -287,6 +289,8 @@ while( $row = mysqli_fetch_assoc($result) )
                                     ?>
                                     <tr>
                                         <td><?php echo $row['name'];?></td>
+                                        <td><?php echo $row['department'];?></td>
+                                        <td><?php echo $row['shift'];?></td>
                                         <td><?php echo $row['purpose'];?></td>
                                         <td><?php echo $row['reason'];?></td>
                                         <td><?php echo $row['datee'];?></td>
