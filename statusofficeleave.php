@@ -240,7 +240,7 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['timeout'];?></td>
                                         <td><?php echo $row['timein'];?></td>
                                         <td><?php echo $row['status'];?></td>
-                                        <td><a href="staffformupdate(leave).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="staffformdelete.php?no=<?php echo $row['no'];?>">Delete</a></td>
+                                        <td><a href="staffformupdate(officeleave).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="staffformdelete(officeleave).php?no=<?php echo $row['no'];?>">Delete</a></td>
 
                                     </tr>
                                     <?php

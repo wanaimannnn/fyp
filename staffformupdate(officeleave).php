@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -51,68 +52,69 @@ while( $row = mysqli_fetch_assoc($result) )
 
 </head>
 
-<div id="wrapper">
+ <div id="wrapper">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="staffhome.php">Staff Page</a>
-        </div>
-        <!-- Top Menu Items -->
-        <ul class="nav navbar-right top-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                <ul class="dropdown-menu alert-dropdown">
-                    <li>
-                        <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">View All</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="index.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="staffhome.php">Staff Page</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <?php
+          }
+          ?>
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
@@ -132,7 +134,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="officeleaverecords.html">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -152,44 +154,33 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                             <li>
-                                <a href="leaverecords.html"></i> View Record</a>
+                                <a href="leaverecords.php"></i> View Record</a>
                             </li>
 
                         </ul>
+
+                          <li>
+                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                            </li>
+
                     </li>
 
-              <!--  <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                </li>-->
-
-              <!--  <li>
-                    <<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                </li>
-                <li>
-                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                </li>
-                <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Form <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo" class="collapse">
-                        <li>
-                            <a href="#">Office Leave</a>
-                        </li>
-                        <li>
-                            <a href="#">Leave</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                </li>
-            </ul>
-        </div>
-        < /.navbar-collapse -->
     </nav>
+    <?php
+    $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
+    mysqli_error($link));
+
+    $q=mysqli_select_db($link,"permohonan");
+    $no=$_GET['no'];
+    $name = $_SESSION['id_user'];
+    $query="SELECT * FROM request WHERE no='$no'";
+    $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+    $q=mysqli_query($link,$query);
+    while( $row = mysqli_fetch_assoc($result) )
+    {
+
+  ?>
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -202,7 +193,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Office Leave Form
@@ -212,51 +203,34 @@ while( $row = mysqli_fetch_assoc($result) )
                 </div>
 
                 <!-- /.row -->
-
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form" method="post" action="officeleaveform.php">
+                        <form role="form" method="post" action="staffofficeleaveupdate.php">
 
-                          <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
+                          <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
                           <div class="form-group">
                         <label>Name </Label>
-                      <input class="form-control" name="name" value="<?php echo $row['name']; ?> " readonly>
+                      <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                           </div>
 
-                        <div class="form-group">
-                                <label>Department</label>
-                              <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                            </div>
+                          <div class="form-group">
+                                  <label>Department</label>
+                                <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                              </div>
 
                             <div class="form-group">
                                 <label>Shift</label>
                                 <div class="checkbox" name="shift" >
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Normal">Normal
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Morning">Morning
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Afternoon">Afternoon
-                                    </label>
-                                </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Evening">Evening
-                                    </label>
+                                    <input class="form-control" name="chkbox[]" value="<?php echo $row['shift'];?>"  readonly>
                                 </div>
                             </div>
 
                            <div class="form-group">
                                 <label>Date</label>
                                 <br>
-                            <input class="form-group" id="date" name="date" type="date" required>
+                                <input class="form-group" id="date" name="date" value="<?php echo $row['datee']; ?> " style="text-align:center;"readonly>
+
                             </div>
 
                              <div class="form-group">
@@ -272,7 +246,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                         <input type="radio" name="purpose" id="optionsRadios2" value="Others">Others, state your reason below
                                     </label>
                                     <br><br>
-                                    <textarea class="form-control" rows="3" name="reason"></textarea>
+                                    <textarea class="form-control" rows="3" name="reason"><?php echo $row['reason'];?></textarea>
                                 </div>
                             </div>
 
@@ -283,7 +257,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                             <div class="form-group">
                             <div> <label>Select Time Out:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
+                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout" value="<?php echo $row['timeout']; ?> ">
                             </div>
 
                             <script type="text/javascript">
@@ -294,7 +268,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                              <div class="form-group">
                             <div> <label>Select Time In:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
+                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein" value="<?php echo $row['timein']; ?> ">
                             </div>
 
                             <script type="text/javascript">
@@ -309,21 +283,19 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <input type="file">
                             </div> -->
 
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
+                            <button type="submit" class="btn btn-default">Update</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
                         </form>
                     </div>
                 </div>
-                <?php
-                        }
-                        ?>
                     </div>
                 </div>
                 <!-- /.row -->
-
             </div>
             <!-- /.container-fluid -->
-
+            <?php
+                    }
+                    ?>
         </div>
         <!-- /#page-wrapper -->
 

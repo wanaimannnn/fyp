@@ -213,12 +213,13 @@ $num_rows= mysqli_num_rows($q);
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Type of Leave</th>
-                                        <th>Reason</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Status</th>
+                                        <th><center>Name</center></th>
+                                        <th><center>Type of Leave</center></th>
+                                        <th><center>Reason</center></th>
+                                        <th><center>Start Date</center></th>
+                                        <th><center>End Date</center></th>
+                                        <th><center>Status</center></th>
+                                        <th><center>Action</center></th>
 
                                     </tr>
                                   </thead>
@@ -235,6 +236,8 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['start_date'];?></td>
                                         <td><?php echo $row['end_date'];?></td>
                                         <td><?php echo $row['status'];?></td>
+                                        <td><a href="staffformupdate(leave).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="staffformdelete(leave).php?no=<?php echo $row['no'];?>">Delete</a>
+
                                     </tr>
                                     <?php
                                     }

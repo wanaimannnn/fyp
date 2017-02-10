@@ -9,18 +9,20 @@ $no = $_POST['no'];
 $name = $_POST['name'];
 $department = $_POST['department'];
 foreach($_POST['chkbox'] as $index => $val);
-$start_date = date('Y-m-d',strtotime($_POST['start_date']));
-$end_date= date('Y-m-d',strtotime($_POST['end_date']));
+$date = date('Y-m-d',strtotime($_POST['date']));
+$purpose= $_POST['purpose'];
 $reason=mysqli_real_escape_string($link, $_POST['reason']);
-$status = $_POST['status'];
+$timeout= $_POST['timeout'];
+$timein= $_POST['timein'];
+$status=$_POST['status'];
 
 
-$result = mysqli_query ($link,"UPDATE leavereq SET name='$name',department='$department',leavetype='$val',start_date='$start_date',end_date='$end_date',reason='$reason',status='$status' WHERE no='$no'")
+$result = mysqli_query ($link,"UPDATE request SET name='$name',department='$department',shift='$val', datee='$date',purpose='$purpose',reason='$reason',timeout='$timeout',timein='$timein',status='$status' WHERE no='$no'")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
 		."alert('The form has been updated');"
 		."</script>"
-		."<meta http-equiv=Refresh content=\"0; URL=statusleave.php\">";
+		."<meta http-equiv=Refresh content=\"0; URL=statusofficeleave.php\">";
 mysqli_close($link);
 ?>
