@@ -171,7 +171,7 @@ $q=mysqli_select_db($link,"permohonan");
 
 $staff = $_SESSION['id_user'];
 $name = $_SESSION['user_name'];
-$query="SELECT * FROM request WHERE name = '$name' AND status = false";
+$query="SELECT * FROM request WHERE status = false";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
@@ -203,7 +203,7 @@ $num_rows= mysqli_num_rows($q);
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-                  
+
 
                     </center>
                         <div class="table-responsive">
@@ -237,7 +237,7 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['timein'];?></td>
                                         <td><?php echo $row['status'];?></td>
                                         <td><a href="applicationsvforms.php?no=<?php echo $row['no'];?>">Validate </a>
-                                       
+
                                     </tr>
                                     <?php
                                     }

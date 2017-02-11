@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$link=mysqli_connect("localhost","root","") or die ("Unable to connect".
+$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
 
 mysqli_error($link));
 

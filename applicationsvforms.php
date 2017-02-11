@@ -204,50 +204,27 @@ while( $row = mysqli_fetch_assoc($result) )
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form" method="post" action="officeleaveform.php">
-
-                          <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
+                        <form role="form" method="post" action="mgrvalidateform(officeleave).php">
+                          <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
                           <div class="form-group">
-                        <label>Name </Label>
-                      <input class="form-control" name="name" value="<?php echo $row['name']; ?> " readonly>
+                         <label>Name </Label>
+                         <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                           </div>
-
-                        <div class="form-group">
-                                <label>Department</label>
+                          <div class="form-group">
+                                  <label>Department</label>
                                 <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                            </div>
-
+                              </div>
                             <div class="form-group">
                                 <label>Shift</label>
-                                <div class="checkbox" name="shift"  value="<?php echo $row['shift']; ?> " readonly>
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Normal">Normal
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Morning">Morning
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Afternoon">Afternoon
-                                    </label>
-                                </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Evening">Evening
-                                    </label>
+                                <div class="checkbox" name="shift" >
+                                    <input class="form-control" name="chkbox[]" value="<?php echo $row['shift'];?>"  readonly>
                                 </div>
                             </div>
-
-                          <div class="form-group">
+                           <div class="form-group">
                                 <label>Date</label>
                                 <br>
                                 <input class="form-group" id="date" name="date" value="<?php echo $row['datee']; ?> " style="text-align:center;"readonly>
-
                             </div>
-
                              <div class="form-group">
                                 <label>Purpose</label>
                                 <div class="radio">
@@ -255,84 +232,85 @@ while( $row = mysqli_fetch_assoc($result) )
                                         <input type="radio" name="purpose" id="optionsRadios1" value="Medical Checkup" checked> Medical Checkup
                                     </label>
                                 </div>
-
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="purpose" id="optionsRadios2" value="Others">Others, state your reason below
                                     </label>
                                     <br><br>
-                                    <textarea class="form-control" rows="3" name="reason"></textarea>
+                                    <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason'];?></textarea>
                                 </div>
                             </div>
-
                           <!-- <div class="form-group">
                                 <label>Reason</label>
                                 <textarea class="form-control" rows="3" name="reason"></textarea>
                             </div> -->
-
                             <div class="form-group">
                             <div> <label>Select Time Out:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
+                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout" value="<?php echo $row['timeout']; ?> " readonly>
                             </div>
-
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
                                 $('.sel-time-am').clockface();
                             </script>
                             </div>
-
                              <div class="form-group">
                             <div> <label>Select Time In:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
+                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein" value="<?php echo $row['timein']; ?> " readonly>
                             </div>
-
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
                                 $('.sel-time-am').clockface();
                             </script>
                           </div>
-                            <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
+                          <?php
+                         }
+                         ?>
                             <hr>
-                            
+                            <?php
+                            $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+                            mysqli_error($link));
+                            $q=mysqli_select_db($link,"permohonan");
+                            $no=$_GET['no'];
+                            $name = $_SESSION['id_user'];
+                            $query="SELECT * FROM manager WHERE mgr_username='$name'";
+                            $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+                            $q=mysqli_query($link,$query);
+                            while( $row = mysqli_fetch_assoc($result) )
+                            {
+                          ?>
                              <div class="form-group">
                                 <label>Status</label>
-                                <select class="form-control" name="status" required>
+                                <select class="form-control" id="status" name="status" required>
                                     <option></option>
                                     <option value="1">Approve</option>
                                     <option value="0">Not Approve</option>
-                                 
                                 </select>
                             </div>
+                            <div class="form-group">
+                              <label> Validated By</label>
+                              <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?> " readonly>
+                            </div>
+                         <button type="submit" class="btn btn-default"> Validate </button>
 
-                        <button type="submit" class="btn btn-default">Submit Button</button>
-                        </form>
-
-                     
+                         </form>
                             </ul>
-                    </div>
-                </div>
-                <?php
-                        }
-                        ?>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+                         </div>
+                         </div>
+                         <?php
+                         }
+                         ?>
+                         </div>
+                         </div>
+                         <!-- /.row -->
+                         </div>
+                         <!-- /.container-fluid -->
+                         </div>
+                         <!-- /#page-wrapper -->
+                         </div>
+                         <!-- /#wrapper -->
+                         <!-- jQuery -->
+                         <script src="js/jquery.js"></script>
+                         <!-- Bootstrap Core JavaScript -->
+                         <script src="js/bootstrap.min.js"></script>
+                         </body>
+                         </html>

@@ -171,7 +171,7 @@ mysqli_error($link));
 $q=mysqli_select_db($link,"permohonan");
 $mgr = $_SESSION['id_user'];
 $name = $_SESSION['user_name'];
-$query="SELECT * FROM leavereq WHERE name = '$name' AND status = false";
+$query="SELECT * FROM leavereq WHERE status = false";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
@@ -231,7 +231,7 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['end_date'];?></td>
                                         <td><?php echo $row['status'];?></td>
                                          <td><a href="applicationstaffleaveform.php"?no=<?php echo $row['no'];?>">Validate </a>
-                                       
+
                                     </tr>
                                     <?php
                                     }
