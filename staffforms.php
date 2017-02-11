@@ -202,7 +202,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Office Leave Form

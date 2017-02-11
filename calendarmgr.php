@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 session_start();
 
@@ -150,7 +152,7 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i><?php echo $row['name']; ?> <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
                           <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>

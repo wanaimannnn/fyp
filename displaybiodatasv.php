@@ -67,59 +67,6 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-              <!--<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu message-dropdown">
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-footer">
-                          <a href="#">Read All New Messages</a>
-                      </li>
-                  </ul>
-              </li>-->
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
@@ -173,7 +120,7 @@ while( $row = mysqli_fetch_assoc($result) )
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="svhome.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
 					<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
@@ -199,6 +146,17 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 							<li>
 								<a href="svleaverecords.html">View Records</a>
+						</ul>
+					</li>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
+                            </li>
+                            <li>
+                                <a href="svappleave.php">Validate Leave Form </a>
+                            </li>
 						</ul>
 					</li>
 					<li>
@@ -261,7 +219,7 @@ while( $row = mysqli_fetch_assoc($result) )
                        </h1>
                        <ol class="breadcrumb">
                            <li>
-                               <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
+                               <i class="fa fa-dashboard"></i>  <a href="svhome.html">Dashboard</a>
                            </li>
                            <li class="active">
                                <i class="fa fa-user"></i> Profile

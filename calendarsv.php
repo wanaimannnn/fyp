@@ -1,3 +1,4 @@
+<?php include_once('functions.php'); ?>
 <?php
 session_start();
 
@@ -15,7 +16,6 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
-<?php include_once('functions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,7 +149,7 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?><b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
                           <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -203,6 +203,17 @@ while( $row = mysqli_fetch_assoc($result) )
 								<a href="svleaverecords.php">View Records</a>
 							</ul>
 							</li>
+							<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
+                            </li>
+                            <li>
+                                <a href="svappleave.php">Validate Leave Form </a>
+                            </li>
+						</ul>
+					</li>
 							<li>
 							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
 							</li>

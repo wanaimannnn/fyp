@@ -7,8 +7,8 @@ mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-$mgr = $_SESSION['id_user'];
-$query="SELECT * FROM staff WHERE staff_username='$mgr'";
+$sv = $_SESSION['id_user'];
+$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
@@ -60,7 +60,7 @@ while( $row = mysqli_fetch_assoc($result) )
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="staffhome.php">Staff Page</a>
+                <a class="navbar-brand" href="svhome.php">Supervisor Page</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -96,7 +96,7 @@ while( $row = mysqli_fetch_assoc($result) )
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -116,45 +116,49 @@ while( $row = mysqli_fetch_assoc($result) )
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
                   <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo1" class="collapse">
-
-                        <li>
-                            <a href="staffforms.php"></i> Office Leave Form</a>
-                        </li>
-
-                        <li>
-                            <a href="statusofficeleave.php"></i> Status</a>
-                        </li>
-
-                        <li>
-                            <a href="Officeleaverecords.php">View Record</a>
-                        </li>
-                    </ul>
-                </li>
-
-                 <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="staffleaveform.php">Leave Form</a>
+                                <a href="svleaveoffice.php">Office Leave Form</a>
                             </li>
-
                             <li>
-                                <a href="statusleave.php"></i> Status</a>
+                                <a href="svstatusofficeleave.php">Status </a>
                             </li>
-
+							<li>
+								<a href="svofficeleaverecords.php">View Records</a>
+						</ul>
+					</li>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
                             <li>
-                                <a href="Leaverecords.php"></i> View Record</a>
+                                <a href="svleaveforms.php">Leave</a>
                             </li>
-                        </ul>
+                            <li>
+                                <a href="svstatusleave.php">Status </a>
+                            </li>
+							<li>
+								<a href="svleaverecords.php">View Records</a>
+						</ul>
+					</li>
+						<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
+                            </li>
+                            <li>
+                                <a href="svappleave.php">Validate Leave Form </a>
+                            </li>
+						</ul>
+					</li>
 
                           <li>
-                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                                <a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                             </li>
 
                     </li>
@@ -194,10 +198,10 @@ $num_rows= mysqli_num_rows($q);
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> Status
+                                <i class="fa fa-table"></i> Validate
                             </li>
                         </ol>
                     </div>
@@ -239,7 +243,7 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['timeout'];?></td>
                                         <td><?php echo $row['timein'];?></td>
                                         <td><?php echo $row['status'];?></td>
-                                        <td><a href="applicationstaffforms.php?no=<?php echo $row['no'];?>">Validate </a>
+                                        <td><a href="applicationstaffformsv.php?no=<?php echo $row['no'];?>">Validate </a>
 
                                     </tr>
                                     <?php

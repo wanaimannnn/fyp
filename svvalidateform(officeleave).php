@@ -24,5 +24,5 @@ or die ("Insert Error:" . mysqli_error($link));
 echo"<script>"
 		."alert('The form has been validated');"
 		."</script>"
-		."<meta http-equiv=Refresh content=\"0; URL=applicationstatusofficeleave.php\">";
+		."<meta http-equiv=Refresh content=\"0; URL=svappofficeleave.php\">";
 mysqli_close($link);

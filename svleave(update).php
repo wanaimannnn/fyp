@@ -15,7 +15,6 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +25,7 @@ while( $row = mysqli_fetch_assoc($result) )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OFFICE MANAGEMENT SYSTEM</title>
+    <title>OFFICCE MANAGEMENT SYSTEM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,9 +33,11 @@ while( $row = mysqli_fetch_assoc($result) )
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,59 +65,8 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-              <!--<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu message-dropdown">
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-footer">
-                          <a href="#">Read All New Messages</a>
-                      </li>
-                  </ul>
-              </li>-->
+
+              </li>
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
@@ -145,14 +95,12 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
                           <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
-                      <li>
-                          <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                      </li>
+
                       <li>
                           <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                       </li>
@@ -163,16 +111,16 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
           </ul>
-		  <?php
-		  }
-		  ?>
+<?php
+}
+?>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-          <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav side-nav">
-                  <li class="active">
-                      <a href="svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                  </li>
-                <li>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+					<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Office Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
@@ -198,7 +146,7 @@ while( $row = mysqli_fetch_assoc($result) )
 								<a href="svleaverecords.php">View Records</a>
 						</ul>
 					</li>
-					<li>
+							<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
                             <li>
@@ -209,38 +157,31 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 						</ul>
 					</li>
-					<li>
-							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
-					</li>
-                <!--  <li>
-                      <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                  </li>
-                  <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                  </li>
 
-                  <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li> -->
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
+                     
+
+                          <li>
+                                <a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                            </li>
+
+                    </li>
+					</ul>
       </nav>
 	   <?php
       $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
-      mysqli_error($link));
-      $q=mysqli_select_db($link,"permohonan");
-     $sv = $_SESSION['id_user'];
-	$name = $_SESSION['user_name'];
-	$query="SELECT * FROM leavereq WHERE name='$name' AND status = false";
-	$result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
-	$q=mysqli_query($link,$query);
-	$num_rows= mysqli_num_rows($q);
 
-      ?>
+      mysqli_error($link));
+
+      $q=mysqli_select_db($link,"permohonan");
+      $no=$_GET['no'];
+      $name = $_SESSION['id_user'];
+      $query="SELECT * FROM leavereq WHERE no='$no'";
+      $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+      $q=mysqli_query($link,$query);
+      while( $row = mysqli_fetch_assoc($result) )
+      {
+
+    ?>
 
         <div id="page-wrapper">
 
@@ -257,7 +198,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i>Status
+                                <i class="fa fa-edit"></i> Leave Form
                             </li>
                         </ol>
                     </div>
@@ -265,47 +206,55 @@ while( $row = mysqli_fetch_assoc($result) )
                 <!-- /.row -->
 
                  <div class="row">
-                    <!--<div class="col-lg-6">-->
+                    <div class="col-lg-6">
 
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Type of Leave</th>
-                                        <th>Reason</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Status</th>
-										<th>Action</th>
+                      <form role="form" method="post" action="svleaveupdate.php">
+                              <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" value="<?php echo $row['no']; ?>" required>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
+                                <p class="help-block">.</p>
+                            </div>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                  <?php
+                            <div class="form-group">
+                                <label>Department</label>
+                                  <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                            </div>
 
-                                  while($row=mysqli_fetch_array($result))
-                                  {
-                                  ?>
-                                  <tr>
-                                      <td><?php echo $row['name'];?></td>
-                                      <td><?php echo $row['leavetype'];?></td>
-                                      <td><?php echo $row['reason'];?></td>
-                                      <td><?php echo $row['start_date'];?></td>
-                                      <td><?php echo $row['end_date'];?></td>
-                                      <td><?php echo $row['status'];?></td>
-									  <td><a href="svleave(update).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="svleave(delete).php?no=<?php echo $row['no'];?>">Delete</a>
-                                  </tr>
-                                  <?php
-                                  }
-                                  mysqli_close($link);
-                                  ?>
-                                </tbody>
-                            </table>
-                        </div>
+							              <div class="form-group">
+                                <label>Type of Leave</label>
+                                <div class="checkbox" name="leavetype">
+                                <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
+                								</div>
+                            </div>
 
+      							      <div class="form-group">
+      									<label>Leave Requested to Commence On</label>
+      									    <div id="datetimepicker" class="input-append date">
+      									               <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;"></input>&nbsp;Until&nbsp;<input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;"></input>
+      							        </div>
+                          </div>
+
+      							<div class="form-group">
+      							<label> Will Resume Duty On:</label>
+      							</div>
+
+							              <div class="form-group">
+                                <label>Reasons</label>
+                                <textarea class="form-control" rows="3" name="reason"><?php echo $row['reason']; ?> </textarea>
+                            </div>
+                            <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
+
+					              <!--<div class="form-group">
+                                <label>File input</label>
+                                <input type="file">
+                            </div> -->
+
+                            <button type="submit" class="btn btn-default">Update</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
+
+                        </form>
                     </div>
-                </div>
 
                 </div>
                 <!-- /.row -->
@@ -315,7 +264,9 @@ while( $row = mysqli_fetch_assoc($result) )
 
         </div>
         <!-- /#page-wrapper -->
-
+        <?php
+                }
+                ?>
     </div>
     <!-- /#wrapper -->
 

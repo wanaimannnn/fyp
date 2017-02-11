@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-$link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+$link=mysqli_connect("localhost","root","") or die ("Unable to connect".
 
 mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-$sv = $_SESSION['id_user'];
-$query="SELECT * FROM supervisor WHERE sv_username='$sv'";
+$staff = $_SESSION['id_user'];
+$query="SELECT * FROM staff WHERE staff_username='$staff'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
@@ -61,63 +61,12 @@ while( $row = mysqli_fetch_assoc($result) )
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="svhome.php">Supervisor Page</a>
+              <a class="navbar-brand" href="staffhome.php">Staff Page</a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-             <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu message-dropdown">
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-preview">
-                          <a href="#">
-                              <div class="media">
-                                  <span class="pull-left">
-                                      <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                  </span>
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>John Smith</strong>
-                                      </h5>
-                                      <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                  </div>
-                              </div>
-                          </a>
-                      </li>
-                      <li class="message-footer">
-                          <a href="#">Read All New Messages</a>
-                      </li>
-                  </ul>
-              </li>-->
+
+              </li>
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
@@ -146,14 +95,12 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
-                          <a href="displaybiodatasv.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                          <a href="displaybiodatastaff.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
-                      <li>
-                          <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                      </li>
+
                       <li>
                           <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                       </li>
@@ -168,7 +115,7 @@ while( $row = mysqli_fetch_assoc($result) )
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li class="active">
-                      <a href=svhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="staffhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
 
                                   <li>
@@ -176,15 +123,15 @@ while( $row = mysqli_fetch_assoc($result) )
                     <ul id="demo1" class="collapse">
 
                         <li>
-                            <a href="svleaveoffice.php"></i> Office Leave Form</a>
+                            <a href="staffforms.php"></i> Office Leave Form</a>
                         </li>
 
                         <li>
-                            <a href="svstatusofficeleave.php"></i> Status</a>
+                            <a href="statusofficeleave.php"></i> Status</a>
                         </li>
 
                         <li>
-                            <a href="svofficeleaverecords.php">View Record</a>
+                            <a href="Officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -196,33 +143,25 @@ while( $row = mysqli_fetch_assoc($result) )
 
 
                             <li>
-                                <a href="svleaveforms.php">Leave Form</a>
+                                <a href="staffleaveform.php">Leave Form</a>
                             </li>
 
                             <li>
-                                <a href="svstatusleave.php"></i> Status</a>
+                                <a href="statusleave.php"></i> Status</a>
                             </li>
 
                             <li>
-                                <a href="svleaverecords.php"></i> View Record</a>
+                                <a href="Leaverecords.php"></i> View Record</a>
                             </li>
 
                         </ul>
+
+                          <li>
+                                <a href="calendarstaff.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                            </li>
+
                     </li>
-					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo2" class="collapse">
-                            <li>
-                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
-                            </li>
-                            <li>
-                                <a href="svappleave.php">Validate Leave Form </a>
-                            </li>
-						</ul>
-					</li>
-					<li>
-							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
-					</li>
+
       </nav>
 
         <div id="page-wrapper">
@@ -237,7 +176,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="staffhome.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Leave Form
@@ -250,7 +189,7 @@ while( $row = mysqli_fetch_assoc($result) )
                 <div class="row">
                     <div class="col-lg-6">
 
-                      <form role="form" method="post" action="svleaveform.php">
+                      <form role="form" method="post" action="leaveform.php">
                               <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
                             <div class="form-group">
                                 <label>Name</label>
@@ -260,7 +199,16 @@ while( $row = mysqli_fetch_assoc($result) )
 
                             <div class="form-group">
                                 <label>Department</label>
-                                <input class="form-control" name="department" value="<?php echo $row['department']; ?>" readonly>
+                                <select class="form-control" name="department" required>
+                                    <option></option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Human Resource">Human Resources</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Front Office">Front Service Office</option>
+                                    <option value="Account">Account</option>
+                                    <option value="Housekeeping">House Keeping</option>
+                                    <option value="Landscape/Maintenance">Landscape/Maintenance</option>
+                                </select>
                             </div>
 
 							              <div class="form-group">
@@ -314,20 +262,27 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
 
-					              <!--<div class="form-group">
-                                <label>File input</label>
-                                <input type="file">
-                            </div> -->
+                            <hr>
+                            
+                             <div class="form-group">
+                                <label>Status</label>
+                                <select class="form-control" name="department" required>
+                                    <option></option>
+                                    <option value="1">Approve</option>
+                                    <option value="0">Not Approve</option>
+                                 
+                                </select>
+                            </div>
 
                             <button type="submit" class="btn btn-default">Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
                         </form>
-<?php
-}
-?>
+                        <?php
+                                }
+                                ?>
                     </div>
-
+                  
                 </div>
                 <!-- /.row -->
 

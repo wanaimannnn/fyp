@@ -201,6 +201,17 @@ while( $row = mysqli_fetch_assoc($result) )
 						</ul>
 					</li>
 					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
+                            </li>
+                            <li>
+                                <a href="svappleave.php">Validate Leave Form </a>
+                            </li>
+						</ul>
+					</li>
+					<li>
 							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
 					</li>
 					</li>

@@ -7,8 +7,8 @@ mysqli_error($link));
 
 $q=mysqli_select_db($link,"permohonan");
 
-$staff = $_SESSION['id_user'];
-$query="SELECT * FROM staff WHERE staff_username='$staff'";
+$mgr = $_SESSION['id_user'];
+$query="SELECT * FROM staff WHERE staff_username='$mgr'";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
@@ -219,7 +219,7 @@ $num_rows= mysqli_num_rows($q);
                                         <th><center>Start Date</center></th>
                                         <th><center>End Date</center></th>
                                         <th><center>Status</center></th>
-                                        <th><center>Action</center></th>
+                                        <th><center>Actions</center></th>
 
                                     </tr>
                                   </thead>

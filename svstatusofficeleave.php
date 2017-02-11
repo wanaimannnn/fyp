@@ -181,20 +181,31 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <a href="#">Status </a>
                             </li>
 							<li>
-								<a href="svofficeleaverecords.html">View Records</a>
+								<a href="svofficeleaverecords.php">View Records</a>
 						</ul>
 					</li>
 					<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-edit"></i> Leave <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="svleaveform.html">Leave</a>
+                                <a href="svleaveforms.php">Leave</a>
                             </li>
                             <li>
                                 <a href="svstatusleave.php">Status </a>
                             </li>
 							<li>
-								<a href="svleaverecords.html">View Records</a>
+								<a href="svleaverecords.php">View Records</a>
+						</ul>
+					</li>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
+                            </li>
+                            <li>
+                                <a href="svappleave.php">Validate Leave Form </a>
+                            </li>
 						</ul>
 					</li>
 					<li>
@@ -269,6 +280,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <th>Time Out</th>
                                       <th>Time In</th>
                                       <th>Status</th>
+									  <th>Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -285,6 +297,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td><?php echo $row['timeout'];?></td>
                                       <td><?php echo $row['timein'];?></td>
                                       <td><?php echo $row['status'];?></td>
+									  <td><a href="svofficeleave(update).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="svofficeleave(delete).php?no=<?php echo $row['no'];?>">Delete</a></td>
                                   </tr>
                                   <?php
                                   }

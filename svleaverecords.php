@@ -13,7 +13,6 @@ $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($lin
 $q=mysqli_query($link,$query);
 while( $row = mysqli_fetch_assoc($result) )
 {
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,6 +145,17 @@ while( $row = mysqli_fetch_assoc($result) )
 						</ul>
 					</li>
 					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-edit"></i> Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="svappofficeleave.php">Validate Office Leave Form</a>
+                            </li>
+                            <li>
+                                <a href="svappleave.php">Validate Leave Form </a>
+                            </li>
+						</ul>
+					</li>
+					<li>
 							<a href="calendarsv.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
 					</li>
 					<!--
@@ -185,110 +195,90 @@ while( $row = mysqli_fetch_assoc($result) )
             <!-- /.navbar-collapse -->
         </nav>
         <?php
-
-        $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
-
-        mysqli_error($link));
-
-        $q=mysqli_select_db($link,"permohonan");
-        $staff = $_SESSION['id_user'];
-        $name = $_SESSION['user_name'];
-        $query="SELECT * FROM leavereq WHERE name='$name' AND status = true";
-        $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
-        $q=mysqli_query($link,$query);
-        $num_rows= mysqli_num_rows($q);
-
-        ?>
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            View Records
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="mgrhome.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-table"></i> Leave Records
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                 <div class="row">
-                    <!--<div class="col-lg-6">-->
-
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>Type of Leave</th>
-                                        <th>Reason</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Status</th>
-                                        <th>Supported By</th>
-                                        <th>Validated By</th>
-
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-
-                                    while($row=mysqli_fetch_array($result))
-                                    {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $row['name'];?></td>
-                                        <td><?php echo $row['department']?></td>
-                                        <td><?php echo $row['leavetype'];?></td>
-                                        <td><?php echo $row['reason'];?></td>
-                                        <td><?php echo $row['start_date'];?></td>
-                                        <td><?php echo $row['end_date'];?></td>
-                                        <td><?php echo $row['status'];?></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <?php
-                                    }
-                                    mysqli_close($link);
-                                    ?>
-                                  </tbody>
-                            </table>
+                $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+                mysqli_error($link));
+                $q=mysqli_select_db($link,"permohonan");
+                $staff = $_SESSION['id_user'];
+                $name = $_SESSION['user_name'];
+                $query="SELECT * FROM leavereq WHERE name='$name' AND status = true";
+                $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+                $q=mysqli_query($link,$query);
+                $num_rows= mysqli_num_rows($q);
+                ?>
+                <div id="page-wrapper">
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    View Records
+                                </h1>
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-dashboard"></i>  <a href="mgrhome.php">Dashboard</a>
+                                    </li>
+                                    <li class="active">
+                                        <i class="fa fa-table"></i> Leave Records
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
-
+                        <!-- /.row -->
+                         <div class="row">
+                            <!--<div class="col-lg-6">-->
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Department</th>
+                                                <th>Type of Leave</th>
+                                                <th>Reason</th>
+                                                <th>Start Date</th>
+                                                <th>End Date</th>
+                                                <th>Status</th>
+                                                <th>Supported By</th>
+                                                <th>Validated By</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <?php
+                                            while($row=mysqli_fetch_array($result))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $row['name'];?></td>
+                                                <td><?php echo $row['department']?></td>
+                                                <td><?php echo $row['leavetype'];?></td>
+                                                <td><?php echo $row['reason'];?></td>
+                                                <td><?php echo $row['start_date'];?></td>
+                                                <td><?php echo $row['end_date'];?></td>
+                                                <td><?php echo $row['status'];?></td>
+                                                <td><?php echo $row['supported_by'];?></td>
+                                                <td><?php echo $row['validated_by'];?></td>
+                                            </tr>
+                                            <?php
+                                            }
+                                            mysqli_close($link);
+                                            ?>
+                                          </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- /.row -->
                     </div>
+                    <!-- /.container-fluid -->
                 </div>
-
-                </div>
-                <!-- /.row -->
-
+                <!-- /#page-wrapper -->
             </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+                <!-- /#page-wrapper -->
+            </div>
+            <!-- /#wrapper -->
+            <!-- jQuery -->
+            <script src="js/jquery.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+        </body>
+        </html>

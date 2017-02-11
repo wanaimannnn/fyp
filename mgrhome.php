@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -122,9 +123,29 @@ while( $row = mysqli_fetch_assoc($result) )
                     <li class="active">
                         <a href="mgrhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-					<li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> Application </a>
+
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-file"></i> Staff Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="applicationstatusofficeleave.php">Office Leave  </a>
+                            </li>
+                            <li>
+                                <a href="applicationstatusleave.php">Leave </a>
+                        </ul>
                     </li>
+
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-file"></i> Supervisor Application <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="applicationsvstatusofficeleave.php">Office Leave  </a>
+                            </li>
+                            <li>
+                                <a href="applicationsvstatusleave.php">Leave </a>
+                        </ul>
+                    </li>
+
 					<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> View Records <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
@@ -138,43 +159,7 @@ while( $row = mysqli_fetch_assoc($result) )
 					<li>
                         <a href="calendarmgr.php"><i class="fa fa-fw fa-table"></i> Calendar</a>
                     </li>
-					<!--<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-edit"></i> Forms <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="SVleaveoffice.html">Office Leave</a>
-                            </li>
-                            <li>
-                                <a href="SVleaveform.html">Leave </a>
-                            </li>
-						</ul>
-					</li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Records</a>
-                    </li>
-
-
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
-                </ul>
-            </div>
             <!-- /.navbar-collapse -->
         </nav>
 
