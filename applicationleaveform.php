@@ -273,8 +273,12 @@ while( $row = mysqli_fetch_assoc($result) )
                               <label> Supported By</label>
                               <input class="form-control" name="supported_by" value="<?php echo $row['name']; ?> " readonly>
                             </div>
-                        <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
+                            <div class="form-group">
+                              <label> Validated By</label>
+                              <input class="form-control" name="validated_by" readonly>
+                            </div>
+                        <button type="submit" class="btn btn-default"> Validate </button>
+
                         </form>
 
 
