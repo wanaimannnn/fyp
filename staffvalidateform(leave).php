@@ -20,7 +20,7 @@ $result = mysqli_query ($link,"UPDATE leavereq SET name='$name',department='$dep
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
-		."alert('The form has been updated');"
+		."alert('The form has been validated');"
 		."</script>"
 		."<meta http-equiv=Refresh content=\"0; URL=applicationstatusleave.php\">";
 mysqli_close($link);
