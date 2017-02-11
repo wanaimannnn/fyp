@@ -242,8 +242,8 @@ while( $row = mysqli_fetch_assoc($result) )
                                           <td><?php echo $row['start_date'];?></td>
                                           <td><?php echo $row['end_date'];?></td>
                                           <td><?php echo $row['status'];?></td>
-                                          <td></td>
-                                          <td></td>
+                                          <td><?php echo $row['supported_by'];?></td>
+                                          <td><?php echo $row['validated_by'];?></td>
                                       </tr>
                                       <?php
                                       }
