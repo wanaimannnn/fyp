@@ -246,7 +246,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div> -->
                             <div class="form-group">
                             <div> <label>Select Time Out:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout" value="<?php echo $row['timeout']; ?> " readonly>
+                                <input class="form-control" type="text" name="timeout" value="<?php echo $row['timeout']; ?> " readonly>
                             </div>
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
@@ -255,7 +255,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
                              <div class="form-group">
                             <div> <label>Select Time In:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein" value="<?php echo $row['timein']; ?> " readonly>
+                                <input input class="form-control" type="text" name="timein" value="<?php echo $row['timein']; ?> " readonly>
                             </div>
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
