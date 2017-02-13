@@ -36,19 +36,19 @@
 
   if($_SESSION['role']=='admin')
   {
-    echo("<SCRIPT language='javascript'>window.alert('Login Success, Welcome Admin!!');window.location='adminhome.php'; </SCRIPT>");
+    echo("<SCRIPT language='javascript'>window.alert('Login Success, Welcome Admin!!');window.location='admin/adminhome.php'; </SCRIPT>");
   }
   elseif($_SESSION['role']=='manager')
   {
-    echo("<SCRIPT language='javascript'> window.alert('Login Success, Welcome Manager!!');window.location='mgrhome.php'; </SCRIPT>");
+    echo("<SCRIPT language='javascript'> window.alert('Login Success, Welcome Manager!!');window.location='manager/mgrhome.php'; </SCRIPT>");
   }
   elseif($_SESSION['role']=='supervisor')
   {
-    echo("<SCRIPT language='javascript'> window.alert('Login Success, Welcome Supervisor!!');window.location='svhome.php'; </SCRIPT>");
+    echo("<SCRIPT language='javascript'> window.alert('Login Success, Welcome Supervisor!!');window.location='supervisor/svhome.php'; </SCRIPT>");
   }
   elseif($_SESSION['role']=='staff')
   {
-    echo("<SCRIPT language='javascript'> window.alert('Login Success, Welcome Staff!!');window.location='staffhome.php'; </SCRIPT>");
+    echo("<SCRIPT language='javascript'> window.alert('Login Success, Welcome Staff!!');window.location='staff/staffhome.php'; </SCRIPT>");
   }
 else
 {
