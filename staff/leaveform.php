@@ -14,9 +14,9 @@ $start_date = date('Y-m-d',strtotime($_POST['start_date']));
 $end_date= date('Y-m-d',strtotime($_POST['end_date']));
 $reason=mysqli_real_escape_string($link, $_POST['reason']);
 $status = $_POST['status'];
-// $verification = $_POST['verification']
+$role = $_POST['role'];
 
-$result = mysqli_query ($link,"INSERT INTO leavereq (name,department,leavetype,start_date,end_date,reason,status) VALUES ('$name','$department','$val','$start_date','$end_date','$reason','$status')")
+$result = mysqli_query ($link,"INSERT INTO leavereq (name,department,leavetype,start_date,end_date,reason,status,role) VALUES ('$name','$department','$val','$start_date','$end_date','$reason','$status','$role')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"

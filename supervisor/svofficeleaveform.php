@@ -18,7 +18,7 @@ $timein= $_POST['timein'];
 $status=$_POST['status'];
 $role=$_POST['role'];
 
-$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein,role) VALUES ('$name','$department','$val','$date','$radio','$reason','$timeout','$timein','$role')")
+$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein,status,role) VALUES ('$name','$department','$val','$date','$radio','$reason','$timeout','$timein','$status','$role')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"

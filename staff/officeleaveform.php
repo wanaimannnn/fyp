@@ -16,14 +16,15 @@ $reason=mysqli_real_escape_string($link, $_POST['reason']);
 $timeout= $_POST['timeout'];
 $timein= $_POST['timein'];
 $status=$_POST['status'];
+$role=$_POST['role'];
 
 
-$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein,status) VALUES ('$name','$department','$val','$date','$purpose','$reason','$timeout','$timein','$status')")
+$result = mysqli_query ($link,"INSERT INTO request (name,department,shift,datee,purpose,reason,timeout,timein,status,role) VALUES ('$name','$department','$val','$date','$purpose','$reason','$timeout','$timein','$status','$role')")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
 		."alert('Your form has been submitted');"
 		."</script>"
-		."<meta http-equiv=Refresh content=\"0; URL=statusofficeleave.php\">";
+		."<meta http-equiv=Refresh content=\"0; URL=staffofficeleave.php\">";
 mysqli_close($link);
 ?>

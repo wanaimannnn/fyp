@@ -275,7 +275,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </script>
                           </div>
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
-
+                             <input class="form-control" type="hidden"  name="role" value="<?php echo $row['role']; ?> " readonly>
                         <!--     <div class="form-group">
                                 <label>Document</label>
                                 <input type="file">
