@@ -127,7 +127,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <a href="applicationstaffstatusofficeleave.php">Office Leave  </a>
                             </li>
                             <li>
-                                <a href="Applicationstaffstatusleave.php">Leave </a>
+                                <a href="applicationstaffstatusleave.php">Leave </a>
                         </ul>
                     </li>
 

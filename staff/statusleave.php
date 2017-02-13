@@ -131,7 +131,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.php">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -151,7 +151,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                             <li>
-                                <a href="Leaverecords.php"></i> View Record</a>
+                                <a href="leaverecords.php"></i> View Record</a>
                             </li>
 
                         </ul>

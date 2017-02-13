@@ -228,6 +228,19 @@ while( $row = mysqli_fetch_assoc($result) )
                              }
                              ?>
                                  <hr>
+                                 
+                                  <div class="form-group">
+                                     <label>Status</label>
+                                     <select class="form-control" id="status" name="status" required>
+                                         <option></option>
+                                         <option value="1">Approve</option>
+                                         <option value="0">Not Approve</option>
+                                     </select>
+                                 </div>
+                                 <div class="form-group">
+                                   <label> Supported By</label>
+                                   <input class="form-control" name="supported_by" value="<?php echo $row['supported_by']; ?> " readonly>
+                                 </div>
                                  <?php
                                  $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
                                  mysqli_error($link));
@@ -240,18 +253,6 @@ while( $row = mysqli_fetch_assoc($result) )
                                  while( $row = mysqli_fetch_assoc($result) )
                                  {
                                ?>
-                                  <div class="form-group">
-                                     <label>Status</label>
-                                     <select class="form-control" id="status" name="status" required>
-                                         <option></option>
-                                         <option value="1">Approve</option>
-                                         <option value="0">Not Approve</option>
-                                     </select>
-                                 </div>
-                                 <div class="form-group">
-                                   <label> Supported By</label>
-                                   <input class="form-control" name="supported_by" value="<?php echo $row['name']; ?> " readonly>
-                                 </div>
                                  <div class="form-group">
                                    <label> Validated By</label>
                                    <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?>" readonly>
