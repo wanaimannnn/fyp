@@ -224,9 +224,6 @@ while( $row = mysqli_fetch_assoc($result) )
                                  <label>Reasons</label>
                                  <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
                                </div>
-                               <?php
-                             }
-                             ?>
                                  <hr>
                                  
                                   <div class="form-group">
@@ -240,6 +237,9 @@ while( $row = mysqli_fetch_assoc($result) )
                                  <div class="form-group">
                                    <label> Supported By</label>
                                    <input class="form-control" name="supported_by" value="<?php echo $row['supported_by']; ?> " readonly>
+                                      <?php
+                             }
+                             ?>
                                  </div>
                                  <?php
                                  $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
