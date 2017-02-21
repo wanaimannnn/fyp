@@ -132,7 +132,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.php">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -213,7 +213,7 @@ $num_rows= mysqli_num_rows($q);
                             <table class="table table-bordered table-hover">
                                   <thead>
                                     <tr>
-                                        
+
                                         <th><center>Name</center></th>
                                         <th><center>Purpose</center></th>
                                         <th><center>Reason</center></th>
@@ -232,7 +232,7 @@ $num_rows= mysqli_num_rows($q);
                                     ?>
                                     <tbody>
                                     <tr>
-                                        
+
                                         <td><?php echo $row['name'];?></td>
                                         <td><?php echo $row['purpose'];?></td>
                                         <td><?php echo $row['reason'];?></td>
