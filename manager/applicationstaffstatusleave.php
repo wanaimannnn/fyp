@@ -103,7 +103,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
+                            <a href="../logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -230,7 +230,7 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['end_date'];?></td>
                                         <td><?php echo $row['status'];?></td>
                                          <td><a href="applicationstaffleave(form).php?no=<?php echo $row['no'];?>">Validate </a>
-                                       
+
                                     </tr>
                                     <?php
                                     }
