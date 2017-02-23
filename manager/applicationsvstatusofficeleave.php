@@ -203,7 +203,7 @@ $num_rows= mysqli_num_rows($q);
 
                  <div class="row">
                     <!--<div class="col-lg-6">-->
-                  
+
 
                     </center>
                         <div class="table-responsive">
@@ -218,6 +218,7 @@ $num_rows= mysqli_num_rows($q);
                                         <th><center>Time Out</center></th>
                                         <th><center>Time In</center></th>
                                         <th><center>Status</center></th>
+                                        <th><center>Created Date</center></th>
                                         <th><center>Action</center></th>
 
                                     </tr>
@@ -228,7 +229,7 @@ $num_rows= mysqli_num_rows($q);
                                     {
                                     ?>
                                     <tbody>
-                                    <tr>
+                                    <tr align="center">
                                         <td><?php echo $row['name'];?></td>
                                         <td><?php echo $row['purpose'];?></td>
                                         <td><?php echo $row['reason'];?></td>
@@ -236,8 +237,9 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['timeout'];?></td>
                                         <td><?php echo $row['timein'];?></td>
                                         <td><?php echo $row['status'];?></td>
+                                        <td><?php echo $row['created'];?></td>
                                         <td><a href="applicationsvofficeleave(form).php?no=<?php echo $row['no'];?>">Validate </a>
-                                       
+
                                     </tr>
                                     <?php
                                     }

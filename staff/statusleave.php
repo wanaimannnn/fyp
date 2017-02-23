@@ -229,7 +229,7 @@ $num_rows= mysqli_num_rows($q);
                                     while($row=mysqli_fetch_array($result))
                                     {
                                     ?>
-                                    <tr>
+                                    <tr align="center">
                                         <td><?php echo $row['name'];?></td>
                                         <td><?php echo $row['leavetype'];?></td>
                                         <td><?php echo $row['reason'];?></td>

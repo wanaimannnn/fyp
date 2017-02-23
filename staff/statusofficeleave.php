@@ -231,8 +231,7 @@ $num_rows= mysqli_num_rows($q);
                                     {
                                     ?>
                                     <tbody>
-                                    <tr>
-
+                                    <tr align="center">
                                         <td><?php echo $row['name'];?></td>
                                         <td><?php echo $row['purpose'];?></td>
                                         <td><?php echo $row['reason'];?></td>

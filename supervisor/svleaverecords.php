@@ -227,15 +227,16 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <table class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Department</th>
-                                                <th>Type of Leave</th>
-                                                <th>Reason</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
-                                                <th>Status</th>
-                                                <th>Supported By</th>
-                                                <th>Validated By</th>
+                                                <th><center>Name</center></th>
+                                                <th><center>Department</center></th>
+                                                <th><center>Type of Leave</center></th>
+                                                <th><center>Reason</center></th>
+                                                <th><center>Start Date</center></th>
+                                                <th><center>End Date</center></th>
+                                                <th><center>Status</center></th>
+                                                <th><center>Supported By</center></th>
+                                                <th><center>Validated By</center></th>
+                                                <th><center>Created Date</center></th>
                                             </tr>
                                           </thead>
                                           <tbody>
@@ -243,7 +244,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                             while($row=mysqli_fetch_array($result))
                                             {
                                             ?>
-                                            <tr>
+                                            <tr align="center">
                                                 <td><?php echo $row['name'];?></td>
                                                 <td><?php echo $row['department']?></td>
                                                 <td><?php echo $row['leavetype'];?></td>
@@ -253,6 +254,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                                 <td><?php echo $row['status'];?></td>
                                                 <td><?php echo $row['supported_by'];?></td>
                                                 <td><?php echo $row['validated_by'];?></td>
+                                                <td><?php echo $row['created'];?></td>
                                             </tr>
                                             <?php
                                             }

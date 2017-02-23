@@ -215,13 +215,13 @@ while( $row = mysqli_fetch_assoc($result) )
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Type of Leave</th>
-                                        <th>Reason</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Status</th>
-										<th>Action</th>
+                                        <th><center>Name</center></th>
+                                        <th><center>Type of Leave</center></th>
+                                        <th><center>Reason</center></th>
+                                        <th><center>Start Date</center></th>
+                                        <th><center>End Date</center></th>
+                                        <th><center>Status</center></th>
+										                    <th><center>Action</center></th>
 
                                     </tr>
                                 </thead>

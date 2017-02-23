@@ -218,6 +218,7 @@ $num_rows= mysqli_num_rows($q);
                                         <th><center>Start Date</center></th>
                                         <th><center>End Date</center></th>
                                         <th><center>Status</center></th>
+                                        <th><center>Created Date</center></th>
                                         <th><center>Action</center></th>
 
                                     </tr>
@@ -228,15 +229,15 @@ $num_rows= mysqli_num_rows($q);
                                     while($row=mysqli_fetch_array($result))
                                     {
                                     ?>
-                                    <tr>
+                                    <tr align="center">
                                         <td><?php echo $row['name'];?></td>
                                         <td><?php echo $row['leavetype'];?></td>
                                         <td><?php echo $row['reason'];?></td>
                                         <td><?php echo $row['start_date'];?></td>
                                         <td><?php echo $row['end_date'];?></td>
                                         <td><?php echo $row['status'];?></td>
+                                        <td><?php echo $row['created'];?></td>
                                          <td><a href="svappleaveforms.php?no=<?php echo $row['no'];?>">Validate </a>
-
                                     </tr>
                                     <?php
                                     }

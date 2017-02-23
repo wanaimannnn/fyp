@@ -218,14 +218,14 @@ while( $row = mysqli_fetch_assoc($result) )
                             <table class="table table-bordered table-hover">
                                 <thead>
                                   <tr>
-                                      <th>Name</th>
-                                      <th>Purpose</th>
-                                      <th>Reason</th>
-                                      <th>Date</th>
-                                      <th>Time Out</th>
-                                      <th>Time In</th>
-                                      <th>Status</th>
-									  <th>Action</th>
+                                      <th><center>Name</center></th>
+                                      <th><center>Purpose</center></th>
+                                      <th><center>Reason</center></th>
+                                      <th><center>Date</center></th>
+                                      <th><center>Time Out</center></th>
+                                      <th><center>Time In</center></th>
+                                      <th><center>Status</center></th>
+									                    <th><center>Action</center></th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -234,7 +234,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                   while($row=mysqli_fetch_array($result))
                                   {
                                   ?>
-                                  <tr>
+                                  <tr align="center">
                                       <td><?php echo $row['name'];?></td>
                                       <td><?php echo $row['purpose'];?></td>
                                       <td><?php echo $row['reason'];?></td>
@@ -242,7 +242,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td><?php echo $row['timeout'];?></td>
                                       <td><?php echo $row['timein'];?></td>
                                       <td><?php echo $row['status'];?></td>
-									  <td><a href="svofficeleave(update).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="svofficeleave(delete).php?no=<?php echo $row['no'];?>">Delete</a></td>
+									                    <td><a href="svofficeleave(update).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="svofficeleave(delete).php?no=<?php echo $row['no'];?>">Delete</a></td>
                                   </tr>
                                   <?php
                                   }
