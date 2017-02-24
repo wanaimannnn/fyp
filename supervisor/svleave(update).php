@@ -102,7 +102,7 @@ while( $row = mysqli_fetch_assoc($result) )
                       </li>
 
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                          <a href="svchgpass.php"><i class="fa fa-fw fa-gear"></i> Settings</a>
                       </li>
                       <li class="divider"></li>
                       <li>
@@ -158,7 +158,7 @@ while( $row = mysqli_fetch_assoc($result) )
 						</ul>
 					</li>
 
-                     
+
 
                           <li>
                                 <a href="svcalendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>

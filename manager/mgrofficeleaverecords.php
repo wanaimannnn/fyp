@@ -101,7 +101,7 @@ while( $row = mysqli_fetch_assoc($result) )
                       </li>
 
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                          <a href="mgrchgpass.php"><i class="fa fa-fw fa-gear"></i> Settings</a>
                       </li>
                       <li class="divider"></li>
                       <li>

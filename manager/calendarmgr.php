@@ -71,7 +71,7 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-             
+
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
@@ -107,7 +107,7 @@ while( $row = mysqli_fetch_assoc($result) )
                       </li>
 
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                          <a href="mgrchgpass.php"><i class="fa fa-fw fa-gear"></i> Settings</a>
                       </li>
                       <li class="divider"></li>
                       <li>
@@ -162,7 +162,7 @@ while( $row = mysqli_fetch_assoc($result) )
                     <li>
                       <a href="calendarmgr.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                     </li>
-               
+
               </ul>
           </div>
           <!-- /.navbar-collapse -->

@@ -119,20 +119,6 @@ while( $row = mysqli_fetch_assoc($result) )
                   <li class="active">
                       <a href="adminhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
-                <!--  <li>
-                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Managements <i class="fa fa-fw fa-caret-down"></i></a>
-                      <ul id="demo" class="collapse">
-                          <li>
-                              <a href="#">Manager Management</a>
-                          </li>
-                          <li>
-                              <a href="#">Supervisor Management</a>
-                          </li>
-                          <li>
-                              <a href="#">Staff Management</a>
-                          </li>
-                      </ul>
-                  </li> -->
                   <li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-user"></i> User Registration <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="demo1" class="collapse">
@@ -150,14 +136,11 @@ while( $row = mysqli_fetch_assoc($result) )
                           </li>
                       </ul>
                   </li>
+              <!--    <li>
+                      <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
+                    </li> -->
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Supervisor Management</a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
+                      <a href="user_manage.php"><i class="fa fa-fw fa-edit"></i> User Management</a>
                   </li>
                   <li>
                       <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
@@ -207,7 +190,7 @@ while( $row = mysqli_fetch_assoc($result) )
              {
              ?>
              <div class="row">
-                 <div class="col-lg-6">
+                 <div class="col-sm-6 col-sm-offset-3">
                      <h2>User Biodata</h2>
                      <div class="table-responsive">
                          <table class="table table-user-information">

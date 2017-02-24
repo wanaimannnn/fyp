@@ -127,7 +127,7 @@ while( $row = mysqli_fetch_assoc($result) )
                           </li>
 
                           <li>
-                              <a href="#"></i> Supervisor Registration</a>
+                              <a href="svsignup.php"></i> Supervisor Registration</a>
                           </li>
 
                           <li>
@@ -139,27 +139,11 @@ while( $row = mysqli_fetch_assoc($result) )
                       <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
                     </li> -->
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Supervisor Management</a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
+                      <a href="user_manage.php"><i class="fa fa-fw fa-edit"></i> User Management</a>
                   </li>
                   <li>
                       <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
-                <!--    <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                  </li>
-
-                  <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li> -->
               </ul>
           </div>
           <!-- /.navbar-collapse -->
