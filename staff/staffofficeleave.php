@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -67,33 +68,7 @@ while( $row = mysqli_fetch_assoc($result) )
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                <ul class="dropdown-menu alert-dropdown">
-                    <li>
-                        <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                    </li>
-                    <li>
-                        <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">View All</a>
-                    </li>
-                </ul>
-            </li>
+
             <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -186,24 +161,35 @@ while( $row = mysqli_fetch_assoc($result) )
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-6 col-sm-offset-3">
+                    <form role="form" method="post" action="officeleaveform.php">
 
-                        <form role="form" method="post" action="officeleaveform.php">
+                      <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
 
-                          <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
-                          <div class="form-group">
-                        <label>Name </Label>
-                      <input class="form-control" name="name" value="<?php echo $row['name']; ?> " readonly>
-                          </div>
+                      <div class="table-responsive">
+                         <table class="table table-user-information">
+                       <div class="form-group">
+                           <tr>
+                             <td>
+                     <label> Name </Label></td>
+                     <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly></td>
+                   </tr>
+                   </div>
+                        <tr>
+                     <td>
+                         <div class="form-group">
+                             <label> Department </Label></td>
+                             <td><input class="form-control" name="ic" value="<?php echo $row['department']; ?>" readonly></td>
+                           </tr>
 
-                        <div class="form-group">
-                                <label>Department</label>
-                              <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                            </div>
+                         </div>
+
+                         <tr>
+                         <td>
 
                             <div class="form-group">
-                                <label>Shift</label>
-                                <div class="checkbox" name="shift" >
+                                <label>Shift</label><br></td>
+                                <td><div class="checkbox" name="shift" >
                                     <label>
                                         <input type="checkbox" name="chkbox[]" value="Normal">Normal
                                     </label>
@@ -222,18 +208,24 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <label>
                                         <input type="checkbox" name="chkbox[]" value="Evening">Evening
                                     </label>
-                                </div>
+                                </div></td>
                             </div>
+
+                            <tr>
+                            <td>
 
                            <div class="form-group">
-                                <label>Date</label>
+                                <label>Date</label></td>
                                 <br>
-                            <input class="form-group" id="date" name="date" type="date" required>
-                            </div>
+                            <td><input class="form-group" id="date" name="date" type="date" required>
+                            </div></td>
+
+                            <tr>
+                            <td>
 
                              <div class="form-group">
-                                <label>Purpose</label>
-                                <div class="radio">
+                                <label>Purpose</label></td>
+                                <td><div class="radio">
                                     <label>
                                         <input type="radio" name="purpose" id="optionsRadios1" value="Medical Checkup" checked> Medical Checkup
                                     </label>
@@ -246,44 +238,45 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <br><br>
                                     <textarea class="form-control" rows="3" name="reason"></textarea>
                                 </div>
-                            </div>
+                            </div></td>
 
-                          <!-- <div class="form-group">
-                                <label>Reason</label>
-                                <textarea class="form-control" rows="3" name="reason"></textarea>
-                            </div> -->
+                            <tr>
+                            <td>
 
                             <div class="form-group">
-                            <div> <label>Select Time Out:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
+                            <div> <label>Select Time Out:</label></td>
+                            <td><input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
                             </div>
 
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
                                 $('.sel-time-am').clockface();
                             </script>
-                            </div>
+                            </div></td></tr>
+
+                           <tr>
+                           <td>
 
                              <div class="form-group">
-                            <div> <label>Select Time In:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
+                            <div> <label>Select Time In:</label></td>
+                              <td>  <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
                             </div>
 
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
                                 $('.sel-time-am').clockface();
                             </script>
-                          </div>
+                          </div></td></tr>
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
-                             <input class="form-control" type="hidden"  name="role" value="<?php echo $row['role']; ?> " readonly>
-                        <!--     <div class="form-group">
-                                <label>Document</label>
-                                <input type="file">
-                            </div> -->
+                             <input class="form-control" type="hidden"  name="role" value="<?php echo $row['role']; ?> " readonly></td>
 
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
+                             <tr>
+                             <td colspan="2">
+                            <button type="submit" class="btn btn-default">Submit</button>&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-default">Reset</button></td></tr>
                         </form>
+                      </table>
+                    </div>
                     </div>
                 </div>
                 <?php

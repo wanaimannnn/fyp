@@ -118,30 +118,16 @@ while( $row = mysqli_fetch_assoc($result) )
                   <li class="active">
                       <a href="adminhome.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
-                <!--  <li>
-                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Managements <i class="fa fa-fw fa-caret-down"></i></a>
-                      <ul id="demo" class="collapse">
-                          <li>
-                              <a href="#">Manager Management</a>
-                          </li>
-                          <li>
-                              <a href="#">Supervisor Management</a>
-                          </li>
-                          <li>
-                              <a href="#">Staff Management</a>
-                          </li>
-                      </ul>
-                  </li> -->
                   <li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-user"></i> User Registration <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="demo1" class="collapse">
 
                           <li>
-                              <a href="#"> Manager Registration</a>
+                              <a href="mgrsignup.php"></i> Manager Registration</a>
                           </li>
 
                           <li>
-                              <a href="svsignup.php"> Supervisor Registration</a>
+                              <a href="svsignup.php"></i> Supervisor Registration</a>
                           </li>
 
                           <li>
@@ -153,27 +139,11 @@ while( $row = mysqli_fetch_assoc($result) )
                       <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
                     </li> -->
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Manager Management</a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Supervisor Management</a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-fw fa-edit"></i> Staff Management</a>
+                      <a href="user_manage.php"><i class="fa fa-fw fa-edit"></i> User Management</a>
                   </li>
                   <li>
                       <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
-                <!--    <li>
-                      <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                  </li>
-
-                  <li>
-                      <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                  </li>
-                  <li>
-                      <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                  </li> -->
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -223,13 +193,24 @@ while( $row = mysqli_fetch_assoc($result) )
              <div class="row">
                  <div class="col-sm-6 col-sm-offset-3">
 
-                     <form role="form" method="post" action="updatebio.php">
+                     <form role="form" method="post" action="updatebio.php" enctype="multipart/form-data">
                        <br>
                       <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
 
-                       <h2 align="center">User Biodata</h2>
+                      <h2>User Biodata</h2>
                        <div class="table-responsive">
                          <table class="table table-user-information">
+                           <!--
+                           <th colspan="2"><center>User Biodata</center></td>
+                           -->
+                           <tr>
+                             <td colspan="2"><center><?php echo $row['profile'];?></center></td>
+                           </tr>
+                           <tr>
+                             <td>
+                                 <td><input name="profile" type="file" id="profile">
+                               </div></td>
+                             </tr>
                        <div class="form-group">
                            <tr>
                              <td>
@@ -273,15 +254,20 @@ while( $row = mysqli_fetch_assoc($result) )
                          <td>
                      <div class="form-group">
                              <label>Department</label></td>
-                            <td> <select class="form-control" name="department" >
-                               <option>--Please Choose One--</option>
-                               <option value="Admin">Admin</option>
-                               <option value="Human Resource">Human Resources</option>
-                               <option value="Kitchen">Kitchen</option>
-                               <option value="Front Office">Front Service Office</option>
-                               <option value="Account">Account</option>
-                               <option value="Housekeeping">House Keeping</option>
-                               <option value="Landscape/Maintenance">Landscape/Maintenance</option>
+                            <td> <select class="form-control" name="department" required>
+                              <option value="">--Please Choose One--</option>
+                              <option value="Admin">Admin</option>
+                              <option value="Human Resources">Human Resources</option>
+                              <option value="Sales & Marketing">Sales & Marketing</option>
+                              <option value="Kitchen">Kitchen</option>
+                              <option value="Front Office">Front Service Office</option>
+                              <option value="Account">Account</option>
+                              <option value="House Keeping">House Keeping</option>
+                              <option value="Landscape">Landscape</option>
+                              <option value="Security">Security</option>
+                              <option value="Food & Beverages">Food & Beverages</option>
+                              <option value="Maintenance">Maintenance</option>
+                            </select>
                              </select></td>
                          </div>
                        </tr>
@@ -349,6 +335,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 </label></td>
                             </div>
                           </tr>
+
                             <?php
                             }
                             ?>

@@ -67,42 +67,11 @@ while( $row = mysqli_fetch_assoc($result) )
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="displaybiodatamgr.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                         </li>
                         <li>
                             <a href="mgrchgpass.php"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -186,15 +155,15 @@ while( $row = mysqli_fetch_assoc($result) )
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-building fa-5x"></i>
+                                        <i class="fa fa-desktop fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>Administration</div>
+                                        <div class="huge"></div>
+                                        <div>Front Office</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(frontoffice).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -203,21 +172,20 @@ while( $row = mysqli_fetch_assoc($result) )
                             </a>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-users fa-5x"></i>
+                                        <i class="fa fa-trash fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>Human Resources</div>
+                                        <div class="huge"></div>
+                                        <div>House Keeping</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(housekeeping).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -234,12 +202,12 @@ while( $row = mysqli_fetch_assoc($result) )
                                         <i class="fa fa-cutlery fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
+                                        <div class="huge"></div>
                                         <div>Kitchen</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(kitchen).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -253,15 +221,15 @@ while( $row = mysqli_fetch_assoc($result) )
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-money fa-5x"></i>
+                                        <i class="fa fa-wrench fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Account</div>
+                                        <div class="huge"></div>
+                                        <div>Maintenance</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(maintenance).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -271,22 +239,21 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
+            <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-building fa-5x"></i>
+                                        <i class="fa fa-tree fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>Administration</div>
+                                        <div class="huge"></div>
+                                        <div>Landscape</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(landscape).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -304,12 +271,12 @@ while( $row = mysqli_fetch_assoc($result) )
                                         <i class="fa fa-users fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
+                                        <div class="huge"></div>
                                         <div>Human Resources</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(humanresources).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -323,15 +290,61 @@ while( $row = mysqli_fetch_assoc($result) )
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-cutlery fa-5x"></i>
+                                        <i class="fa fa-apple fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>Kitchen</div>
+                                        <div class="huge"></div>
+                                        <div>Food And Beverages</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mgrdeplist(food).php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+					<div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-money fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div>Account</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mgrdeplist(account).php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+				 <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-briefcase fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div>Sales And Marketing</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mgrdeplist(sales).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -341,7 +354,30 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
 
-                </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-lock fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div>Security</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mgrdeplist(security).php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+				</div>
+            </div>
 
 
 

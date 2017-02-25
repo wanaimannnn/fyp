@@ -67,8 +67,8 @@ while( $row = mysqli_fetch_assoc($result) )
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
 
-              </li>
-              <li class="dropdown">
+
+              <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                   <ul class="dropdown-menu alert-dropdown">
                       <li>
@@ -94,7 +94,7 @@ while( $row = mysqli_fetch_assoc($result) )
                           <a href="#">View All</a>
                       </li>
                   </ul>
-              </li>
+              </li>-->
               <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -188,24 +188,34 @@ while( $row = mysqli_fetch_assoc($result) )
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-6 col-sm-offset-3">
 
                       <form role="form" method="post" action="leaveform.php">
-                              <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
+                           <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
+
+                      <div class="table-responsive">
+                         <table class="table table-user-information">
+                       <div class="form-group">
+                       <tr>
+                       <td>
+                                <label>Name</label></td>
+                                <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                 <p class="help-block">.</p>
+                                </td></tr>
                             </div>
+                            <tr>
+                            <td>
 
                             <div class="form-group">
-                                    <label>Department</label>
-                                  <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                                    <label>Department</label></td>
+                                  <td><input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                                  </td></tr>
                                 </div>
-
+                                <tr>
+                                <td>
 							              <div class="form-group">
-                                <label>Type of Leave</label>
-                                <div class="checkbox" name="leavetype">
+                                <label>Type of Leave</label></td>
+                                <td><div class="checkbox" name="leavetype">
                                     <label>
                                         <input type="checkbox" name="chkbox[]" value="Annual Leave">Annual Leave
                                     </label>
@@ -233,41 +243,41 @@ while( $row = mysqli_fetch_assoc($result) )
                 								<div class="checkbox">
                 									<label>
                 										<input type="checkbox" name="chkbox[]" value="Hospital Leave">Hospital Leave
-                									</label>
+                									</label></td></tr>
                 								</div>
                             </div>
-
+                            <tr>
+                            <td>
       							      <div class="form-group">
-      									<label>Leave Requested to Commence On</label>
-      									    <div id="datetimepicker" class="input-append date">
-      									               <input class="form-group" name="start_date" type="date"></input>&nbsp;Until&nbsp;<input class="form-group" name="end_date" type="date"></input>
+      									<label>Leave Requested Date</label></td>
+      									   <td> <div id="datetimepicker" class="input-append date">
+      									               <input class="form-group" name="start_date" type="date"></input><br>Until<br><br><input class="form-group" name="end_date" type="date"></input></td></tr>
       							        </div>
                           </div>
 
-      							<div class="form-group">
-      							<label> Will Resume Duty On:</label>
-      							</div>
 
+                          <tr>
+                          <td>
 							              <div class="form-group">
-                                <label>Reasons</label>
-                                <textarea class="form-control" rows="3" name="reason"></textarea>
+                                <label>Reasons</label></td>
+                                <td><textarea class="form-control" rows="3" name="reason"></textarea></td></tr>
                             </div>
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
                             <input class="form-control" type="hidden" name="role" value="<?php echo $row['role']; ?>" readonly>
-					              <!--<div class="form-group">
-                                <label>File input</label>
-                                <input type="file">
-                            </div> -->
 
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
+                            <tr>
+                            <td colspan="2">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="reset" class="btn btn-default">Reset</button></td></tr>
 
                         </form>
+                      </table>
+                    </div>
                         <?php
                                 }
                                 ?>
                     </div>
-
+                  </div>
                 </div>
                 <!-- /.row -->
 

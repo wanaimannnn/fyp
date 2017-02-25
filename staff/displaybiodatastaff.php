@@ -70,33 +70,7 @@ while( $row = mysqli_fetch_assoc($result) )
             <ul class="nav navbar-right top-nav">
 
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -218,68 +192,71 @@ $num_rows= mysqli_num_rows($q);
                {
                ?>
                <div class="row">
-                   <div class="col-lg-6">
-                       <h2>User Biodata</h2>
-                       <div class="table-responsive">
-                           <table class="table table-user-information">
+                 <div class="col-sm-6 col-sm-offset-3">
+                     <h2>User Biodata</h2>
+                     <div class="table-responsive">
+                         <table class="table table-user-information">
+                             <tbody>
                                <tbody>
-                                 <tbody>
-                                  <tr>
-                                    <td>Name:</td>
-                                    <td><?php echo $row['name'];?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Identification Card:</td>
-                                    <td><?php echo $row['ic'];?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Address:</td>
-                                    <td><?php echo $row['address'];?></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Mobile Number:</td>
-                                    <td><?php echo $row['mobileno'];?></td>
-                                  </tr>
-                                   <tr>
-                                    <td>Position:</td>
-                                    <td><?php echo $row['position'];?></td>
-                                  </tr>
-                                  <tr>
-                                   <td>Department:</td>
-                                   <td><?php echo $row['department'];?></td>
+                               <tr>
+                                   <td colspan="2"><center><?php echo $row['profile'];?></center></td>
+                                 </tr>
+                                <tr>
+                                  <td>Name:</td>
+                                  <td><?php echo $row['name'];?></td>
+                                </tr>
+                                <tr>
+                                  <td>Identification Card:</td>
+                                  <td><?php echo $row['ic'];?></td>
+                                </tr>
+                                <tr>
+                                  <td>Address:</td>
+                                  <td><?php echo $row['address'];?></td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile Number:</td>
+                                  <td><?php echo $row['mobileno'];?></td>
+                                </tr>
+                                 <tr>
+                                  <td>Position:</td>
+                                  <td><?php echo $row['position'];?></td>
+                                </tr>
+                                <tr>
+                                 <td>Department:</td>
+                                 <td><?php echo $row['department'];?></td>
+                               </tr>
+                               <tr>
+                                <td>Gender:</td>
+                                <td><?php echo $row['gender'];?></td>
+                                </tr>
+                                <tr>
+                                 <td>Citizen Status:</td>
+                                 <td><?php echo $row['citizenstatus'];?></td>
                                  </tr>
                                  <tr>
-                                  <td>Gender:</td>
-                                  <td><?php echo $row['gender'];?></td>
-                                  </tr>
-                                  <tr>
-                                   <td>Citizen Status:</td>
-                                   <td><?php echo $row['citizenstatus'];?></td>
-                                   </tr>
-                                   <tr>
-                                    <td>Race</td>
-                                    <td><?php echo $row['race'];?></td>
-                                  </tr>
-                                  <tr>
-                                   <td>Religion:</td>
-                                   <td><?php echo $row['religion'];?></td>
-                                   </tr>
-                                   <tr>
-                                  <td>Marital Status:</td>
-                                  <td><?php echo $row['maritalstatus'];?></td>
-                                   </tr>
-                                   <tr>
-                                    <td>Email:</td>
-                                    <td><?php echo $row['email'];?></td>
-                                  </tr>
-                               </tbody>
-                               <?php
-                               }
-                               mysqli_close($link);
-                               ?>
-                           </table>
-                       </div>
-                   </div>
+                                  <td>Race</td>
+                                  <td><?php echo $row['race'];?></td>
+                                </tr>
+                                <tr>
+                                 <td>Religion:</td>
+                                 <td><?php echo $row['religion'];?></td>
+                                 </tr>
+                                 <tr>
+                                <td>Marital Status:</td>
+                                <td><?php echo $row['maritalstatus'];?></td>
+                                 </tr>
+                                 <tr>
+                                  <td>Email:</td>
+                                  <td><?php echo $row['email'];?></td>
+                                </tr>
+                             </tbody>
+                             <?php
+                             }
+                             mysqli_close($link);
+                             ?>
+                         </table>
+                     </div>
+                 </div>
                 <!-- /.row -->
       <!--	<center>
                  <h1 class="page-header">

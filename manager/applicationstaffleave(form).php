@@ -65,35 +65,6 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-
-              </li>
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu alert-dropdown">
-                      <li>
-                          <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                          <a href="#">View All</a>
-                      </li>
-                  </ul>
-              </li>
               <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -193,51 +164,85 @@ while( $row = mysqli_fetch_assoc($result) )
                      </div>
                      <!-- /.row -->
                      <div class="row">
-                         <div class="col-lg-6">
+                         <div class="col-lg-6 col-sm-offset-3">
                              <form role="form" method="post" action="mgrvalidateform(staffleave).php">
                                <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" value="<?php echo $row['no']; ?>" required>
-                             <div class="form-group">
-                                 <label>Name</label>
+                            <div class="table-responsive">
+                         <table class="table table-user-information">  
+					   <tr>
+					   <td>						 
+							<div class="form-group">
+                                 <label>Name</label><td>
                                  <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                  <p class="help-block">.</p>
-                             </div>
-                             <div class="form-group">
-                                 <label>Department</label>
+							</tr>
+							</td>
+							</td>                         
+						 </div>  
+					   <tr>
+					   <td>                         
+						 <div class="form-group">
+                                 <label>Department</label><td>
                                    <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                             </div>
-                             <div class="form-group">
-                                 <label>Type of Leave</label>
+							</tr>
+							</td>
+							</td>                         
+						 </div>
+					   <tr>
+					   <td>                           
+						   <div class="form-group">
+                                 <label>Type of Leave</label><td>
                                  <div class="checkbox" name="leavetype">
                                  <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
                                  </div>
-                             </div>
-                           <div class="form-group">
-                         <label>Leave Requested to Commence On</label>
+							</tr>
+							</td>
+							</td>                          
+						  </div>
+					   <tr>
+					   <td>                        
+						<div class="form-group">
+                         <label>Leave Requested Date</label><td>
                              <div id="datetimepicker" class="input-append date">
-                                        <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input>&nbsp;Until&nbsp;<input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
+                                        <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input><br>Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
                              </div>
-                           </div>
-                     <div class="form-group">
-                     <label> Will Resume Duty On:</label>
-                     </div>
+							</tr>
+							</td>
+							</td>                        
+						</div>
+					   <tr>
+					   <td>                   
                              <div class="form-group">
-                                 <label>Reasons</label>
+                                 <label>Reasons</label><td>
                                  <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
-                               </div>
+							</tr>
+							</td>
+							</td>                             
+							 </div>
                                  <hr>
-
+                        <tr>
+						<td>
                                   <div class="form-group">
-                                     <label>Status</label>
+                                     <label>Status</label><td>
                                      <select class="form-control" id="status" name="status" required>
                                          <option></option>
                                          <option value="1">Approve</option>
                                          <option value="0">Not Approve</option>
-                                     </select>
-                                 </div>
-                                 <div class="form-group">
-                                   <label> Supported By</label>
+                                								</select>
+							</tr>
+							</td>
+							</td>                               
+							   </div>
+					   <tr>
+					   <td>                           
+						   <div class="form-group">
+                                   <label> Supported By</label><td>
                                    <input class="form-control" name="supported_by" value="<?php echo $row['supported_by']; ?> " readonly>
-                                      <?php
+							</tr>
+							</td>
+							</td>
+							</div>
+								<?php
                              }
                              ?>
                                  </div>
@@ -253,12 +258,22 @@ while( $row = mysqli_fetch_assoc($result) )
                                  while( $row = mysqli_fetch_assoc($result) )
                                  {
                                ?>
-                                 <div class="form-group">
-                                   <label> Validated By</label>
+					   <tr>
+					   <td>                           
+						   <div class="form-group">
+                                   <label> Validated By</label><td>
                                    <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?>" readonly>
-                                 </div>
-                             <button type="submit" class="btn btn-default"> Validate </button>
-                             </form>
+							</tr>
+							</td>
+							</td>                           		
+								</div>
+					   <tr>
+					   <td>                           
+						   <button type="submit" class="btn btn-default"> Validate </button>
+							</tr>
+							</td>
+							</td>                         
+						 </form>
                                  </ul>
                          </div>
                      </div>

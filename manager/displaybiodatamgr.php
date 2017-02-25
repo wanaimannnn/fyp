@@ -68,34 +68,6 @@ while( $row = mysqli_fetch_assoc($result) )
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
-
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu alert-dropdown">
-                      <li>
-                          <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                          <a href="#">View All</a>
-                      </li>
-                  </ul>
-              </li>
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -239,12 +211,15 @@ while( $row = mysqli_fetch_assoc($result) )
                {
                ?>
                <div class="row">
-                   <div class="col-lg-6">
+                   <div class="col-sm-6 col-sm-offset-3">
                        <h2>User Biodata</h2>
                        <div class="table-responsive">
                            <table class="table table-user-information">
                                <tbody>
                                  <tbody>
+								 <tr>
+                                   <td colspan="2"><center><?php echo $row['profile'];?></center></td>
+                                 </tr>
                                   <tr>
                                     <td>Name:</td>
                                     <td><?php echo $row['name'];?></td>

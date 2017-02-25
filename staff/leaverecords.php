@@ -66,7 +66,7 @@ while( $row = mysqli_fetch_assoc($result) )
               <!-- Top Menu Items -->
               <ul class="nav navbar-right top-nav">
 
-                  <li class="dropdown">
+                  <!--<li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                       <ul class="dropdown-menu alert-dropdown">
                           <li>
@@ -92,7 +92,7 @@ while( $row = mysqli_fetch_assoc($result) )
                               <a href="#">View All</a>
                           </li>
                       </ul>
-                  </li>
+                  </li>-->
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                       <ul class="dropdown-menu">
@@ -222,6 +222,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <th><center>Supported By</center></th>
                                       <th><center>Validated By</center></th>
                                       <th><center>Created Date</center></th>
+                                      <th><center>Action</center></th>
 
                                   </tr>
                                 </thead>
@@ -242,6 +243,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td><?php echo $row['supported_by'];?></td>
                                       <td><?php echo $row['validated_by'];?></td>
                                       <td><?php echo $row['created'];?></td>
+                                      <td><a href="staffleave(print).php?no=<?php echo $row['no'];?>"> Print </a></td>
                                   </tr>
                                   <?php
                                   }

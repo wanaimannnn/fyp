@@ -182,7 +182,8 @@ while( $row = mysqli_fetch_assoc($result) )
 
             </div>
             <!-- /.container-fluid -->
-
+            <br>
+            <br>
         </div>
         <!-- /#page-wrapper -->
 

@@ -171,7 +171,7 @@ while( $row = mysqli_fetch_assoc($result) )
              <div class="row">
                  <div class="col-lg-12">
                      <h1 class="page-header">
-                         Tables
+                         Profile
                      </h1>
                      <ol class="breadcrumb">
                          <li>
@@ -196,6 +196,9 @@ while( $row = mysqli_fetch_assoc($result) )
                          <table class="table table-user-information">
                              <tbody>
                                <tbody>
+                                 <tr>
+                                   <td colspan="2"><center><?php echo $row['profile'];?></center></td>
+                                 </tr>
                                 <tr>
                                   <td>Name:</td>
                                   <td><?php echo $row['name'];?></td>
@@ -256,7 +259,8 @@ while( $row = mysqli_fetch_assoc($result) )
 
          </div>
          <!-- /.container-fluid -->
-
+         <br>
+         <br>
      </div>
      <!-- /#page-wrapper -->
 

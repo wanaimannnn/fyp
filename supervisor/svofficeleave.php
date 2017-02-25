@@ -68,33 +68,6 @@ while( $row = mysqli_fetch_assoc($result) )
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                  <ul class="dropdown-menu alert-dropdown">
-                      <li>
-                          <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                      </li>
-                      <li>
-                          <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                          <a href="#">View All</a>
-                      </li>
-                  </ul>
-              </li>
-              <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-user"></i> <?php echo $row['name']; ?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
@@ -182,99 +155,148 @@ while( $row = mysqli_fetch_assoc($result) )
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-offset-3">
 
                         <form role="form" method="post" action="svofficeleaveform.php">
 
                           <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
-                          <div class="form-group">
-                        <label>Name </Label>
-                        <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
-                          </div>
+						           <div class="table-responsive">
+                         <table class="table table-user-information">
+              						  <div class="form-group">
+              						  <tr>
+              						  <td>
+                                      <label>Name </Label></td>
+                                    <td>  <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
 
-                        <div class="form-group">
-                                <label>Department</label>
-                                  <input class="form-control" name="department" value="<?php echo $row['department']; ?>" readonly>
-                            </div>
+              						  </td>
 
-                            <div class="form-group">
-                                <label>Shift</label>
-                                <div class="checkbox" name="shift" >
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Normal">Normal
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Morning">Morning
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Afternoon">Afternoon
-                                    </label>
-                                </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="chkbox[]" value="Evening">Evening
-                                    </label>
-                                </div>
-                            </div>
+                            </tr>
+              						  </div>
 
-                           <div class="form-group">
-                                <label>Date</label>
-                                <br>
-                            <input class="form-group" id="date" name="date" type="date" required>
-                            </div>
+              						<tr>
+              						<td>
+                                      <div class="form-group">
+                                              <label>Department</label></td>
+                                              <td>  <input class="form-control" name="department" value="<?php echo $row['department']; ?>" readonly>
 
-                             <div class="form-group">
-                                <label>Purpose</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="purpose" id="optionsRadios1" value="Medical Checkup" checked> Medical Checkup
-                                    </label>
-                                </div>
+              						</td>
+              				</tr>
+              						   </div>
 
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="purpose" id="optionsRadios2" value="Others">Others, state your reason below
-                                    </label>
-                                    <br><br>
-                                    <textarea class="form-control" rows="3" name="reason"></textarea>
-                                </div>
-                            </div>
+              							<tr>
+              							<td>
+                                          <div class="form-group">
+                                              <label>Shift</label></td>
+                                          <td>    <div class="checkbox" name="shift" >
+                                                  <label>
+                                                      <input type="checkbox" name="chkbox[]" value="Normal">Normal
+                                                  </label>
+                                              </div>
+                                              <div class="checkbox">
+                                                  <label>
+                                                      <input type="checkbox" name="chkbox[]" value="Morning">Morning
+                                                  </label>
+                                              </div>
+                                              <div class="checkbox">
+                                                  <label>
+                                                      <input type="checkbox" name="chkbox[]" value="Afternoon">Afternoon
+                                                  </label>
+                                              </div>
+                                               <div class="checkbox">
+                                                  <label>
+                                                      <input type="checkbox" name="chkbox[]" value="Evening">Evening
+                                                  </label>
+                                              </div>
+                                              	</td>
+              								</tr>
 
-                          <!-- <div class="form-group">
-                                <label>Reason</label>
-                                <textarea class="form-control" rows="3" name="reason"></textarea>
-                            </div> -->
 
-                            <div class="form-group">
-                            <div> <label>Select Time Out:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
-                            </div>
+                                          </div>
 
-                            <script type="text/javascript">
-                                $('.sel-time').clockface({format: 'HH:mm'});
-                                $('.sel-time-am').clockface();
-                            </script>
-                            </div>
+              							<tr>
+              							<td>
+                                         <div class="form-group">
+                                              <label>Date</label></td>
+                                              <br>
+                                          <td><input class="form-group" id="date" name="date" type="date" required>
 
-                             <div class="form-group">
-                            <div> <label>Select Time In:</label>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
-                            </div>
+              							</td>
+              							  </tr>
+              							</div>
 
-                            <script type="text/javascript">
-                                $('.sel-time').clockface({format: 'HH:mm'});
-                                $('.sel-time-am').clockface();
-                            </script>
-                          </div>
-                            <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
-                            <input class="form-control" type="hidden" name="role" value="<?php echo $row['role']; ?>" readonly>
-                            <button type="submit" class="btn btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-default">Reset Button</button>
-                        </form>
+              							<tr>
+              							<td>
+                                           <div class="form-group">
+                                              <label>Purpose</label></td>
+                                            <td>  <div class="radio">
+                                                  <label>
+                                                      <input type="radio" name="purpose" id="optionsRadios1" value="Medical Checkup" checked> Medical Checkup
+                                                  </label>
+
+                                              </div>
+
+                                              <div class="radio">
+                                                  <label>
+                                                      <input type="radio" name="purpose" id="optionsRadios2" value="Others">Others, state your reason below
+                                                  </label>
+                                                  <br><br>
+                                                  <textarea class="form-control" rows="3" name="reason"></textarea>
+                                              </div>
+
+              								</td>
+                              </tr>
+                                          </div>
+
+                                        <!-- <div class="form-group">
+                                              <label>Reason</label>
+                                              <textarea class="form-control" rows="3" name="reason"></textarea>
+                                          </div> -->
+
+              							<tr>
+              							<td>
+                                          <div class="form-group">
+                                          <div> <label>Select Time Out:</label></td>
+                                          <td>    <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
+
+              							</td>
+                            </tr>
+              							</div>
+
+
+                                          <script type="text/javascript">
+                                              $('.sel-time').clockface({format: 'HH:mm'});
+                                              $('.sel-time-am').clockface();
+                                          </script>
+
+                                          </div>
+
+              							<tr>
+              							<td>
+                                           <div class="form-group">
+                                          <div> <label>Select Time In:</label></td>
+                                      <td>        <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
+
+              							</td>
+              						</tr>
+              							</div>
+
+
+                                          <script type="text/javascript">
+                                              $('.sel-time').clockface({format: 'HH:mm'});
+                                              $('.sel-time-am').clockface();
+                                          </script>
+                                        </div>
+              						  <tr>
+              						  <td colspan="2">
+                                          <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
+                                          <input class="form-control" type="hidden" name="role" value="<?php echo $row['role']; ?>" readonly>
+                                          <button type="submit" class="btn btn-default">Submit </button>
+                                          <button type="reset" class="btn btn-default">Reset </button>
+                                      </form>
+              						</tr>
+              						</td>
+                        </table>
+                      </div>
                     </div>
                     <?php
                             }

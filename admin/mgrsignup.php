@@ -173,77 +173,104 @@ while( $row = mysqli_fetch_assoc($result) )
              <!-- /.row -->
 
              <div class="row">
-                 <div class="col-lg-6">
+                 <div class="col-sm-6 col-sm-offset-3">
 
-                     <form role="form" method="post" action="mgrsignupprocess.php">
+                     <form role="form" method="post" action="mgrsignupprocess.php" enctype="multipart/form-data">
                       <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" required>
+                      <br>
+                      <br>
+                      <div class="table-responsive">
+                        <table class="table table-user-information">
+                          <tr>
+                            <td>
                        <div class="form-group">
-                     <label> Name </Label>
-                     <input class="form-control" name="name">
+                     <label> Name </Label></td>
+                  <td>   <input class="form-control" name="name" placeholder="Enter name"> </td>
+                    </tr>
 
                    </div>
-
+                   <tr>
+                     <td>
                          <div class="form-group">
-                             <label> Number IC </Label>
-                             <input class="form-control" name="ic">
+                             <label> Number IC </Label> </td>
+                            <td> <input class="form-control" name="ic" placeholder="Enter IC number"> </td>
 
                          </div>
-
+                           </tr>
+                           <tr>
+                             <td>
                           <div class="form-group">
-                             <label>Address</label>
-                             <textarea class="form-control" rows="3" name="address"></textarea>
+                             <label>Address</label></td>
+                             <td><textarea class="form-control" rows="3" name="address" placeholder="Enter address"></textarea></td>
                          </div>
-
+                       </tr>
+                       <tr>
+                         <td>
                          <div class="form-group">
-                             <label> Phone Number </Label>
-                             <input class="form-control" name="mobileno">
+                             <label> Phone Number </Label></td>
+                             <td><input class="form-control" name="mobileno" placeholder="Enter mobile number"></td>
 
                          </div>
-
+                       </tr>
+                       <tr>
+                         <td>
                          <div class="form-group">
-                             <label> Position </Label>
-                             <input class="form-control" name="position">
+                             <label> Position </Label></td>
+                            <td> <input class="form-control" name="position" placeholder="Enter position"></td>
 
                          </div>
-
+                       </tr>
+                       <tr>
+                         <td>
                      <div class="form-group">
-                             <label>Department</label>
-                             <select class="form-control" name="department">
-                               <option></option>
+                             <label>Department</label> </td>
+                            <td> <select class="form-control" name="department" required>
+                               <option value="">--Please Choose One--</option>
                                <option value="Admin">Admin</option>
-                               <option value="Human Resource">Human Resources</option>
+                               <option value="Human Resources">Human Resources</option>
+                               <option value="Sales & Marketing">Sales & Marketing</option>
                                <option value="Kitchen">Kitchen</option>
                                <option value="Front Office">Front Service Office</option>
                                <option value="Account">Account</option>
-                               <option value="Housekeeping">House Keeping</option>
-                               <option value="Landscape/Maintenance">Landscape/Maintenance</option>
-                             </select>
+                               <option value="House Keeping">House Keeping</option>
+                               <option value="Landscape">Landscape</option>
+                               <option value="Security">Security</option>
+                               <option value="Food & Beverages">Food & Beverages</option>
+                               <option value="Maintenance">Maintenance</option>
+                             </select></td>
                          </div>
-
+                       </tr>
+                       <tr>
+                         <td>
                            <div class="form-group">
-                                <label>Gender</label><br>
-                                <label class="radio-inline">
+                                <label>Gender</label><br> </td>
+                              <td>  <label class="radio-inline">
                                     <input type="radio" name="gender" id="optionsRadiosInline1" value="Male" checked>Male
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="gender" id="optionsRadiosInline2" value="Female">Female
-                                </label>
+                                </label></td>
                             </div>
+                          </tr>
+                          <tr>
+                            <td>
 
                                <div class="form-group">
-                                <label>Citizen Status</label><br>
-                                <label class="radio-inline">
+                                <label>Citizen Status</label><br></td>
+                              <td>  <label class="radio-inline">
                                     <input type="radio" name="citizenstatus" id="optionsRadiosInline1" value="Malaysian" checked>Malaysia
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="citizenstatus" id="optionsRadiosInline2" value="Other">Others
-                                </label>
+                                </label></td>
                               <!--   <input class="form-control" name="citizen" > -->
                             </div>
-
+                          </tr>
+                          <tr>
+                            <td>
                             <div class="form-group">
-                                <label>Race</label><br>
-                                <label class="radio-inline">
+                                <label>Race</label><br></td>
+                                <td><label class="radio-inline">
                                     <input type="radio" name="race" id="optionsRadiosInline1" value="Malay" checked>Malay
                                 </label>
                                 <label class="radio-inline">
@@ -254,13 +281,16 @@ while( $row = mysqli_fetch_assoc($result) )
                                 </label>
                                  <label class="radio-inline">
                                     <input type="radio" name="race" id="optionsRadiosInline3" value="Others">Others
-                                </label>
+                                </label></td>
                                 <!-- <input class="form-control" name="race" > -->
                             </div>
+                          </tr>
+                          <tr>
+                            <td>
 
                             <div class="form-group">
-                                <label>Religion</label><br>
-                                <label class="radio-inline">
+                                <label>Religion</label><br></td>
+                              <td>  <label class="radio-inline">
                                     <input type="radio" name="religion" id="optionsRadiosInline1" value="Islam" checked>Islam
                                 </label>
                                 <label class="radio-inline">
@@ -271,13 +301,16 @@ while( $row = mysqli_fetch_assoc($result) )
                                 </label>
                                  <label class="radio-inline">
                                     <input type="radio" name="religion" id="optionsRadiosInline3" value="Others">Others
-                                </label>
+                                </label></td>
                                <!-- <input class="form-control" name="religion" > -->
                             </div>
+                          </tr>
+                          <tr>
+                            <td>
 
                              <div class="form-group">
-                                <label>Marital Status</label><br>
-                                <label class="radio-inline">
+                                <label>Marital Status</label><br></td>
+                            <td>    <label class="radio-inline">
                                     <input type="radio" name="maritalstatus" id="optionsRadiosInline1" value="Married" checked>Married
                                 </label>
                                 <label class="radio-inline">
@@ -285,43 +318,60 @@ while( $row = mysqli_fetch_assoc($result) )
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="maritalstatus" id="optionsRadiosInline2" value="Divorced">Divorced
-                                </label>
+                                </label></td>
                             </div>
+                          </tr>
+                          <tr>
+                            <td>
 
                              <div class="form-group">
-                             <label> Email </Label>
-                             <input class="form-control" name="email">
+                             <label> Email </Label></td>
+                            <td> <input class="form-control" name="email" placeholder="Enter email"></td>
                              </div>
+                           </tr>
+                           <tr>
+                             <td>
+                             <div class="form-group">
+                             <label> Profile Picture </Label></td>
+                             <td><input name="profile" type="file" id="profile"></td>
+                             </div>
+                           </tr>
 
-                   <h3 class="page-header"> Login Credential </h3>
+                  <th colspan="2"><center>Login Credential</center></td>
 
                         <form role="form">
-
+                          <tr>
+                            <td>
                          <div class="form-group">
-                             <label> Username Request </label>
-                             <input class="form-control" name="mgr_username">
+                             <label> Username Request </label></td>
+                            <td> <input class="form-control" name="mgr_username" placeholder="Enter the username requested"></td>
 
                          </div>
-
+                       </tr>
+                       <tr>
+                         <td>
                          <div class="form-group">
-                             <label> Password </label>
-                             <input type="password" class="form-control" name="mgr_pwd">
+                             <label> Password </label></td>
+                            <td> <input type="password" class="form-control" name="mgr_pwd" placeholder="Enter the password requested"></td>
 
                          </div>
+                       </tr>
 
                                  <input type="hidden" class="form-control" name="role" value="manager">
 
+                                 <tr>
+                                   <td>
+                              <button type="submit" class="btn btn-default">Submit</button> &nbsp;&nbsp;
+                              <button type="reset" class="btn btn-default">Reset</button>
+                            </label><td></tr>
+                          </form>
+                        </table>
+                      </div>
+                          <br>
 
-                         <button type="submit" class="btn btn-default">Submit Button</button> &nbsp;&nbsp;
-                         <button type="reset" class="btn btn-default">Reset Button</button>
-                         </label>
-                     </form>
-
-                     <br>
-                     <br>
-                 </div>
-
-             </div>
+                      </div>
+                    </div>
+                  </div>
              <!-- /.row -->
 
          </div>
