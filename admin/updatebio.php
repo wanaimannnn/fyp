@@ -23,6 +23,7 @@ if(isset($_POST["submit"])) {
     }
 }
 echo "<fieldset>";
+<!--
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, the image was not uploaded.";
@@ -34,7 +35,7 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading the image.";
     }
 }
-
+-->
 $no = $_POST['no'];
 $name = $_POST['name'];
 $ic = $_POST['ic'];
