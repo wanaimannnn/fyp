@@ -51,7 +51,7 @@ $maritalstatus = $_POST['maritalstatus'];
 $email = $_POST['email'];
 $profile = $target_dir . $_FILES["profile"]["name"];
 
-$superdir = "<img src=" . $profile .  " alt=HTML5 Icon style=width:auto;height:150px>";
+$superdir = "<picture> <img src=" . $profile .  " alt=HTML5 Icon style=width:auto;height:150px></picture>";
 
 $tables = array("manager","supervisor","staff");
 foreach($tables as $table){
