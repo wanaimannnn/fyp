@@ -168,67 +168,67 @@ while( $row = mysqli_fetch_assoc($result) )
                              <form role="form" method="post" action="mgrvalidateform(staffleave).php">
                                <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" value="<?php echo $row['no']; ?>" required>
                             <div class="table-responsive">
-                         <table class="table table-user-information">  
+                         <table class="table table-user-information">
 					   <tr>
-					   <td>						 
+					   <td>
 							<div class="form-group">
                                  <label>Name</label></td>
                                  <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                  <p class="help-block">.</p>
 							</td>
-							</tr>                         
-						 </div>  
+							</tr>
+						 </div>
 					   <tr>
-					   <td>                         
+					   <td>
 						 <div class="form-group">
                                  <label>Department</label></td>
                                   <td> <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
 							</td>
-							</tr>                         
+							</tr>
 						 </div>
 					   <tr>
-					   <td>                           
+					   <td>
 						   <div class="form-group">
                                  <label>Type of Leave</label></td>
                                 <td> <div class="checkbox" name="leavetype">
                                  <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
                                  </div>
 							</td>
-							</tr>                          
+							</tr>
 						  </div>
 					   <tr>
-					   <td>                        
+					   <td>
 						<div class="form-group">
                          <label>Leave Requested Date</label></td>
                              <td><div id="datetimepicker" class="input-append date">
                                         <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input><br>Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
                              </div>
 							</td>
-							</tr>                        
+							</tr>
 						</div>
 					   <tr>
-					   <td>                   
+					   <td>
                              <div class="form-group">
                                  <label>Reasons</label></td>
-                                 <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
+                                <td> <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
 							</td>
-							</tr>                             
+							</tr>
 							 </div>
                                  <hr>
                         <tr>
 						<td>
                                   <div class="form-group">
                                      <label>Status</label></td>
-                                     <select class="form-control" id="status" name="status" required>
+                                     <td><select class="form-control" id="status" name="status" required>
                                          <option></option>
                                          <option value="1">Approve</option>
                                          <option value="0">Not Approve</option>
                                 								</select>
 							</td>
-							</tr>                               
+							</tr>
 							   </div>
 					   <tr>
-					   <td>                           
+					   <td>
 						   <div class="form-group">
                                    <label> Supported By</label></td>
                                    <td><input class="form-control" name="supported_by" value="<?php echo $row['supported_by']; ?> " readonly>
@@ -252,18 +252,18 @@ while( $row = mysqli_fetch_assoc($result) )
                                  {
                                ?>
 					   <tr>
-					   <td>                           
+					   <td>
 						   <div class="form-group">
                                    <label> Validated By</label></td>
                                   <td> <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?>" readonly>
 							</td>
-							</tr>                           		
+							</tr>
 								</div>
 					   <tr>
-					   <td>                           
+					   <td>
 						   <button type="submit" class="btn btn-default"> Validate </button>
 							</tr>
-							</td>                         
+							</td>
 						 </form>
                                  </ul>
                          </div>
