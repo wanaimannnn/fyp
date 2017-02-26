@@ -75,9 +75,6 @@ while( $row = mysqli_fetch_assoc($result) )
                       <li>
                           <a href="displaybiodata.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                       </li>
-                      <li>
-                          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                      </li>
                       <li class="divider"></li>
                       <li>
                           <a href="../logout.php"><i class=fa fa-sign-out fa-fw"></i> Log Out</a>
