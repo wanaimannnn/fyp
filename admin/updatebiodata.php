@@ -139,16 +139,16 @@ while( $row = mysqli_fetch_assoc($result) )
          $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
          mysqli_error($link));
          $q=mysqli_select_db($link,"permohonan");
-         $no=$_GET['no'];
+         $ic=$_GET['ic'];
          $name = $_SESSION['id_user'];
          $query="SELECT *
-                 FROM manager WHERE no='$no'
+                 FROM manager WHERE ic='$ic'
                  UNION ALL
                  SELECT *
-                 FROM supervisor WHERE no='$no'
+                 FROM supervisor WHERE ic='$ic'
                  UNION ALL
                  SELECT *
-                 FROM staff WHERE no='$no'";
+                 FROM staff WHERE ic='$ic'";
          $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
          $q=mysqli_query($link,$query);
          while( $row = mysqli_fetch_assoc($result) )
@@ -182,7 +182,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                      <form role="form" method="post" action="updatebio.php" enctype="multipart/form-data">
                        <br>
-                      <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
+                      <input class="input-lg" type="hidden" id="ic" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
 
                       <h2>User Biodata</h2>
                        <div class="table-responsive">
@@ -328,17 +328,17 @@ while( $row = mysqli_fetch_assoc($result) )
                              $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
                              mysqli_error($link));
                              $q=mysqli_select_db($link,"permohonan");
-                             $no=$_GET['no'];
+                             $ic=$_GET['ic'];
                              $name = $_SESSION['id_user'];
                              $pass = $_SESSION['id_pass'];
                              $query="SELECT *
-                                     FROM manager WHERE (no='$no') OR (mgr_username='$name' AND mgr_pwd='$pass')
+                                     FROM manager WHERE (ic='$ic') OR (mgr_username='$name' AND mgr_pwd='$pass')
                                      UNION ALL
                                      SELECT *
-                                     FROM supervisor WHERE (no='$no') OR (sv_username='$name' AND sv_pwd='$pass')
+                                     FROM supervisor WHERE (ic='$ic') OR (sv_username='$name' AND sv_pwd='$pass')
                                      UNION ALL
                                      SELECT *
-                                     FROM staff WHERE (no='$no') OR (staff_username='$name' AND staff_pwd='$pass')";
+                                     FROM staff WHERE (ic='$ic') OR (staff_username='$name' AND staff_pwd='$pass')";
 
                              $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
                              $q=mysqli_query($link,$query);

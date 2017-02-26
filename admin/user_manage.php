@@ -201,7 +201,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <td><?php echo $row['name'];?></td>
                                     <td><?php echo $row['department']?></td>
                                     <td><?php echo $row['role'];?></td>
-                                    <td><a href="updatebiodata.php?no=<?php echo $row['no'];?>"> <img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="user_delete.php?no=<?php echo $row['no'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a>
+                                    <td><a href="updatebiodata.php?ic=<?php echo $row['ic'];?>"> <img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="user_delete.php?ic=<?php echo $row['ic'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a>
                                 </tr>
                                 <?php
                                 }
