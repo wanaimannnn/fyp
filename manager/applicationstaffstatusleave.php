@@ -201,9 +201,15 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['reason'];?></td>
                                         <td><?php echo $row['start_date'];?></td>
                                         <td><?php echo $row['end_date'];?></td>
-                                        <td><?php echo $row['status'];?></td>
+                                        <td>  <?php
+                                        if ( $row['status'] == "0") {
+                                          echo "Pending";
+                                        } else {
+                                          echo "Approved";
+                                        }
+                                        ?></td>
                                         <td><?php echo $row['created'];?></td>
-                                         <td><a href="applicationstaffleave(form).php?no=<?php echo $row['no'];?>">Validate </a>
+                                         <td><a href="applicationstaffleave(form).php?no=<?php echo $row['no'];?>"><img src="../css/img/leave.png" style="30" width="30"/> </a>
 
                                     </tr>
                                     <?php

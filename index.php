@@ -41,9 +41,9 @@
     <div id="login">
 		<form method="post" action="authentication.php">
 		Username<br>
-		<input type="text" name="username">
+		<input type="text" name="username" required>
         Password<br>
-		<input type="password" name="password"><br>
+		<input type="password" name="password" required><br>
        <input type="submit" value="Login" name="submit">
 		</form>
 	</div>

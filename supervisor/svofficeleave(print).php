@@ -129,7 +129,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 						</ul>
 					</li>
-                        
+
                           <li>
                                 <a href="svcalendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                             </li>
@@ -175,12 +175,17 @@ while( $row = mysqli_fetch_assoc($result) )
                 {
 
               ?>
-                <div class="row">
+                <div class="row" id="form">
                     <div class="col-sm-6 col-sm-offset-3">
                     <form role="form" method="post" action="#.php">
 
                       <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
 
+						<center>
+                <img src="../css/img/mayangsari-logo.png" width="150" height="150">
+                </center>
+				<br>
+				<h4><center>Office Leave Form</center></h4>
                       <div class="table-responsive">
                          <table class="table table-user-information">
                        <div class="form-group">
@@ -212,7 +217,6 @@ while( $row = mysqli_fetch_assoc($result) )
 
                            <div class="form-group">
                                 <label>Office Leave Date</label></td>
-                                <br>
                             <td><input class="form-control" name="datee" value="<?php echo $row['datee']; ?>" readonly></td>
                           </div></tr>
 
@@ -254,9 +258,33 @@ while( $row = mysqli_fetch_assoc($result) )
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
                              <input class="form-control" type="hidden"  name="role" value="<?php echo $row['role']; ?> " readonly></td>
 
+							 <tr>
+						 <td>
+                            <div class="form-group">
+                              <label> Validated By</label></td>
+                              <td><input class="form-control" name="validated_by" value="<?php echo $row['name']; ?> " readonly>
+                                                      </td>
+						  </tr>
+							</div>
+
+                            <script language="javascript">
+function printdiv(printpage)
+{
+var headstr = "<html><head><title></title></head><body>";
+var footstr = "</body>";
+var newstr = document.all.item(printpage).innerHTML;
+var oldstr = document.body.innerHTML;
+document.body.innerHTML = headstr+newstr+footstr;
+window.print();
+document.body.innerHTML = oldstr;
+return false;
+}
+</script>
+
+
                              <tr>
                              <td colspan="2">
-                            <button type="submit" class="btn btn-default">Print</button></td></tr>
+                           <input name="b_print" type="button" class="ipt"   onClick="printdiv('form');" value=" Print "></td></tr>
                         </form>
                     </div>
                 </div>

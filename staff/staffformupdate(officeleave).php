@@ -268,7 +268,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             <tr>
                             <td>
                             <button type="submit" class="btn btn-default">Update</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+
                             </td></tr>
                         </form>
                     </div>

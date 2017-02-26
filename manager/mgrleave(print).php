@@ -167,12 +167,18 @@ while( $row = mysqli_fetch_assoc($result) )
                 </div>
                 <!-- /.row -->
 
-                <div class="row">
+                <div class="row" id="form">
                     <div class="col-sm-6 col-sm-offset-3">
 
                       <form role="form" method="post" action="#.php">
                                      <input class="input-lg" type="hidden" id="no" name="no" value="<?php echo $row['no']; ?>" maxlength="100" required>
 
+									 <center>
+                <img src="../css/img/mayangsari-logo.png" width="150" height="150">
+                </center>
+				<br>
+
+				<h4><center>Leave Form</center></h4>
                       <div class="table-responsive">
                          <table class="table table-user-information">
                        <div class="form-group">
@@ -214,11 +220,41 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
 
+															 <tr>
+								 <td>
+                                 <div class="form-group">
+                                   <label> Supported By</label></td>
+                                <td>   <input class="form-control" name="supported_by" value="<?php echo $row['name']; ?> " readonly>
+                                 </td>
+								 </tr>
+								 </div>
+								 <tr>
+								 <td>
+                                 <div class="form-group">
+                                   <label> Validated By</label></td>
+                               <td>    <input class="form-control" name="validated_by" readonly>
+                                 </td>
+								 </tr>
+								 </div>
 
-                            <tr>
-                            <td colspan="2">
-                            <button type="submit" class="btn btn-default">Print</button>
-                            </td></tr>
+<script language="javascript">
+function printdiv(printpage)
+{
+var headstr = "<html><head><title></title></head><body>";
+var footstr = "</body>";
+var newstr = document.all.item(printpage).innerHTML;
+var oldstr = document.body.innerHTML;
+document.body.innerHTML = headstr+newstr+footstr;
+window.print();
+document.body.innerHTML = oldstr;
+return false;
+}
+</script>
+
+
+                             <tr>
+                             <td colspan="2">
+                           <input name="b_print" type="button" class="ipt"   onClick="printdiv('form');" value=" Print "></td></tr>
 
                         </form>
                     </div>

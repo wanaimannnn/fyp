@@ -208,9 +208,15 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['datee'];?></td>
                                         <td><?php echo $row['timeout'];?></td>
                                         <td><?php echo $row['timein'];?></td>
-                                        <td><?php echo $row['status'];?></td>
+                                        <td>  <?php
+                                        if ( $row['status'] == "0") {
+                                          echo "Pending";
+                                        } else {
+                                          echo "Approved";
+                                        }
+                                        ?></td>
                                         <td><?php echo $row['created'];?></td>
-                                        <td><a href="applicationsvofficeleave(form).php?no=<?php echo $row['no'];?>">Validate </a>
+                                        <td><a href="applicationsvofficeleave(form).php?no=<?php echo $row['no'];?>"><img src="../css/img/pencil.png" style="30" width="30"/> </a>
 
                                     </tr>
                                     <?php

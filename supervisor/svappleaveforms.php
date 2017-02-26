@@ -170,6 +170,8 @@ while( $row = mysqli_fetch_assoc($result) )
                      <div class="row">
                          <div class="col-lg-6 col-sm-offset-3">
                              <form role="form" method="post" action="svvalidateform(leave).php">
+                               <br>
+                               <br>
                                <input class="input-lg" type="hidden" id="no" name="no" maxlength="100" value="<?php echo $row['no']; ?>" required>
                             <div class="table-responsive">
 							<table class="table table-user-information">
@@ -181,7 +183,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                  <p class="help-block">.</p>
 								 </td>
 								 </tr>
-								 
+
                              </div>
 							 <tr>
 							 <td>
@@ -208,7 +210,7 @@ while( $row = mysqli_fetch_assoc($result) )
                            <div class="form-group">
                          <label>Leave Requested Date</label></td>
                              <td><div id="datetimepicker" class="input-append date">
-                                        <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input><br>Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
+                                        <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
                              </div>
 							 </td>
 							 </tr>
@@ -218,14 +220,14 @@ while( $row = mysqli_fetch_assoc($result) )
 							<td>
                              <div class="form-group">
                                  <label>Reasons</label></td>
-                                 <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
+                                <td> <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
                                </td>
 							   </tr>
 							   </div>
                                <?php
                              }
                              ?>
-                                 <hr>
+
                                  <?php
                                  $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
                                  mysqli_error($link));
@@ -244,8 +246,8 @@ while( $row = mysqli_fetch_assoc($result) )
                                   <div class="form-group">
                                      <label>Status</label></td>
                                   <td>   <select class="form-control" id="status" name="status" required>
-                                         <option></option>
-                                         <option value="1">Approve</option>
+                                         <option value="">--Please Select One--</option>
+                                         <option value="0">Approve</option>
                                          <option value="0">Not Approve</option>
                                      </select>
 									 </td>
@@ -264,17 +266,17 @@ while( $row = mysqli_fetch_assoc($result) )
 								 <td>
                                  <div class="form-group">
                                    <label> Validated By</label></td>
-                               <td>    <input class="form-control" name="validated_by" readonly>
+                               <td>    <input class="form-control" name="validated_by"  readonly>
                                  </td>
 								 </tr>
 								 </div>
 								 <tr>
-								 <td>
+								 <td colspan="2">
                              <button type="submit" class="btn btn-default"> Validate </button>
 							 </tr>
 							 </td>
                              </form>
-                              
+
                                </table>
                              </div>
                          </div>

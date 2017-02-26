@@ -179,7 +179,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         <h1 class="page-header">
                             Dashboard <small>Staff Page</small>
                         </h1>
-                                               <ol class="breadcrumb">
+                        <ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard
                             </li>
@@ -210,7 +210,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-success class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -254,7 +254,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <div class="panel panel-info class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -278,7 +278,7 @@ while( $row = mysqli_fetch_assoc($result) )
                 </div>
             <div class="row">
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-danger class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -323,7 +323,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-warning class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -344,7 +344,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </a>
                         </div>
                     </div>
-					<div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
                                 <div class="row">
@@ -367,7 +367,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                 </div>
-				 <div class="row">
+                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -381,7 +381,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                     </div>
                                 </div>
                             </div>
-                            <a href="staffdeplist(sale marketing).php">
+                            <a href="staffdeplist(salemarketing).php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -392,7 +392,7 @@ while( $row = mysqli_fetch_assoc($result) )
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-info yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -413,7 +413,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </a>
                         </div>
                     </div>
-				</div>
+                </div>
             </div>
                 <!-- /.row -->
 
@@ -427,7 +427,7 @@ while( $row = mysqli_fetch_assoc($result) )
 				<center>
 				<img src="../css/img/mayangsari-logo.png" style="width">
 				</center>
-
+        <br><br>
             </div>
             <!-- /.container-fluid -->
 

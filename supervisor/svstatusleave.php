@@ -210,8 +210,14 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td><?php echo $row['reason'];?></td>
                                       <td><?php echo $row['start_date'];?></td>
                                       <td><?php echo $row['end_date'];?></td>
-                                      <td><?php echo $row['status'];?></td>
-									  <td><a href="svleave(update).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="svleave(delete).php?no=<?php echo $row['no'];?>">Delete</a>
+                                      <td>  <?php
+                                        if ( $row['status'] == "0") {
+                                          echo "Pending";
+                                        } else {
+                                          echo "Approved";
+                                        }
+                                        ?></td>
+									  <td><a href="svleave(update).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="svleave(delete).php?no=<?php echo $row['no'];?>"><img src="../css/img/recycle-bin.png" style="30" width="30"/></a>
                                   </tr>
                                   <?php
                                   }

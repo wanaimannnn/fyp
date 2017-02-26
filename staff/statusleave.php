@@ -235,8 +235,14 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php echo $row['reason'];?></td>
                                         <td><?php echo $row['start_date'];?></td>
                                         <td><?php echo $row['end_date'];?></td>
-                                        <td><?php echo $row['status'];?></td>
-                                        <td><a href="staffformupdate(leave).php?no=<?php echo $row['no'];?>">Update </a> &nbsp &nbsp <a href="staffformdelete(leave).php?no=<?php echo $row['no'];?>">Delete</a>
+                                        <td><?php
+                                      if ( $row['status'] == "0") {
+                                        echo "Pending";
+                                      } else {
+                                        echo "Approved";
+                                      }
+                                      ?></td>
+                                        <td><a href="staffformupdate(leave).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/></a> &nbsp &nbsp <a href="staffformdelete(leave).php?no=<?php echo $row['no'];?>"><img src="../css/img/recycle-bin.png" style="30" width="30"/></a>
 
                                     </tr>
                                     <?php

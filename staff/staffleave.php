@@ -260,7 +260,7 @@ while( $row = mysqli_fetch_assoc($result) )
                           <td>
 							              <div class="form-group">
                                 <label>Reasons</label></td>
-                                <td><textarea class="form-control" rows="3" name="reason"></textarea></td></tr>
+                                <td><textarea class="form-control" rows="3" name="reason" required></textarea></td></tr>
                             </div>
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
                             <input class="form-control" type="hidden" name="role" value="<?php echo $row['role']; ?>" readonly>

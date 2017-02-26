@@ -239,11 +239,17 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td><?php echo $row['reason'];?></td>
                                       <td><?php echo $row['start_date'];?></td>
                                       <td><?php echo $row['end_date'];?></td>
-                                      <td><?php echo $row['status'];?></td>
+                                      <td><?php
+                                      if ( $row['status'] == "0") {
+                                        echo "Pending";
+                                      } else {
+                                        echo "Approved";
+                                      }
+                                      ?></td>
                                       <td><?php echo $row['supported_by'];?></td>
                                       <td><?php echo $row['validated_by'];?></td>
                                       <td><?php echo $row['created'];?></td>
-                                      <td><a href="staffleave(print).php?no=<?php echo $row['no'];?>"> Print </a></td>
+                                      <td><a href="staffleave(print).php?no=<?php echo $row['no'];?>"> <img src="../css/img/printer.png" style="30" width="30"/> </a></td>
                                   </tr>
                                   <?php
                                   }

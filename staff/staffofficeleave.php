@@ -179,7 +179,7 @@ while( $row = mysqli_fetch_assoc($result) )
                      <td>
                          <div class="form-group">
                              <label> Department </Label></td>
-                             <td><input class="form-control" name="ic" value="<?php echo $row['department']; ?>" readonly></td>
+                             <td><input class="form-control" name="department" value="<?php echo $row['department']; ?>" readonly></td>
                            </tr>
 
                          </div>
