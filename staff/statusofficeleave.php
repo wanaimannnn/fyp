@@ -245,7 +245,7 @@ $num_rows= mysqli_num_rows($q);
                                         echo "Approved";
                                       }
                                       ?></td>
-                                        <td><a href="staffformupdate(officeleave).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="staffformdelete(officeleave).php?no=<?php echo $row['no'];?>"><img src="../css/img/recycle-bin.png" style="30" width="30"/></a></td>
+                                        <td><a href="staffformupdate(officeleave).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="staffformdelete(officeleave).php?no=<?php echo $row['no'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a></td>
 
                                     </tr>
                                     <?php

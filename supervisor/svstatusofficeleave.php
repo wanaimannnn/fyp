@@ -220,7 +220,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                           echo "Approved";
                                         }
                                         ?></td>
-									                    <td><a href="svofficeleave(update).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="svofficeleave(delete).php?no=<?php echo $row['no'];?>"><img src="../css/img/recycle-bin.png" style="30" width="30"/></a></td>
+									                    <td><a href="svofficeleave(update).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="svofficeleave(delete).php?no=<?php echo $row['no'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a></td>
                                   </tr>
                                   <?php
                                   }

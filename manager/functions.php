@@ -81,7 +81,7 @@ function getCalender($year = '',$month = '')
 						//Hover event popup
 						echo '<div id="date_popup_'.$currentDate.'" class="date_popup_wrap none">';
 						echo '<div class="date_window">';
-						echo '<div class="popup_event">Leave Records('.$eventNum.')</div>';
+						echo '<div class="popup_event">Office Leave Records('.$eventNum.')</div>';
 						echo ($eventNum > 0)?'<a href="javascript:;" onclick="getEvents(\''.$currentDate.'\');" style="text-decoration:none;">View Record(s)</a>':'';
 						echo '</div></div>';
 
@@ -198,7 +198,7 @@ function getEvents($date = ''){
 		$eventListHTML = '<h2>Records on '.date("l, d M Y",strtotime($date)).'</h2>';
 		$eventListHTML .= '<ul>';
 		while($row = $result->fetch_assoc()){
-            $eventListHTML .= '<li>' .$row['name']. '</li>';
+            $eventListHTML .= '<li>' .$row['name']. '('.$row['department'].')</li>';
         }
 		$eventListHTML .= '</ul>';
 	}
