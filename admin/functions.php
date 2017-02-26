@@ -198,7 +198,7 @@ function getEvents($date = ''){
 		$eventListHTML = '<h2>Records on '.date("l, d M Y",strtotime($date)).'</h2>';
 		$eventListHTML .= '<ul>';
 		while($row = $result->fetch_assoc()){
-            $eventListHTML .= '<li>' .$row['name']. '('.$row['department'].')</li>';
+            $eventListHTML .= '<li>' .$row['name']. &nbsp;&nbsp;'('.$row['department'].')</li>';
         }
 		$eventListHTML .= '</ul>';
 	}

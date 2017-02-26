@@ -214,7 +214,7 @@ while( $row = mysqli_fetch_assoc($result) )
 							</td>
 							</tr>
 							 </div>
-                                 <hr>
+                                
                         <tr>
 						<td>
                                   <div class="form-group">
