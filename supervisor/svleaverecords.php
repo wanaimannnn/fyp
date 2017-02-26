@@ -210,6 +210,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                                 <th><center>Supported By</center></th>
                                                 <th><center>Validated By</center></th>
                                                 <th><center>Created Date</center></th>
+												<th><center>Action</center></th>
                                             </tr>
                                           </thead>
                                           <tbody>
@@ -228,6 +229,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                                 <td><?php echo $row['supported_by'];?></td>
                                                 <td><?php echo $row['validated_by'];?></td>
                                                 <td><?php echo $row['created'];?></td>
+												<td><a href="svleave(print).php?no=<?php echo $row['no'];?>"> Print </a></td>
                                             </tr>
                                             <?php
                                             }

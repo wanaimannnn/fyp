@@ -172,74 +172,67 @@ while( $row = mysqli_fetch_assoc($result) )
 					   <tr>
 					   <td>						 
 							<div class="form-group">
-                                 <label>Name</label><td>
-                                 <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
+                                 <label>Name</label></td>
+                                 <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                  <p class="help-block">.</p>
-							</tr>
 							</td>
-							</td>                         
+							</tr>                         
 						 </div>  
 					   <tr>
 					   <td>                         
 						 <div class="form-group">
-                                 <label>Department</label><td>
-                                   <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-							</tr>
+                                 <label>Department</label></td>
+                                  <td> <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
 							</td>
-							</td>                         
+							</tr>                         
 						 </div>
 					   <tr>
 					   <td>                           
 						   <div class="form-group">
-                                 <label>Type of Leave</label><td>
-                                 <div class="checkbox" name="leavetype">
+                                 <label>Type of Leave</label></td>
+                                <td> <div class="checkbox" name="leavetype">
                                  <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
                                  </div>
-							</tr>
 							</td>
-							</td>                          
+							</tr>                          
 						  </div>
 					   <tr>
 					   <td>                        
 						<div class="form-group">
-                         <label>Leave Requested Date</label><td>
-                             <div id="datetimepicker" class="input-append date">
+                         <label>Leave Requested Date</label></td>
+                             <td><div id="datetimepicker" class="input-append date">
                                         <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input><br>Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
                              </div>
-							</tr>
 							</td>
-							</td>                        
+							</tr>                        
 						</div>
 					   <tr>
 					   <td>                   
                              <div class="form-group">
-                                 <label>Reasons</label><td>
+                                 <label>Reasons</label></td>
                                  <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
-							</tr>
 							</td>
-							</td>                             
+							</tr>                             
 							 </div>
                                  <hr>
                         <tr>
 						<td>
                                   <div class="form-group">
-                                     <label>Status</label><td>
+                                     <label>Status</label></td>
                                      <select class="form-control" id="status" name="status" required>
                                          <option></option>
                                          <option value="1">Approve</option>
                                          <option value="0">Not Approve</option>
                                 								</select>
-							</tr>
 							</td>
-							</td>                               
+							</tr>                               
 							   </div>
 					   <tr>
 					   <td>                           
 						   <div class="form-group">
-                                   <label> Supported By</label><td>
-                                   <input class="form-control" name="supported_by" value="<?php echo $row['supported_by']; ?> " readonly>
+                                   <label> Supported By</label></td>
+                                   <td><input class="form-control" name="supported_by" value="<?php echo $row['supported_by']; ?> " readonly>
 							</tr>
-							</td>
 							</td>
 							</div>
 								<?php
@@ -261,17 +254,15 @@ while( $row = mysqli_fetch_assoc($result) )
 					   <tr>
 					   <td>                           
 						   <div class="form-group">
-                                   <label> Validated By</label><td>
-                                   <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?>" readonly>
-							</tr>
+                                   <label> Validated By</label></td>
+                                  <td> <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?>" readonly>
 							</td>
-							</td>                           		
+							</tr>                           		
 								</div>
 					   <tr>
 					   <td>                           
 						   <button type="submit" class="btn btn-default"> Validate </button>
 							</tr>
-							</td>
 							</td>                         
 						 </form>
                                  </ul>

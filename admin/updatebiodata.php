@@ -136,10 +136,27 @@ while( $row = mysqli_fetch_assoc($result) )
                       </ul>
                   </li>
               <!--    <li>
-                      <a href="signupform.html"><i class="fa fa-fw fa-user"></i> User Registration</a>
+                      <a href="signupform.html"><i class="fa fa-fw fa-user"></i> Login Credential</a>
                     </li> -->
                   <li>
                       <a href="user_manage.php"><i class="fa fa-fw fa-edit"></i> User Management</a>
+                  </li>
+                  <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> Login Credential <i class="fa fa-fw fa-caret-down"></i></a>
+                      <ul id="demo2" class="collapse">
+
+                          <li>
+                              <a href="user_credential(mgr).php"></i> Manager </a>
+                          </li>
+
+                          <li>
+                              <a href="user_credential(sv).php"></i> Supervisor </a>
+                          </li>
+
+                          <li>
+                              <a href="user_credential(staff).php"> Staff </a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
                       <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
@@ -300,7 +317,9 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
                           </tr>
 
-
+                          <?php
+                          }
+                          ?>
                             <tr>
                               <td>
                             <div class="form-group">
@@ -335,10 +354,49 @@ while( $row = mysqli_fetch_assoc($result) )
                                 </label></td>
                             </div>
                           </tr>
+                        <!--  <?php
+                             $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+                             mysqli_error($link));
+                             $q=mysqli_select_db($link,"permohonan");
+                             $no=$_GET['no'];
+                             $name = $_SESSION['id_user'];
+                             $pass = $_SESSION['id_pass'];
+                             $query="SELECT *
+                                     FROM manager WHERE (no='$no') OR (mgr_username='$name' AND mgr_pwd='$pass')
+                                     UNION ALL
+                                     SELECT *
+                                     FROM supervisor WHERE (no='$no') OR (sv_username='$name' AND sv_pwd='$pass')
+                                     UNION ALL
+                                     SELECT *
+                                     FROM staff WHERE (no='$no') OR (staff_username='$name' AND staff_pwd='$pass')";
 
-                            <?php
-                            }
-                            ?>
+                             $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+                             $q=mysqli_query($link,$query);
+                             while( $row = mysqli_fetch_assoc($result) )
+                             {
+                           ?>
+                          <th colspan="2"><center>Login Credential</center></td>
+
+                                <form role="form">
+                                  <tr>
+                                    <td>
+                                 <div class="form-group">
+                                     <label> Username </label></td>
+                                    <td> <input class="form-control" name="username" value="<?php echo $name; ?>"></td>
+                                 </div>
+                               </tr>
+                               <tr>
+                                 <td>
+                                 <div class="form-group">
+                                     <label> Password </label></td>
+                                    <td> <input type="text" class="form-control" name="pwd" value="<?php echo $pass; ?>"></td>
+
+                                 </div>
+                               </tr>
+                               <?php
+                             }
+                             ?>
+-->
                             <tr>
                               <td>
                          <button type="submit" class="btn btn-default">Update</button> &nbsp;&nbsp;

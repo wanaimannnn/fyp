@@ -186,54 +186,49 @@ while( $row = mysqli_fetch_assoc($result) )
 						 <tr>
 						 <td>
 							<div class="form-group">
-                                <label>Name</label><td>
-                                <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
+                                <label>Name</label></td>
+                            <td>    <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                 <p class="help-block">.</p>
+								</td>
 								</tr>
-								</td>
-								</td>
                             </div>
-													 <tr>
+						<tr>
 						 <td>
                             <div class="form-group">
-                                <label>Department</label><td>
+                                <label>Department</label></td>
                                   <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                            								</tr>
-								</td>
-								</td>
+                        </td>
+						</tr>
 							</div>
 						 <tr>
 						 <td>
 							              <div class="form-group">
-                                <label>Type of Leave</label><td>
+                                <label>Type of Leave</label></td>
                                 <div class="checkbox" name="leavetype">
-                                <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
+                            <td>    <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
                 								
 												</div>
-                            								</tr>
-								</td>
-								</td>
+                            </td>
+							</tr>
 							</div>
 						 <tr>
 						 <td>
       							      <div class="form-group">
-      									<label>Leave Requested Date</label><td>
-      									    <div id="datetimepicker" class="input-append date">
+      									<label>Leave Requested Date</label></td>
+      									<td> <div id="datetimepicker" class="input-append date">
       									               <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;"></input><br>Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;"></input>
       							        </div>
+								</td>
 								</tr>
-								</td>
-								</td>
                           </div>
 
 						 <tr>
 						 <td>
 							              <div class="form-group">
-                                <label>Reasons</label><td>
-                                <textarea class="form-control" rows="3" name="reason"><?php echo $row['reason']; ?> </textarea>
-                            								</tr>
-								</td>
-								</td>
+                                <label>Reasons</label></td>
+                               <td> <textarea class="form-control" rows="3" name="reason"><?php echo $row['reason']; ?> </textarea>
+                            	</td>
+								</tr>
 							</div>
 
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>

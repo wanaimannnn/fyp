@@ -186,48 +186,44 @@ while( $row = mysqli_fetch_assoc($result) )
 						 <tr>
 						 <td>
                           <div class="form-group">
-                        <label>Name </Label><td>
-                      <input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
-                          </tr>
-						  </td>
-						  </td>
+                        <label>Name </Label></td>
+                      <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
+                          </td>
+						  </tr>
 						  </div>
 						
 						<tr>
 						 <td>
                           <div class="form-group">
-                                  <label>Department</label><td>
-                                <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
-                           </tr>
-						  </td>
-						  </td>
+                                  <label>Department</label></td>
+                             <td>   <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                           </td>
+						  </tr>
 							  </div>
 							<tr>
 						 <td>
                             <div class="form-group">
-                                <label>Shift</label><td>
-                                <div class="checkbox" name="shift" >
+                                <label>Shift</label></td>
+                               <td> <div class="checkbox" name="shift" >
                                     <input class="form-control" name="chkbox[]" value="<?php echo $row['shift'];?>"  readonly>
                                 </div>
-								                          </tr>
-						  </td>
-						  </td>
+							</td>
+						  </tr>
                             </div>
 							<tr>
 						 <td>
                            <div class="form-group">
-                                <label>Date</label><td>
+                                <label>Date</label></td>
                                 <br>
-                                <input class="form-group" id="date" name="date" value="<?php echo $row['datee']; ?> " style="text-align:center;"readonly>
-							                          </tr>
-						  </td>
-						  </td>
+                                <td><input class="form-group" id="date" name="date" value="<?php echo $row['datee']; ?> " style="text-align:center;"readonly>
+							</td>
+						  </tr>
                             </div>
 							<tr>
 						 <td>
                              <div class="form-group">
-                                <label>Purpose</label><td>
-                                <div class="radio">
+                                <label>Purpose</label></td>
+                                <td><div class="radio">
                                     <label>
                                         <input type="radio" name="purpose" id="optionsRadios1" value="Medical Checkup" checked> Medical Checkup
                                     </label>
@@ -241,9 +237,8 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <br><br>
                                     <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason'];?></textarea>
                                 </div>
-								                          </tr>
-						  </td>
-						  </td>
+								                          </td>
+						  </tr>
                             </div>
 
                           <!-- <div class="form-group">
@@ -253,11 +248,10 @@ while( $row = mysqli_fetch_assoc($result) )
 							<tr>
 						 <td>
                             <div class="form-group">
-                            <div> <label>Select Time Out:</label><td>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout" value="<?php echo $row['timeout']; ?> " readonly>
-                                                      </tr>
-						  </td>
-						  </td>
+                            <div> <label>Select Time Out:</label></td>
+                                <td><input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout" value="<?php echo $row['timeout']; ?> " readonly>
+                                                      </td>
+						  </tr>
 							</div>
 
                             <script type="text/javascript">
@@ -268,11 +262,10 @@ while( $row = mysqli_fetch_assoc($result) )
 							<tr>
 						 <td>
                              <div class="form-group">
-                            <div> <label>Select Time In:</label><td>
-                                <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein" value="<?php echo $row['timein']; ?> " readonly>
-                                                      </tr>
-						  </td>
-						  </td>
+                            <div> <label>Select Time In:</label></td>
+                                <td><input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein" value="<?php echo $row['timein']; ?> " readonly>
+                                                      </td>
+						  </tr>
 							</div>
 
                             <script type="text/javascript">
@@ -302,24 +295,22 @@ while( $row = mysqli_fetch_assoc($result) )
 						  <tr>
 						 <td>
                              <div class="form-group">
-                                <label>Status</label><td>
-                                <select class="form-control" id="status" name="status" required>
+                                <label>Status</label></td>
+                                <td><select class="form-control" id="status" name="status" required>
                                     <option></option>
                                     <option value="1">Approve</option>
                                     <option value="0">Not Approve</option>
                                 </select>
-								                          </tr>
-						  </td>
-						  </td>
+							</td>
+						  </tr>
                             </div>
 							<tr>
 						 <td>
                             <div class="form-group">
                               <label> Validated By</label></td>
-                              <input class="form-control" name="validated_by" value="<?php echo $row['name']; ?> " readonly>
-                                                      </tr>
-						  </td>
-						  </td>
+                              <td><input class="form-control" name="validated_by" value="<?php echo $row['name']; ?> " readonly>
+                                                      </td>
+						  </tr>
 							</div>
 							<tr>
 							<td>

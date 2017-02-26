@@ -31,6 +31,7 @@
   $row = $query->fetch(PDO::FETCH_ASSOC);
   session_regenerate_id();
   $_SESSION['id_user'] = $row['mgr_username'];
+  $_SESSION['id_pass'] = $row['mgr_pwd'];
   $_SESSION['user_name'] = $row['name'];
   $_SESSION['role']= $row['role'];
 

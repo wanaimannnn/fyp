@@ -173,7 +173,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-success class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -217,7 +217,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <div class="panel panel-info class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -241,7 +241,7 @@ while( $row = mysqli_fetch_assoc($result) )
                 </div>
             <div class="row">
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-danger class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -286,7 +286,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-warning class">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -355,7 +355,7 @@ while( $row = mysqli_fetch_assoc($result) )
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-info yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">

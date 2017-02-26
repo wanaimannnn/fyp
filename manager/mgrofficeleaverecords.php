@@ -186,6 +186,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <th><center>Status</center></th>
                                       <th><center>Created Date</center></th>
                                       <th><center>Validated By</center></th>
+									  <th><center>Action</center></th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -206,6 +207,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td><?php echo $row['status'];?></td>
                                       <td><?php echo $row['created'];?></td>
                                       <td><?php echo $row['validated_by'];?></td>
+									  <td><a href="mgrofficeleave(print).php?no=<?php echo $row['no'];?>"> Print </a></td>
                                   </tr>
                                   <?php
                                   }

@@ -186,6 +186,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                           <th><center>Created Date</center></th>
                                           <th><center>Supported By</center></th>
                                           <th><center>Validated By</center></th>
+										  <th><center>Action</center></th>
 
                                       </tr>
                                     </thead>
@@ -206,6 +207,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                           <td><?php echo $row['created'];?></td>
                                           <td><?php echo $row['supported_by'];?></td>
                                           <td><?php echo $row['validated_by'];?></td>
+										  <td><a href="mgrleave(print).php?no=<?php echo $row['no'];?>"> Print </a></td>
                                       </tr>
                                       <?php
                                       }
