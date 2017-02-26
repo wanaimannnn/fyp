@@ -139,9 +139,9 @@ while( $row = mysqli_fetch_assoc($result) )
            $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
            mysqli_error($link));
            $q=mysqli_select_db($link,"permohonan");
-           $no=$_GET['no'];
+           $ic=$_GET['ic'];
            $name = $_SESSION['id_user'];
-           $query="SELECT * FROM request WHERE no='$no'";
+           $query="SELECT * FROM request WHERE ic='$ic'";
            $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
            $q=mysqli_query($link,$query);
            while( $row = mysqli_fetch_assoc($result) )

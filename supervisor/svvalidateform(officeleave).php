@@ -8,7 +8,7 @@ mysqli_select_db($link,'permohonan') or die("Select Error:" . mysqli_error());
 $no = $_POST['no'];
 $name = $_POST['name'];
 $department = $_POST['department'];
-foreach($_POST['chkbox'] as $index => $val);
+$shift = $_POST['shift'];
 $date = date('Y-m-d',strtotime($_POST['date']));
 $purpose= $_POST['purpose'];
 $reason=mysqli_real_escape_string($link, $_POST['reason']);
@@ -18,7 +18,7 @@ $status=$_POST['status'];
 $validate=$_POST['validated_by'];
 
 
-$result = mysqli_query ($link,"UPDATE request SET name='$name',department='$department',shift='$val', datee='$date',purpose='$purpose',reason='$reason',timeout='$timeout',timein='$timein',status='$status',validated_by='$validate' WHERE no='$no'")
+$result = mysqli_query ($link,"UPDATE request SET name='$name',department='$department',shift='$shift', datee='$date',purpose='$purpose',reason='$reason',timeout='$timeout',timein='$timein',status='$status',validated_by='$validate' WHERE no='$no'")
 or die ("Insert Error:" . mysqli_error($link));
 
 echo"<script>"
