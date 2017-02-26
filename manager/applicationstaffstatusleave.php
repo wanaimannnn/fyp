@@ -209,7 +209,7 @@ $num_rows= mysqli_num_rows($q);
                                         }
                                         ?></td>
                                         <td><?php echo $row['created'];?></td>
-                                         <td><a href="applicationstaffleave(form).php?no=<?php echo $row['no'];?>"><img src="../css/img/leave.png" style="30" width="30"/> </a>
+                                         <td><a href="applicationstaffleave(form).php?no=<?php echo $row['no'];?>"><img src="../css/img/pencil.png" style="30" width="30"/> </a>
 
                                     </tr>
                                     <?php
