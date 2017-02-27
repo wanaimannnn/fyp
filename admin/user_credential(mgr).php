@@ -196,7 +196,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <td><?php echo $row['department']?></td>
                                     <td><?php echo $row['mgr_username'];?></td>
                                     <td><?php echo $row['mgr_pwd'];?></td>
-                                    <td><a href="usercred(mgr).php?no=<?php echo $row['no'];?>">Update </a>
+                                    <td><a href="usercred(mgr).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a>
                                 </tr>
                                 <?php
                                 }
