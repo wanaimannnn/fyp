@@ -216,7 +216,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       </td>
                                       <td><?php echo $row['created'];?></td>
                                       <td><?php echo $row['validated_by'];?></td>
-									  <td><a href="mgrofficeleave(print).php?ic=<?php echo $row['ic'];?>"> <img src="../css/img/printer.png" style="30" width="30"/> </a></td>
+									  <td><a href="mgrofficeleave(print).php?no=<?php echo $row['no'];?>"> <img src="../css/img/printer.png" style="30" width="30"/> </a></td>
                                   </tr>
                                   <?php
                                   }

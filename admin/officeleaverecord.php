@@ -150,82 +150,105 @@ while( $row = mysqli_fetch_assoc($result) )
           <!-- /.navbar-collapse -->
       </nav>
       <?php
-              $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
-              mysqli_error($link));
-              $q=mysqli_select_db($link,"permohonan");
-              $staff = $_SESSION['id_user'];
-              $name = $_SESSION['user_name'];
-              $query="SELECT *
-                      FROM manager WHERE department='Human Resources'
-                      UNION ALL
-                      SELECT *
-                      FROM supervisor WHERE department='Human Resources'
-                      UNION ALL
-                      SELECT *
-                      FROM staff WHERE department='Human Resources'";
-              $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
-              $q=mysqli_query($link,$query);
-              $num_rows= mysqli_num_rows($q);
-              ?>
-              <div id="page-wrapper">
-                  <div class="container-fluid">
-                      <!-- Page Heading -->
-                      <div class="row">
-                          <div class="col-lg-12">
-                              <h1 class="page-header">
-                                  Department List
-                              </h1>
-                              <ol class="breadcrumb">
-                                  <li>
-                                      <i class="fa fa-dashboard"></i>  <a href="adminhome.php">Dashboard</a>
-                                  </li>
-                                  <li class="active">
-                                      <i class="fa fa-table"></i> Human Resources
-                                  </li>
-                              </ol>
-                          </div>
-                      </div>
-                      <!-- /.row -->
-                       <div class="row">
-                          <!--<div class="col-lg-6">-->
-                              <div class="table-responsive">
-                                  <table class="table table-bordered table-hover">
-                                      <thead>
-                                          <tr>
-                                              <th><center>Name</center></th>
-                                              <th><center>Position</center></th>
-                                              <th><center>Number Phone</center></th>
-                                              <th><center>Email</center></th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <?php
-                                          while($row=mysqli_fetch_array($result))
-                                          {
-                                          ?>
-                                          <tr align="center">
-                                              <td><?php echo $row['name'];?></td>
-                                              <td><?php echo $row['position']?></td>
-                                              <td><?php echo $row['mobileno'];?></td>
-                                              <td><?php echo $row['email'];?></td>
-                                          </tr>
-                                          <?php
-                                          }
-                                          mysqli_close($link);
-                                          ?>
-                                        </tbody>
-                                  </table>
-                              </div>
-                          </div>
-                          <br><br>
-                      </div>
-                      </div>
+
+    $link=mysqli_connect("localhost","root","opom2317") or die ("Unable to connect".
+
+    mysqli_error($link));
+
+    $q=mysqli_select_db($link,"permohonan");
+    $staff = $_SESSION['id_user'];
+    $name = $_SESSION['user_name'];
+    $query="SELECT * FROM request WHERE status = true";
+    $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
+    $q=mysqli_query($link,$query);
+    $num_rows= mysqli_num_rows($q);
+
+    ?>
+      <div id="page-wrapper">
+
+         <div class="container-fluid">
+
+             <!-- Page Heading -->
+             <div class="row">
+                 <div class="col-lg-12">
+                     <h1 class="page-header">
+                         Records Management
+                     </h1>
+                     <ol class="breadcrumb">
+                         <li>
+                             <i class="fa fa-dashboard"></i>  <a href="adminhome.php">Dashboard</a>
+                         </li>
+                         <li class="active">
+                             <i class="fa fa-edit"></i> Office Leave Record Management
+                         </li>
+                     </ol>
+                 </div>
+             </div>
+
+             <!-- /.row -->
+             <div class="row">
+                <!--<div class="col-lg-6">-->
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                  <th><center>Name</center></th>
+                                  <th><center>Department</center></th>
+                                  <th><center>Shift</center></th>
+                                  <th><center>Purpose</center></th>
+                                  <th><center>Reason</center></th>
+                                  <th><center>Date</center></th>
+                                  <th><center>Time Out</center></th>
+                                  <th><center>Time In</center></th>
+                                  <th><center>Status</center></th>
+                                  <th><center>Validated By</center></th>
+                                  <th><center>Created Date</center></th>
+                                  <th><center>Action</center></th>
+                              </thead>
+                              <tbody>
+                                <?php
+
+                                while($row=mysqli_fetch_array($result))
+                                {
+                                ?>
+                                <tr align="center">
+                                  <td><?php echo $row['name'];?></td>
+                                  <td><?php echo $row['department'];?></td>
+                                  <td><?php echo $row['shift'];?></td>
+                                  <td><?php echo $row['purpose'];?></td>
+                                  <td><?php echo $row['reason'];?></td>
+                                  <td><?php echo $row['datee'];?></td>
+                                  <td><?php echo $row['timeout'];?></td>
+                                  <td><?php echo $row['timein'];?></td>
+                                  <td><?php
+                                  if ( $row['status'] == "0") {
+                                    echo "Pending";
+                                  } else {
+                                    echo "Approved";
+                                  }
+                                  ?></td>
+                                  <td><?php echo $row['validated_by'];?></td>
+                                  <td><?php echo $row['created'];?></td>
+                                    <td><a href="officeleavedelete.php?no=<?php echo $row['no'];?>"><img src="../css/img/delete.png" style="30" width="30"/> </a>
+                                </tr>
+                                <?php
+                                }
+                                mysqli_close($link);
+                                ?>
+                              </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
              <!-- /.row -->
 
          </div>
          <!-- /.container-fluid -->
-         <br>
-         <br>
+
      </div>
      <!-- /#page-wrapper -->
 

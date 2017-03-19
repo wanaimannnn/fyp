@@ -108,7 +108,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.php">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>

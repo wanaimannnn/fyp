@@ -135,7 +135,7 @@ while( $row = mysqli_fetch_assoc($result) )
                         </li>
 
                         <li>
-                            <a href="Officeleaverecords.php">View Record</a>
+                            <a href="officeleaverecords.php">View Record</a>
                         </li>
                     </ul>
                 </li>
@@ -217,7 +217,7 @@ while( $row = mysqli_fetch_assoc($result) )
                 <center>
                 <h4>Leave Form</h4>
                 <center>
-                
+
 
                       <div class="table-responsive">
                          <table class="table table-user-information">

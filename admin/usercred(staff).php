@@ -130,6 +130,19 @@ while( $row = mysqli_fetch_assoc($result) )
                       </ul>
                   </li>
                   <li>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-table"></i> Records Management <i class="fa fa-fw fa-caret-down"></i></a>
+                      <ul id="demo3" class="collapse">
+
+                          <li>
+                              <a href="leaverecord.php"></i> Leave Records </a>
+                          </li>
+
+                          <li>
+                              <a href="officeleaverecord.php"></i> Office Leave Records </a>
+                          </li>
+                        </ul>
+                      </li>
+                  <li>
                       <a href="calendaradmin.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                   </li>
               </ul>
@@ -203,14 +216,14 @@ while( $row = mysqli_fetch_assoc($result) )
                                  <td>
                               <div class="form-group">
                                   <label> Username </label></td>
-                                 <td> <input class="form-control" name="staff_username" value="<?php echo $row['staff_username']; ?>"></td>
+                                 <td> <input class="form-control" name="staff_username" value="<?php echo $row['staff_username']; ?>" required></td>
                               </div>
                             </tr>
                             <tr>
                               <td>
                               <div class="form-group">
                                   <label> Password </label></td>
-                                 <td> <input type="text" class="form-control" name="staff_pwd" value="<?php echo $row['staff_pwd']; ?>"></td>
+                                 <td> <input type="text" class="form-control" name="staff_pwd" value="<?php echo $row['staff_pwd']; ?>" required></td>
 
                               </div>
                             </tr>

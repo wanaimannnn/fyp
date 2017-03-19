@@ -170,12 +170,12 @@ while( $row = mysqli_fetch_assoc($result) )
          </tr>
          <!-- <tr>
            <td><label> New Password </label></td>
-           <td><input type="text" class="input-lg form-control" name="password" id="password" placeholder="New Password" autocomplete="off"></td>
+           <td><input type="text" class="input-lg form-control" name="password" id="password" placeholder="New Password" autocomplete="off" required></td>
         </tr> -->
        <tr>
          <td><label> Enter new password</label></td>
 
-        <td><input type="text" class="input-lg form-control" name="password" id="password" placeholder="New Password" autocomplete="off"></td>
+        <td><input type="text" class="input-lg form-control" name="password" id="password" placeholder="New Password" autocomplete="off" required></td>
       </tr>
        <tr>
          <td>

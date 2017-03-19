@@ -158,9 +158,9 @@ while( $row = mysqli_fetch_assoc($result) )
                 mysqli_error($link));
 
                 $q=mysqli_select_db($link,"permohonan");
-                $ic=$_GET['ic'];
+                $no=$_GET['no'];
                 $name = $_SESSION['id_user'];
-                $query="SELECT * FROM request WHERE ic='$ic'";
+                $query="SELECT * FROM request WHERE no='$no'";
                 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
                 $q=mysqli_query($link,$query);
                 while( $row = mysqli_fetch_assoc($result) )

@@ -158,7 +158,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 </h1>
                                 <ol class="breadcrumb">
                                     <li>
-                                        <i class="fa fa-dashboard"></i>  <a href="mgrhome.php">Dashboard</a>
+                                        <i class="fa fa-dashboard"></i>  <a href="svhome.php">Dashboard</a>
                                     </li>
                                     <li class="active">
                                         <i class="fa fa-table"></i> Security

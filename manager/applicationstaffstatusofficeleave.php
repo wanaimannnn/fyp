@@ -110,7 +110,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <a href="applicationsvstatusofficeleave.php">Office Leave  </a>
                             </li>
                             <li>
-                                <a href="applicationstatusleave.php">Leave </a>
+                                <a href="applicationsvstatusleave.php">Leave </a>
                         </ul>
                     </li>
 

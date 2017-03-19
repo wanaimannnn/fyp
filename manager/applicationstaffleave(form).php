@@ -261,7 +261,7 @@ while( $row = mysqli_fetch_assoc($result) )
 							</tr>
 								</div>
 					   <tr>
-					   <td>
+					   <td colspan="2">
 						   <button type="submit" class="btn btn-default"> Validate </button>
 							</tr>
 							</td>
