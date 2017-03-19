@@ -149,7 +149,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 
                             <li>
-                                <a href="Leaverecords.php"></i> View Record</a>
+                                <a href="leaverecords.php"></i> View Record</a>
                             </li>
                         </ul>
 
