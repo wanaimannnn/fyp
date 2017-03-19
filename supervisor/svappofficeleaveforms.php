@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -129,7 +130,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             </li>
 						</ul>
 					</li>
-                        
+
                           <li>
                                 <a href="svcalendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
                             </li>
@@ -191,7 +192,7 @@ while( $row = mysqli_fetch_assoc($result) )
                           </td>
 						  </tr>
 						  </div>
-						
+
 						<tr>
 						 <td>
                           <div class="form-group">

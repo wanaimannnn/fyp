@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -225,7 +226,7 @@ while( $row = mysqli_fetch_assoc($result) )
       							      <div class="form-group">
       									<label>Leave Requested Date</label></td>
       									  <td>  <div id="datetimepicker" class="input-append date">
-      									               <input class="form-group" name="start_date" type="date"></input><br>Until<br><br><input class="form-group" name="end_date" type="date"></input>
+      									               <input class="form-group" name="start_date" type="date" required></input><br>Until<br><br><input class="form-group" name="end_date" type="date" required></input>
       							        </div>
 
 										</td>
@@ -237,7 +238,7 @@ while( $row = mysqli_fetch_assoc($result) )
 							<td>
 							<div class="form-group">
                                 <label>Reasons</label></td>
-                              <td>  <textarea class="form-control" rows="3" name="reason"></textarea>
+                              <td>  <textarea class="form-control" rows="3" name="reason" required></textarea>
                             </div>
 
 							</td>

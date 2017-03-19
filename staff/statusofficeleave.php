@@ -215,11 +215,7 @@ $num_rows= mysqli_num_rows($q);
                                     <tr>
 
                                         <th><center>Name</center></th>
-                                        <th><center>Purpose</center></th>
-                                        <th><center>Reason</center></th>
-                                        <th><center>Date</center></th>
-                                        <th><center>Time Out</center></th>
-                                        <th><center>Time In</center></th>
+                                        <th><center>Department</center></th>
                                         <th><center>Status</center></th>
                                         <th><center>Action</center></th>
 
@@ -233,11 +229,7 @@ $num_rows= mysqli_num_rows($q);
                                     <tbody>
                                     <tr align="center">
                                         <td><?php echo $row['name'];?></td>
-                                        <td><?php echo $row['purpose'];?></td>
-                                        <td><?php echo $row['reason'];?></td>
-                                        <td><?php echo $row['datee'];?></td>
-                                        <td><?php echo $row['timeout'];?></td>
-                                        <td><?php echo $row['timein'];?></td>
+                                        <td><?php echo $row['department'];?></td>
                                         <td><?php
                                       if ( $row['status'] == "0") {
                                         echo "Pending";

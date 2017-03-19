@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -82,7 +83,7 @@ while( $row = mysqli_fetch_assoc($result) )
                   </ul>
               </li>
           </ul>
-   
+
           <?php
         }
         ?>
@@ -181,43 +182,43 @@ while( $row = mysqli_fetch_assoc($result) )
                                  <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
                                  <p class="help-block">.</p>
                           </td>
-						  </tr>                      
+						  </tr>
 					  </div>
 							<tr>
-							<td>           
+							<td>
 		   <div class="form-group">
                                  <label>Department</label></td>
                                    <td><input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
                           </td>
-						  </tr>                      
+						  </tr>
 					  </div>
 							<tr>
-							<td>                           
+							<td>
 						   <div class="form-group">
                                  <label>Type of Leave</label></td>
                                  <td><div class="checkbox" name="leavetype">
                                  <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
                                  </div>
                           </td>
-						  </tr>                        
+						  </tr>
 						</div>
 							<tr>
-							<td>                        
+							<td>
 						<div class="form-group">
                          <label>Leave Requested Date</label></td>
                              <td><div id="datetimepicker" class="input-append date">
                                         <input class="form-group" name="start_date" type="date" value="<?php echo $row['start_date'];?>" style="text-align:center;" readonly></input><br>Until<br><br><input class="form-group" name="end_date" type="date" value="<?php echo $row['end_date']; ?>" style="text-align:center;" readonly></input>
                              </div>
                           </td>
-						  </tr>                       
+						  </tr>
 					   </div>
 							<tr>
-							<td>                 
+							<td>
                              <div class="form-group">
                                  <label>Reasons</label></td>
                                  <td><textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
                           </td>
-						  </tr>                          
+						  </tr>
 						  </div>
                                <?php
                              }
@@ -236,7 +237,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                  {
                                ?>
 							<tr>
-							<td>                               
+							<td>
 							   <div class="form-group">
                                      <label>Status</label></td>
                                      <td><select class="form-control" id="status" name="status" required>
@@ -245,18 +246,18 @@ while( $row = mysqli_fetch_assoc($result) )
                                          <option value="0">Not Approve</option>
                                      </select>
                           </td>
-						  </tr>                              
+						  </tr>
 							  </div>
 							<tr>
-							<td>                             
+							<td>
 							 <div class="form-group">
                                    <label> Supported By</label></td>
                                    <td><input class="form-control" name="supported_by" value="<?php echo $row['name']; ?> " readonly>
                           </td>
-						  </tr>                              
+						  </tr>
 							  </div>
 							<tr>
-							<td>                             
+							<td>
 							 <div class="form-group">
                                    <label> Validated By</label></td>
                                    <td><input class="form-control" name="validated_by" value="<?php echo $row['name']; ?>" readonly>
@@ -264,7 +265,7 @@ while( $row = mysqli_fetch_assoc($result) )
 						  </tr>
 								   </div>
 							<tr>
-							<td>                       
+							<td>
 					   <button type="submit" class="btn btn-default"> Validate </button>
                           </tr>
 						  </td>

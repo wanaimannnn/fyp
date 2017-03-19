@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -172,7 +173,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             <td>
                        <div class="form-group">
                      <label> Name </Label></td>
-                  <td>   <input class="form-control" name="name" placeholder="Enter name"> </td>
+                  <td>   <input class="form-control" name="name" placeholder="Enter name" required></td>
                     </tr>
 
                    </div>
@@ -180,7 +181,10 @@ while( $row = mysqli_fetch_assoc($result) )
                      <td>
                          <div class="form-group">
                              <label> Number IC </Label> </td>
-                            <td> <input class="form-control" name="ic" placeholder="Enter IC number"> </td>
+                               <td> <input class="form-control" name="ic" placeholder="Enter IC number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+       type = "number"
+       maxlength = "12"
+       required></td>
 
                          </div>
                            </tr>
@@ -188,14 +192,14 @@ while( $row = mysqli_fetch_assoc($result) )
                              <td>
                           <div class="form-group">
                              <label>Address</label></td>
-                             <td><textarea class="form-control" rows="3" name="address" placeholder="Enter address"></textarea></td>
+                             <td><textarea class="form-control" rows="3" name="address" placeholder="Enter address" required></textarea></td>
                          </div>
                        </tr>
                        <tr>
                          <td>
                          <div class="form-group">
                              <label> Phone Number </Label></td>
-                             <td><input class="form-control" name="mobileno" placeholder="Enter mobile number"></td>
+                             <td><input class="form-control" type="number" name="mobileno" placeholder="Enter mobile number" required></td>
 
                          </div>
                        </tr>
@@ -203,7 +207,7 @@ while( $row = mysqli_fetch_assoc($result) )
                          <td>
                          <div class="form-group">
                              <label> Position </Label></td>
-                            <td> <input class="form-control" name="position" placeholder="Enter position"></td>
+                            <td> <input class="form-control" name="position" placeholder="Enter position" required></td>
 
                          </div>
                        </tr>
@@ -313,14 +317,15 @@ while( $row = mysqli_fetch_assoc($result) )
 
                              <div class="form-group">
                              <label> Email </Label></td>
-                            <td> <input class="form-control" name="email" placeholder="Enter email"></td>
+                            <td> <input class="form-control" type="email" name="email" placeholder="Enter email" required></td>
                              </div>
                            </tr>
                            <tr>
                              <td>
                              <div class="form-group">
                              <label> Profile Picture </Label></td>
-                             <td><input name="profile" type="file" id="profile"></td>
+                             <td><input name="profile" type="file" id="profile" required>
+                             </td>
                              </div>
                            </tr>
 
@@ -331,7 +336,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             <td>
                          <div class="form-group">
                              <label> Username Request </label></td>
-                            <td> <input class="form-control" name="mgr_username" placeholder="Enter the username requested"></td>
+                            <td> <input class="form-control" name="mgr_username" placeholder="Enter the username requested" required></td>
 
                          </div>
                        </tr>
@@ -339,7 +344,7 @@ while( $row = mysqli_fetch_assoc($result) )
                          <td>
                          <div class="form-group">
                              <label> Password </label></td>
-                            <td> <input type="password" class="form-control" name="mgr_pwd" placeholder="Enter the password requested"></td>
+                            <td> <input type="password" class="form-control" name="mgr_pwd" placeholder="Enter the password requested" required></td>
 
                          </div>
                        </tr>

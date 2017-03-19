@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -214,7 +215,7 @@ while( $row = mysqli_fetch_assoc($result) )
                 <center>
                 <h4>Office Leave Form</h4>
                 <center>
-                
+
 
                       <div class="table-responsive">
                          <table class="table table-user-information">

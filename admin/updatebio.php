@@ -30,9 +30,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["profile"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["profile"]["name"]). " has been uploaded.";
+      $message[] = "Image uploaded!";
     } else {
-        echo "Sorry, there was an error uploading the image.";
+        $message[] = "Image is too large!.";
     }
 }
 

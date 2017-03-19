@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -195,7 +196,7 @@ while( $row = mysqli_fetch_assoc($result) )
                            </tr>
                            <tr>
                              <td>
-                                 <td><input name="profile" type="file" id="profile">
+                                 <td><input name="profile" type="file" id="profile" required>
                                </div></td>
                              </tr>
                        <div class="form-group">

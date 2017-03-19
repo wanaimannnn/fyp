@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -186,10 +187,10 @@ while( $row = mysqli_fetch_assoc($result) )
                          <label>Name </Label></td>
                          <td><input class="form-control" name="name" value="<?php echo $row['name']; ?>" readonly>
 </td>
-</tr>     
+</tr>
 	 </div>
 						<tr>
-						<td> 
+						<td>
                           <div class="form-group">
                                   <label>Department</label></td>
                                 <td><input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
@@ -204,7 +205,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                     <input class="form-control" name="chkbox[]" value="<?php echo $row['shift'];?>"  readonly>
                             </div>
 </td>
-</tr>                           
+</tr>
 						   </div>
                         <tr>
 						<td>
@@ -213,10 +214,10 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <br>
                                 <td><input class="form-group" id="date" name="date" value="<?php echo $row['datee']; ?> " style="text-align:center;"readonly>
 </td>
-</tr>                           
+</tr>
 						   </div>
 						<tr>
-						<td>                            
+						<td>
 							<div class="form-group">
                                 <label>Purpose</label></td>
                                 <td><div class="radio">
@@ -233,7 +234,7 @@ while( $row = mysqli_fetch_assoc($result) )
                               							  </div>
 </td>
 </tr>
-                           
+
 						   </div>
                           <!-- <div class="form-group">
                                 <label>Reason</label>
@@ -245,7 +246,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             <div> <label>Select Time Out:</label></td>
                             <td>  <input class="form-control" type="text" name="timeout" value="<?php echo $row['timeout']; ?> " readonly>
 </td>
-</tr>                           
+</tr>
 						   </div>
                             <script type="text/javascript">
                                 $('.sel-time').clockface({format: 'HH:mm'});
@@ -282,7 +283,7 @@ while( $row = mysqli_fetch_assoc($result) )
                             {
                           ?>
 						<tr>
-						<td>                            
+						<td>
 							<div class="form-group">
                                 <label>Status</label></td>
                                 <td><select class="form-control" id="status" name="status" required>

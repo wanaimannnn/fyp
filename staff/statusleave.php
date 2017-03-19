@@ -213,13 +213,10 @@ $num_rows= mysqli_num_rows($q);
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th><center>Name</center></th>
-                                        <th><center>Type of Leave</center></th>
-                                        <th><center>Reason</center></th>
-                                        <th><center>Start Date</center></th>
-                                        <th><center>End Date</center></th>
-                                        <th><center>Status</center></th>
-                                        <th><center>Action</center></th>
+                                      <th><center>Name</center></th>
+                                      <th><center>Department</center></th>
+                                      <th><center>Status</center></th>
+                                      <th><center>Action</center></th>
 
                                     </tr>
                                   </thead>
@@ -230,11 +227,8 @@ $num_rows= mysqli_num_rows($q);
                                     {
                                     ?>
                                     <tr align="center">
-                                        <td><?php echo $row['name'];?></td>
-                                        <td><?php echo $row['leavetype'];?></td>
-                                        <td><?php echo $row['reason'];?></td>
-                                        <td><?php echo $row['start_date'];?></td>
-                                        <td><?php echo $row['end_date'];?></td>
+                                      <td><?php echo $row['name'];?></td>
+                                      <td><?php echo $row['department'];?></td>
                                         <td><?php
                                       if ( $row['status'] == "0") {
                                         echo "Pending";

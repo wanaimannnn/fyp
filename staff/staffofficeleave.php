@@ -245,7 +245,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                             <div class="form-group">
                             <div> <label>Select Time Out:</label></td>
-                            <td><input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout">
+                            <td><input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timeout" required>
                             </div>
 
                             <script type="text/javascript">
@@ -259,7 +259,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                              <div class="form-group">
                             <div> <label>Select Time In:</label></td>
-                              <td>  <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein">
+                              <td>  <input data-format="hh:mm A" class="form-control sel-time-am" type="text" name="timein" required>
                             </div>
 
                             <script type="text/javascript">

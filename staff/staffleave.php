@@ -251,7 +251,7 @@ while( $row = mysqli_fetch_assoc($result) )
       							      <div class="form-group">
       									<label>Leave Requested Date</label></td>
       									   <td> <div id="datetimepicker" class="input-append date">
-      									               <input class="form-group" name="start_date" type="date"></input><br>Until<br><br><input class="form-group" name="end_date" type="date"></input></td></tr>
+      									               <input class="form-group" name="start_date" type="date" required></input><br>Until<br><br><input class="form-group" name="end_date" type="date" required></input></td></tr>
       							        </div>
                           </div>
 

@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -129,7 +130,7 @@ while( $row = mysqli_fetch_assoc($result) )
 						</ul>
 					</li>
 
-                     
+
 
                           <li>
                                 <a href="svcalendar.php"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
@@ -196,7 +197,7 @@ while( $row = mysqli_fetch_assoc($result) )
 						 <td>
                             <div class="form-group">
                                 <label>Department</label></td>
-                                  <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
+                                <td>  <input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
                         </td>
 						</tr>
 							</div>
@@ -206,7 +207,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <label>Type of Leave</label></td>
                                 <div class="checkbox" name="leavetype">
                             <td>    <input class="form-control" name="chkbox[]" value="<?php echo $row['leavetype'];?>"  readonly>
-                								
+
 												</div>
                             </td>
 							</tr>
@@ -238,7 +239,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <input type="file">
                             </div> -->
 						 <tr>
-						 <td>
+							<td colspan="2">
                             <button type="submit" class="btn btn-default">Update</button>
                             <button type="reset" class="btn btn-default">Reset</button>
 								</tr>

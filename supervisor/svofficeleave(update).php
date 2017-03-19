@@ -15,6 +15,7 @@ while( $row = mysqli_fetch_assoc($result) )
 {
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -137,7 +138,7 @@ while( $row = mysqli_fetch_assoc($result) )
 
                     </li>
               </ul>
-         
+
 
     </nav>
 
@@ -200,7 +201,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                   <label>Department</label></td>
                                 <td><input class="form-control" name="department" value="<?php echo $row['department']; ?> " readonly>
                         </td>
-						</tr>						
+						</tr>
 							 </div>
 						 <tr>
 						 <td>
@@ -274,15 +275,15 @@ while( $row = mysqli_fetch_assoc($result) )
                                 $('.sel-time-am').clockface();
                             </script>
                           </div>
-				
+
                             <input class="input-lg" type="hidden" id="status" name="status" maxlength="100" required>
-                   
+
                         <!--     <div class="form-group">
                                 <label>Document</label>
                                 <input type="file">
                             </div> -->
 						 <tr>
-						 <td>
+						 	<td colspan="2">
                             <button type="submit" class="btn btn-default">Update</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                         </tr>
@@ -313,4 +314,3 @@ while( $row = mysqli_fetch_assoc($result) )
 </body>
 
 </html>
-
