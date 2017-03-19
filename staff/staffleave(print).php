@@ -37,8 +37,23 @@ while( $row = mysqli_fetch_assoc($result) )
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+  <style>
+  @media print
+{
+    .no-print
+    {
+        display: none !important;
+        height: 0;
+    }
+
+
+    .no-print, .no-print *{
+        display: none !important;
+        height: 0;
+    }
+}
+</style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -297,7 +312,9 @@ return false;
 
                              <tr>
                              <td colspan="2">
+                               <div class="no-print">
                            <input name="b_print" type="button" class="ipt"   onClick="printdiv('form');" value=" Print "></td></tr>
+                         </div>
                         </form>
                     </div>
 

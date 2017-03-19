@@ -41,7 +41,22 @@ while( $row = mysqli_fetch_assoc($result) )
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://demo.itsolutionstuff.com/plugin/clockface.js"></script>
     <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/clockface.css">
+    <style>
+    @media print
+    {
+      .no-print
+      {
+          display: none !important;
+          height: 0;
+      }
 
+
+      .no-print, .no-print *{
+          display: none !important;
+          height: 0;
+      }
+    }
+    </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -262,8 +277,9 @@ return false;
 
                              <tr>
                              <td colspan="2">
+                               <div class="no-print">
                            <input name="b_print" type="button" class="ipt"   onClick="printdiv('form');" value=" Print "></td></tr>
-
+                         </div>
                         </form>
                     </div>
 
