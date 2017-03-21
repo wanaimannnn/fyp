@@ -26,7 +26,7 @@ while( $row = mysqli_fetch_assoc($result) )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OFFICCE MANAGEMENT SYSTEM</title>
+    <title>OFFICE MANAGEMENT SYSTEM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -262,7 +262,19 @@ while( $row = mysqli_fetch_assoc($result) )
       									               <input class="form-group" name="start_date" type="date" required></input><br>Until<br><br><input class="form-group" name="end_date" type="date" required></input></td></tr>
       							        </div>
                           </div>
+                          <tr>
+                          <td>
 
+                          <div class="form-group">
+                                  <label>Duration</label></td>
+                                <td><?php
+                                  $date1=date_create('start_date');
+                                  $date2=date_create('end_date');
+                                  $diff=date_diff($date1,$date2);
+                                  echo $diff->format("%R%a days");
+                                  ?>
+                                </td></tr>
+                              </div>
 
                           <tr>
                           <td>

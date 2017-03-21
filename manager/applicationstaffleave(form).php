@@ -26,7 +26,7 @@ while( $row = mysqli_fetch_assoc($result) )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OFFICCE MANAGEMENT SYSTEM</title>
+    <title>OFFICE MANAGEMENT SYSTEM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -223,7 +223,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                      <td><select class="form-control" id="status" name="status" required>
                                          <option value="">--Please Choose One--</option>
                                          <option value="1">Approve</option>
-                                         <option value="3">Not Approve</option>
+                                         <option value="2">Not Approve</option>
                                 								</select>
 							</td>
 							</tr>
