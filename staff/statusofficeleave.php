@@ -233,8 +233,10 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php
                                       if ( $row['status'] == "0") {
                                         echo "Pending";
-                                      } else {
+                                      } elseif ( $row['status'] == "1") {
                                         echo "Approved";
+                                      } else {
+                                        echo "Rejected";
                                       }
                                       ?></td>
                                         <td><a href="staffformupdate(officeleave).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="staffformdelete(officeleave).php?no=<?php echo $row['no'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a></td>

@@ -275,7 +275,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                       <td> <select class="form-control" id="status" name="status" required>
                                             <option value="">--Please Select One--</option>
                                            <option value="1">Approve</option>
-                                           <option value="0">Not Approve</option>
+                                           <option value="2">Not Approve</option>
                                        </select>
 									</td>
 							   </tr>

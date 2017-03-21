@@ -205,13 +205,15 @@ while( $row = mysqli_fetch_assoc($result) )
                                   <tr align="center">
                                       <td><?php echo $row['name'];?></td>
                                       <td><?php echo $row['department'];?></td>
-                                      <td>  <?php
-                                        if ( $row['status'] == "0") {
-                                          echo "Pending";
-                                        } else {
-                                          echo "Approved";
-                                        }
-                                        ?></td>
+                                      <td><?php
+                                    if ( $row['status'] == "0") {
+                                      echo "Pending";
+                                    } elseif ( $row['status'] == "1") {
+                                      echo "Approved";
+                                    } else {
+                                      echo "Rejected";
+                                    }
+                                    ?></td>
 									                    <td><a href="svofficeleave(update).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/> </a> &nbsp &nbsp <a href="svofficeleave(delete).php?no=<?php echo $row['no'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a></td>
                                   </tr>
                                   <?php
