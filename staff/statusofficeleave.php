@@ -174,7 +174,7 @@ $q=mysqli_select_db($link,"permohonan");
 
 $staff = $_SESSION['id_user'];
 $name = $_SESSION['user_name'];
-$query="SELECT * FROM request WHERE name = '$name' AND status = false";
+$query="SELECT * FROM request WHERE name = '$name' AND status != 1";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
