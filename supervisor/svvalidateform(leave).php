@@ -16,8 +16,27 @@ $status = $_POST['status'];
 $support = $_POST['supported_by'];
 
 
-$result = mysqli_query ($link,"UPDATE leavereq SET name='$name',department='$department',leavetype='$val',start_date='$start_date',end_date='$end_date',reason='$reason',status='$status',supported_by='$support' WHERE no='$no'")
-or die ("Insert Error:" . mysqli_error($link));
+if ($status == 0) {
+
+$sql = "UPDATE leavereq SET name='$name',department='$department',leavetype='$val',start_date='$start_date',end_date='$end_date',reason='$reason',status='$status',supported_by='$support' WHERE no='$no'";
+
+$result = mysqli_multi_query($link, $sql);
+
+if ($result) {
+    do {
+        // grab the result of the next query
+        if (($result = mysqli_store_result($link)) === false && mysqli_error($link) != '') {
+            echo "Query failed: " . mysqli_error($mysqli);
+        }
+    } while (mysqli_more_results($link) && mysqli_next_result($link)); // while there are more results
+}
+}elseif ($status == 2) {
+	 $result = mysqli_query($link,"UPDATE leavereq SET name='$name',department='$department',leavetype='$val',start_date='$start_date',end_date='$end_date',reason='$reason',status='$status' WHERE no='$no'")
+	 or die ("Insert Error:" . mysqli_error($link));
+}
+else {
+    echo "First query failed..." . mysqli_error($link);
+}
 
 echo"<script>"
 		."alert('The form has been validated');"

@@ -224,6 +224,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                 <td> <textarea class="form-control" rows="3" name="reason" readonly><?php echo $row['reason']; ?> </textarea>
                                </td>
 							   </tr>
+                  <input class="input-lg" type="hidden" id="limitcuti" name="limitcuti" maxlength="100" value="<?php echo $row['limitcuti']; ?>" required>
 							   </div>
                                <?php
                              }
@@ -249,7 +250,7 @@ while( $row = mysqli_fetch_assoc($result) )
                                   <td>   <select class="form-control" id="status" name="status" required>
                                          <option value="">--Please Select One--</option>
                                          <option value="0">Approve</option>
-                                         <option value="0">Not Approve</option>
+                                         <option value="2">Not Approve</option>
                                      </select>
 									 </td>
 									 </tr>

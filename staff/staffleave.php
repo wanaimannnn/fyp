@@ -248,6 +248,14 @@ while( $row = mysqli_fetch_assoc($result) )
                             </div>
                             <tr>
                             <td>
+
+                            <div class="form-group">
+                                    <label>Leave Balance</label></td>
+                                  <td>&nbsp;<?php echo $row['limitcuti']; ?>
+                                  </td></tr>
+                                </div>
+                            <tr>
+                            <td>
       							      <div class="form-group">
       									<label>Leave Requested Date</label></td>
       									   <td> <div id="datetimepicker" class="input-append date">

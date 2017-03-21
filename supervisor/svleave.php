@@ -220,7 +220,15 @@ while( $row = mysqli_fetch_assoc($result) )
 												</td>
                         </tr>
                             </div>
+                            <tr>
+                           <td>
+                                         <div class="form-group">
+                                             <label>Leave Balance</label></td>
+                                           <td>  <?php echo $row['limitcuti']; ?>
 
+                           </td>
+                           </tr>
+                           </div>
 									<tr>
 									<td>
       							      <div class="form-group">

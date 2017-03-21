@@ -180,12 +180,8 @@ $num_rows= mysqli_num_rows($q);
                                 <thead>
                                     <tr>
                                         <th><center>Name</center></th>
-                                        <th><center>Type of Leave</center></th>
-                                        <th><center>Reason</center></th>
-                                        <th><center>Start Date</center></th>
-                                        <th><center>End Date</center></th>
+                                        <th><center>Department</center></th>
                                         <th><center>Status</center></th>
-                                        <th><center>Created Date</center></th>
                                         <th><center>Action</center></th>
 
                                     </tr>
@@ -198,10 +194,7 @@ $num_rows= mysqli_num_rows($q);
                                     ?>
                                     <tr align="center">
                                         <td><?php echo $row['name'];?></td>
-                                        <td><?php echo $row['leavetype'];?></td>
-                                        <td><?php echo $row['reason'];?></td>
-                                        <td><?php echo $row['start_date'];?></td>
-                                        <td><?php echo $row['end_date'];?></td>
+                                        <td><?php echo $row['department'];?></td>
                                         <td><?php
                                       if ( $row['status'] == "0") {
                                         echo "Pending";
@@ -209,7 +202,6 @@ $num_rows= mysqli_num_rows($q);
                                         echo "Approved";
                                       }
                                       ?></td>
-                                        <td><?php echo $row['created'];?></td>
                                          <td><a href="applicationsvleave(forms).php?no=<?php echo $row['no'];?>"><img src="../css/img/pencil.png" style="30" width="30"/> </a>
 
                                     </tr>

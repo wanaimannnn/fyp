@@ -177,7 +177,7 @@ mysqli_error($link));
 $q=mysqli_select_db($link,"permohonan");
 $staff = $_SESSION['id_user'];
 $name = $_SESSION['user_name'];
-$query="SELECT * FROM leavereq WHERE name = '$name' AND status = false";
+$query="SELECT * FROM leavereq WHERE name = '$name' AND status != 1";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
@@ -232,12 +232,14 @@ $num_rows= mysqli_num_rows($q);
                                         <td><?php
                                       if ( $row['status'] == "0") {
                                         echo "Pending";
-                                      } else {
+                                      } elseif ( $row['status'] == "1") {
                                         echo "Approved";
+                                      } else {
+                                        echo "Rejected";
                                       }
                                       ?></td>
                                         <td><a href="staffformupdate(leave).php?no=<?php echo $row['no'];?>"><img src="../css/img/contract.png" style="30" width="30"/></a> &nbsp &nbsp <a href="staffformdelete(leave).php?no=<?php echo $row['no'];?>"> <img src="../css/img/delete.png" style="30" width="30"/></a>
-
+                                          
                                     </tr>
                                     <?php
                                     }
