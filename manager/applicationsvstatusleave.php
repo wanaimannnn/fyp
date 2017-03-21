@@ -143,7 +143,7 @@ mysqli_error($link));
 $q=mysqli_select_db($link,"permohonan");
 $mgr = $_SESSION['id_user'];
 $name = $_SESSION['user_name'];
-$query="SELECT * FROM leavereq WHERE role='supervisor' AND status = false";
+$query="SELECT * FROM leavereq WHERE role='supervisor' AND status = 0";
 $result = mysqli_query($link,$query) or die('Query failed. ' . mysqli_error($link));
 $q=mysqli_query($link,$query);
 $num_rows= mysqli_num_rows($q);
